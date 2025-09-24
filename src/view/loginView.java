@@ -45,7 +45,7 @@ public class loginView extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txt_email.setBorder(null);
-        jPanel1.add(txt_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 232, 240, 30));
+        jPanel1.add(txt_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 230, 240, 30));
 
         txt_contraseña.setBorder(null);
         jPanel1.add(txt_contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 290, 240, 30));
