@@ -4,6 +4,8 @@
  */
 package view;
 
+import java.awt.Color;
+
 /**
  *
  * @author User
@@ -30,19 +32,19 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
-        jPanel10 = new javax.swing.JPanel();
+        BarraInicio = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jPanel11 = new javax.swing.JPanel();
+        BarraSolis = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jPanel12 = new javax.swing.JPanel();
+        BarraList = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jPanel13 = new javax.swing.JPanel();
+        BarraModi = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jPanel14 = new javax.swing.JPanel();
+        BarraElim = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -54,8 +56,8 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         jLabel44 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jTabbedPane2 = new javax.swing.JTabbedPane();
-        jPanel9 = new javax.swing.JPanel();
+        tab = new javax.swing.JTabbedPane();
+        Inicioo = new javax.swing.JPanel();
         jPanel15 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -105,6 +107,7 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jLabel42 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
         jPanel19 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
@@ -136,70 +139,150 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
         jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 210, -1));
 
-        jPanel10.setBackground(new java.awt.Color(51, 204, 255));
-        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        BarraInicio.setBackground(new java.awt.Color(51, 204, 255));
+        BarraInicio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BarraInicioMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BarraInicioMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BarraInicioMouseExited(evt);
+            }
+        });
+        BarraInicio.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Inicio");
-        jPanel10.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, 40));
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
+        BarraInicio.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, 40));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/home-button.png"))); // NOI18N
-        jPanel10.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 40, 60));
+        BarraInicio.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 40, 60));
 
-        jPanel2.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 250, 50));
+        jPanel2.add(BarraInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 250, 50));
 
-        jPanel11.setBackground(new java.awt.Color(51, 204, 255));
-        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        BarraSolis.setBackground(new java.awt.Color(51, 204, 255));
+        BarraSolis.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BarraSolisMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BarraSolisMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BarraSolisMouseExited(evt);
+            }
+        });
+        BarraSolis.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Solicitudes de ingreso");
-        jPanel11.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 170, 40));
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
+        BarraSolis.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 170, 40));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/add-account.png"))); // NOI18N
-        jPanel11.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -10, -1, 60));
+        BarraSolis.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -10, -1, 60));
 
-        jPanel2.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 250, 40));
+        jPanel2.add(BarraSolis, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 250, 40));
 
-        jPanel12.setBackground(new java.awt.Color(51, 204, 255));
-        jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        BarraList.setBackground(new java.awt.Color(51, 204, 255));
+        BarraList.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BarraListMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BarraListMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BarraListMouseExited(evt);
+            }
+        });
+        BarraList.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Listado de usuarios");
-        jPanel12.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, -1, 40));
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
+        BarraList.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, -1, 40));
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/phone-book.png"))); // NOI18N
-        jPanel12.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -10, -1, 60));
+        BarraList.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -10, -1, 60));
 
-        jPanel2.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 250, 40));
+        jPanel2.add(BarraList, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 250, 40));
 
-        jPanel13.setBackground(new java.awt.Color(51, 204, 255));
-        jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        BarraModi.setBackground(new java.awt.Color(51, 204, 255));
+        BarraModi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BarraModiMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BarraModiMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BarraModiMouseExited(evt);
+            }
+        });
+        BarraModi.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/update-profile.png"))); // NOI18N
-        jPanel13.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 40, 40));
+        BarraModi.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 40, 40));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Modificación de usuarios");
-        jPanel13.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, 30));
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
+        });
+        BarraModi.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, 30));
 
-        jPanel2.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 250, 40));
+        jPanel2.add(BarraModi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 250, 40));
 
-        jPanel14.setBackground(new java.awt.Color(51, 204, 255));
-        jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        BarraElim.setBackground(new java.awt.Color(51, 204, 255));
+        BarraElim.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BarraElimMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BarraElimMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BarraElimMouseExited(evt);
+            }
+        });
+        BarraElim.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText(" Eliminación usuarios");
-        jPanel14.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, 30));
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+        });
+        BarraElim.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, 30));
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/delete-user.png"))); // NOI18N
-        jPanel14.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 40, 50));
+        BarraElim.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 40, 50));
 
-        jPanel2.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 250, 50));
+        jPanel2.add(BarraElim, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 250, 50));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/book (1).png"))); // NOI18N
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 160, 110));
@@ -236,8 +319,8 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 550, 90));
         jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, -1, -1));
 
-        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Inicioo.setBackground(new java.awt.Color(255, 255, 255));
+        Inicioo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel15.setBackground(new java.awt.Color(51, 153, 255));
         jPanel15.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Hola Admin", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -265,25 +348,30 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(51, 153, 255));
         jButton1.setText("Solicitudes de Ingreso");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         jPanel15.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, -1, -1));
 
-        jPanel9.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 410, 160));
+        Inicioo.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 410, 160));
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(51, 153, 255));
         jLabel19.setText("Inicio");
-        jPanel9.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
+        Inicioo.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
 
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/home-button.png"))); // NOI18N
-        jPanel9.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 40, 40));
+        Inicioo.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 40, 40));
 
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/tutoring (1).png"))); // NOI18N
-        jPanel9.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 240, 70, 70));
+        Inicioo.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 240, 70, 70));
 
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/students (3).png"))); // NOI18N
-        jPanel9.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 70, 70));
+        Inicioo.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 70, 70));
 
-        jTabbedPane2.addTab("Ini", jPanel9);
+        tab.addTab("Ini", Inicioo);
 
         jPanel16.setBackground(new java.awt.Color(255, 255, 255));
         jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -296,7 +384,7 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/add-account.png"))); // NOI18N
         jPanel16.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 50, 40));
 
-        jTabbedPane2.addTab("soli", jPanel16);
+        tab.addTab("soli", jPanel16);
 
         jPanel17.setBackground(new java.awt.Color(255, 255, 255));
         jPanel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -348,7 +436,7 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jLabel34.setText("general de usuarios en el sistema");
         jPanel17.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, -1, 30));
 
-        jTabbedPane2.addTab("list", jPanel17);
+        tab.addTab("list", jPanel17);
 
         jPanel18.setBackground(new java.awt.Color(255, 255, 255));
         jPanel18.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -385,6 +473,11 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Ver listado");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -461,11 +554,14 @@ public class Vitstaadmin extends javax.swing.JFrame {
 
         jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 400, 690));
 
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/students (3).png"))); // NOI18N
+        jPanel5.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 840, 70, 60));
+
         jScrollPane1.setViewportView(jPanel5);
 
         jPanel18.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 430));
 
-        jTabbedPane2.addTab("mo", jPanel18);
+        tab.addTab("mo", jPanel18);
 
         jPanel19.setBackground(new java.awt.Color(255, 255, 255));
         jPanel19.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -499,6 +595,11 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jButton7.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setText("Ver listado");
+        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton7MouseClicked(evt);
+            }
+        });
         jPanel19.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, -1, 20));
 
         jPanel7.setBackground(new java.awt.Color(51, 153, 255));
@@ -546,9 +647,9 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jButton8.setText("Eliminar usuario");
         jPanel19.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 230, 30));
 
-        jTabbedPane2.addTab("elim", jPanel19);
+        tab.addTab("elim", jPanel19);
 
-        jPanel1.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 550, 370));
+        jPanel1.add(tab, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 550, 370));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -583,6 +684,98 @@ public class Vitstaadmin extends javax.swing.JFrame {
     private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField13ActionPerformed
+
+    private void BarraInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BarraInicioMouseClicked
+      tab.setSelectedIndex(0);        // TODO add your handling code here:
+    }//GEN-LAST:event_BarraInicioMouseClicked
+
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+       tab.setSelectedIndex(0);// TODO add your handling code here:
+    }//GEN-LAST:event_jLabel8MouseClicked
+
+    private void BarraSolisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BarraSolisMouseClicked
+        tab.setSelectedIndex(1);// TODO add your handling code here:
+    }//GEN-LAST:event_BarraSolisMouseClicked
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        tab.setSelectedIndex(1);
+    }//GEN-LAST:event_jLabel4MouseClicked
+
+    private void BarraListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BarraListMouseClicked
+       tab.setSelectedIndex(2);
+    }//GEN-LAST:event_BarraListMouseClicked
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        tab.setSelectedIndex(2);
+    }//GEN-LAST:event_jLabel5MouseClicked
+
+    private void BarraModiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BarraModiMouseClicked
+       tab.setSelectedIndex(3);
+    }//GEN-LAST:event_BarraModiMouseClicked
+
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+       tab.setSelectedIndex(3);
+    }//GEN-LAST:event_jLabel6MouseClicked
+
+    private void BarraElimMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BarraElimMouseClicked
+       tab.setSelectedIndex(4);
+    }//GEN-LAST:event_BarraElimMouseClicked
+
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+       tab.setSelectedIndex(4);
+    }//GEN-LAST:event_jLabel7MouseClicked
+
+    private void BarraInicioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BarraInicioMouseEntered
+       BarraInicio.setBackground(new Color(51,153,255));
+    }//GEN-LAST:event_BarraInicioMouseEntered
+
+    private void BarraSolisMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BarraSolisMouseEntered
+        BarraSolis.setBackground(new Color(51,153,255));
+    }//GEN-LAST:event_BarraSolisMouseEntered
+
+    private void BarraListMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BarraListMouseEntered
+       BarraList.setBackground(new Color(51,153,255));
+    }//GEN-LAST:event_BarraListMouseEntered
+
+    private void BarraModiMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BarraModiMouseEntered
+       BarraModi.setBackground(new Color(51,153,255));
+    }//GEN-LAST:event_BarraModiMouseEntered
+
+    private void BarraElimMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BarraElimMouseEntered
+       BarraElim.setBackground(new Color(51,153,255));
+    }//GEN-LAST:event_BarraElimMouseEntered
+
+    private void BarraInicioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BarraInicioMouseExited
+      BarraInicio.setBackground(new Color(51,204,255));
+    }//GEN-LAST:event_BarraInicioMouseExited
+
+    private void BarraSolisMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BarraSolisMouseExited
+      BarraSolis.setBackground(new Color(51,204,255));
+    }//GEN-LAST:event_BarraSolisMouseExited
+
+    private void BarraListMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BarraListMouseExited
+      BarraList.setBackground(new Color(51,204,255));
+    }//GEN-LAST:event_BarraListMouseExited
+
+    private void BarraModiMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BarraModiMouseExited
+      BarraModi.setBackground(new Color(51,204,255));
+    }//GEN-LAST:event_BarraModiMouseExited
+
+    private void BarraElimMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BarraElimMouseExited
+      BarraElim.setBackground(new Color(51,204,255));
+    }//GEN-LAST:event_BarraElimMouseExited
+
+    private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
+       tab.setSelectedIndex(2);
+    }//GEN-LAST:event_jButton7MouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        tab.setSelectedIndex(2);
+    }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        tab.setSelectedIndex(1);
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -620,6 +813,12 @@ public class Vitstaadmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel BarraElim;
+    private javax.swing.JPanel BarraInicio;
+    private javax.swing.JPanel BarraList;
+    private javax.swing.JPanel BarraModi;
+    private javax.swing.JPanel BarraSolis;
+    private javax.swing.JPanel Inicioo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -634,6 +833,7 @@ public class Vitstaadmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -677,11 +877,6 @@ public class Vitstaadmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
@@ -693,14 +888,12 @@ public class Vitstaadmin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
@@ -716,5 +909,6 @@ public class Vitstaadmin extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JTabbedPane tab;
     // End of variables declaration//GEN-END:variables
 }
