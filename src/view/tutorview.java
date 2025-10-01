@@ -5,18 +5,14 @@
 package view;
 
 import java.awt.Color;
+import Vistas.textoSombra;
 
-/**
- *
- * @author Estudiante
- */
 public class tutorview extends javax.swing.JFrame {
 
-    /**
-     * Creates new form tutorview
-     */
     public tutorview() {
         initComponents();
+        this.setLocationRelativeTo(this);
+        textoSombra Notas = new textoSombra("Digite documento", txt_notas);
     }
 
     /**
@@ -28,6 +24,7 @@ public class tutorview extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -55,7 +52,7 @@ public class tutorview extends javax.swing.JFrame {
         jTable2 = new javax.swing.JTable();
         tabla_notas = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txt_notas = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         tabla_buscarNotas = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -67,8 +64,10 @@ public class tutorview extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
-        setPreferredSize(new java.awt.Dimension(800, 500));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel6.setBackground(new java.awt.Color(51, 204, 255));
         jPanel6.setPreferredSize(new java.awt.Dimension(800, 500));
@@ -174,7 +173,7 @@ public class tutorview extends javax.swing.JFrame {
 
         jPanel6.add(panel_horario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 250, 40));
 
-        getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, -1));
+        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, -1));
 
         panel_horizontal.setBackground(new java.awt.Color(51, 153, 255));
         panel_horizontal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -187,23 +186,27 @@ public class tutorview extends javax.swing.JFrame {
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/profesor.png"))); // NOI18N
         panel_horizontal.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, -1, -1));
 
-        getContentPane().add(panel_horizontal, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 550, 90));
+        jPanel1.add(panel_horizontal, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 550, 60));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 204, 255));
         jLabel2.setText("Sistema gestión de tutorias");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, -1, -1));
 
         jSeparator2.setForeground(new java.awt.Color(51, 204, 255));
-        getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 250, 20));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 250, 20));
 
         tabla_lista.setBackground(new java.awt.Color(255, 255, 255));
         tabla_lista.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable1.setAutoCreateRowSorter(true);
-        jTable1.setBackground(new java.awt.Color(242, 242, 242));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
@@ -216,27 +219,20 @@ public class tutorview extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Cédula", "Correo", "Nombres", "# de celular"
+                "Nombre", "Identificación", "Email", "# de celular"
             }
         ) {
             Class[] types = new Class [] {
                 java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
         });
         jScrollPane1.setViewportView(jTable1);
 
-        tabla_lista.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 550, 340));
+        tabla_lista.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 550, 350));
 
         jTabbedPane.addTab("0", tabla_lista);
 
@@ -267,14 +263,12 @@ public class tutorview extends javax.swing.JFrame {
         jLabel1.setText("Ingresa el numero de identidad (sin puntos ni comas)");
         tabla_notas.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 500, 40));
 
-        jTextField1.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField1.setText("Ingrese documento");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txt_notas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txt_notasActionPerformed(evt);
             }
         });
-        tabla_notas.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 170, -1));
+        tabla_notas.add(txt_notas, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 170, -1));
 
         jButton1.setText("Buscar estudiante");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -317,7 +311,9 @@ public class tutorview extends javax.swing.JFrame {
 
         jTabbedPane.addTab("tab4", tabla_buscarNotas);
 
-        getContentPane().add(jTabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 550, 390));
+        jPanel1.add(jTabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 550, 390));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -364,9 +360,9 @@ public class tutorview extends javax.swing.JFrame {
 
     }//GEN-LAST:event_panel_notasMouseClicked
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txt_notasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_notasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txt_notasActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         jTabbedPane.setSelectedIndex(3);
@@ -425,6 +421,7 @@ public class tutorview extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -435,7 +432,6 @@ public class tutorview extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JPanel panel_horario;
     private javax.swing.JPanel panel_horizontal;
@@ -445,5 +441,6 @@ public class tutorview extends javax.swing.JFrame {
     private javax.swing.JPanel tabla_horario;
     private javax.swing.JPanel tabla_lista;
     private javax.swing.JPanel tabla_notas;
+    private javax.swing.JTextField txt_notas;
     // End of variables declaration//GEN-END:variables
 }
