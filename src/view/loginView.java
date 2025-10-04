@@ -5,11 +5,7 @@
 package view;
 
 import Vistas.textoSombra;
-
-/**
- *
- * @author Juanda
- */
+import static controlador.controlLogin.loginUsuarios;
 public class loginView extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(loginView.class.getName());
@@ -20,7 +16,7 @@ public class loginView extends javax.swing.JFrame {
     public loginView() {
         initComponents();
         this.setLocationRelativeTo(this);
-        textoSombra email = new textoSombra("Email",txt_email);
+        textoSombra cedula = new textoSombra("Cedula",txt_cedula);
         textoSombra contraseña = new textoSombra("Contraseña",txt_contraseña);
     }
 
@@ -34,7 +30,7 @@ public class loginView extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        txt_email = new javax.swing.JTextField();
+        txt_cedula = new javax.swing.JTextField();
         txt_contraseña = new javax.swing.JPasswordField();
         btn_registrar = new javax.swing.JButton();
         btn_ingresar = new javax.swing.JButton();
@@ -44,8 +40,8 @@ public class loginView extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txt_email.setBorder(null);
-        jPanel1.add(txt_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 232, 240, 30));
+        txt_cedula.setBorder(null);
+        jPanel1.add(txt_cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 232, 240, 30));
 
         txt_contraseña.setBorder(null);
         jPanel1.add(txt_contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 290, 240, 30));
@@ -65,6 +61,11 @@ public class loginView extends javax.swing.JFrame {
         btn_ingresar.setContentAreaFilled(false);
         btn_ingresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_ingresar.setFocusPainted(false);
+        btn_ingresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ingresarActionPerformed(evt);
+            }
+        });
         jPanel1.add(btn_ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 360, 100, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/loginImagen.png"))); // NOI18N
@@ -89,6 +90,12 @@ public class loginView extends javax.swing.JFrame {
         registerVista.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_registrarActionPerformed
+
+    private void btn_ingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ingresarActionPerformed
+        String cedula = txt_cedula.getText();
+        String contraseña = txt_contraseña.getText();
+        loginUsuarios(cedula, contraseña);
+    }//GEN-LAST:event_btn_ingresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -120,7 +127,7 @@ public class loginView extends javax.swing.JFrame {
     private javax.swing.JButton btn_registrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField txt_cedula;
     private javax.swing.JPasswordField txt_contraseña;
-    private javax.swing.JTextField txt_email;
     // End of variables declaration//GEN-END:variables
 }
