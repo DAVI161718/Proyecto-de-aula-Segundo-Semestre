@@ -4,6 +4,7 @@ import java.io.*;
 import javax.swing.JOptionPane;
 
 public class controlLogin {
+
     public static void loginUsuarios(String cedula, String contraseña) {
         String carpeta = System.getProperty("user.dir") + File.separator + "Datos de Usuarios";
         File archivo = new File(carpeta + File.separator + cedula + ".txt");
@@ -22,7 +23,7 @@ public class controlLogin {
 
             if (cedula.equals(cedulaFile) && contraseña.equals(contraFile)) {
                 JOptionPane.showMessageDialog(null, "Bienvenido al sistema!");
-            }else{
+            } else {
                 JOptionPane.showMessageDialog(null, "Cedula o contraseña incorrecta");
             }
 

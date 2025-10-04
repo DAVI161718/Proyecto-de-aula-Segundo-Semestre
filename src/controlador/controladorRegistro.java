@@ -14,7 +14,7 @@ public class controladorRegistro {
         String archivo = cedula + ".txt";
         File CrearUbi = new File(CrearUbica);
         File CrearArchivo = new File(CrearUbica + archivo);
-        if (nombre.isEmpty() || cedula.isEmpty() || contraseña.isEmpty()) {
+        if (nombre.isEmpty() || cedula.isEmpty() || contraseña.isEmpty() || telefono.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Porfavor rellenar todas las casillas con su respectiva informacion");
         } else {
             try {
@@ -27,8 +27,8 @@ public class controladorRegistro {
                         CrearForma.format("%s\r\n%s\r\n%s\r\n%s\r\n%s\r\n", "Cedula: " + cedula, "Contraseña: " + contraseña, "Numero de Telefono: " + telefono, "Nombre: " + nombre, "Rol: " + rol);
                         CrearForma.close();
                         JOptionPane.showMessageDialog(null, "Registro Exitoso!");
-                        
-                    }else{
+
+                    } else {
                         JOptionPane.showMessageDialog(null, "Informacion no valida, Porfavor intente nuevamente");
                     }
                 }
