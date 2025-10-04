@@ -20,7 +20,7 @@ public class registerView extends javax.swing.JFrame {
     public registerView() {
         initComponents();
         this.setLocationRelativeTo(this);
-        textoSombra email = new textoSombra("Email",txt_email);
+        textoSombra telefono = new textoSombra("Nro de telefono",txt_telefono);
         textoSombra contraseña = new textoSombra("Contraseña",txt_contraseña);
         textoSombra cedula = new textoSombra("Cedula",txt_cedula);
         textoSombra nombre = new textoSombra("Nombre Completo",txt_nombre);
@@ -38,7 +38,7 @@ public class registerView extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         btn_volver = new javax.swing.JButton();
         txt_contraseña = new javax.swing.JPasswordField();
-        txt_email = new javax.swing.JTextField();
+        txt_telefono = new javax.swing.JTextField();
         txt_nombre = new javax.swing.JTextField();
         txt_cedula = new javax.swing.JTextField();
         btn_registrar = new javax.swing.JButton();
@@ -62,11 +62,16 @@ public class registerView extends javax.swing.JFrame {
         txt_contraseña.setBorder(null);
         jPanel1.add(txt_contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 190, 240, 30));
 
-        txt_email.setBorder(null);
-        jPanel1.add(txt_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 130, 240, 30));
+        txt_telefono.setBorder(null);
+        txt_telefono.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_telefonoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txt_telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 310, 240, 30));
 
         txt_nombre.setBorder(null);
-        jPanel1.add(txt_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 306, 240, 30));
+        jPanel1.add(txt_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 130, 240, 30));
 
         txt_cedula.setBorder(null);
         jPanel1.add(txt_cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 250, 240, 30));
@@ -98,6 +103,10 @@ public class registerView extends javax.swing.JFrame {
         loginVista.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_volverActionPerformed
+
+    private void txt_telefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_telefonoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_telefonoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -131,7 +140,7 @@ public class registerView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txt_cedula;
     private javax.swing.JPasswordField txt_contraseña;
-    private javax.swing.JTextField txt_email;
     private javax.swing.JTextField txt_nombre;
+    private javax.swing.JTextField txt_telefono;
     // End of variables declaration//GEN-END:variables
 }
