@@ -24,10 +24,10 @@ public class controladorRegistro {
                     if (valCedula(cedula) && valTelefono(telefono)) {
                         CrearUbi.mkdir();
                         Formatter CrearForma = new Formatter(CrearUbica + archivo);
-                        CrearForma.format("%s\r\n%s\r\n%s\r\n%s\r\n%s\r\n", "Cedula: " + cedula, "Contraseña: " + contraseña, "Numero de Telefono: " + telefono, "Nombre: " + nombre, "Rol: " + rol);
+                        CrearForma.format("%s\r\n%s\r\n%s\r\n%s\r\n%s\r\n", "Cedula: " + cedula, "Contraseña: " + contraseña, "Rol: " + rol, "Nombre Completo: " + nombre, "Numero de telefono: " + telefono);
                         CrearForma.close();
                         JOptionPane.showMessageDialog(null, "Registro Exitoso!");
-
+                        
                     } else {
                         JOptionPane.showMessageDialog(null, "Informacion no valida, Porfavor intente nuevamente");
                     }

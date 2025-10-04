@@ -81,7 +81,9 @@ public class loginView extends javax.swing.JFrame {
     private void btn_ingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ingresarActionPerformed
         String cedula = txt_cedula.getText();
         String contraseña = txt_contraseña.getText();
-        loginUsuarios(cedula, contraseña);
+        if (loginUsuarios(cedula, contraseña) == true) {
+            this.dispose();
+        }
     }//GEN-LAST:event_btn_ingresarActionPerformed
 
     public static void main(String args[]) {
