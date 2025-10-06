@@ -87,24 +87,32 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jLabel35 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
-        jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
-        jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jLabel38 = new javax.swing.JLabel();
-        jLabel39 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jLabel40 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
-        jLabel41 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
         jTextField9 = new javax.swing.JTextField();
-        jLabel42 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
+        jLabel39 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jLabel51 = new javax.swing.JLabel();
+        jComboBox4 = new javax.swing.JComboBox<>();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel52 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
+        jPanel13 = new javax.swing.JPanel();
+        jLabel36 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel40 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel53 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        jTextField8 = new javax.swing.JTextField();
+        jTextField10 = new javax.swing.JTextField();
+        jPanel14 = new javax.swing.JPanel();
         jPanel19 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
@@ -122,6 +130,8 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jLabel48 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
         jButton8 = new javax.swing.JButton();
+        jLabel41 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -429,21 +439,21 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jTable2.setForeground(new java.awt.Color(51, 153, 255));
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Nombre", "identificación", "Email", "Contraseña", "Cargo"
+                "Nombre", "identificación", "N° Celular", "Cargo"
             }
         ));
         jScrollPane3.setViewportView(jTable2);
@@ -484,17 +494,17 @@ public class Vitstaadmin extends javax.swing.JFrame {
                 txt_BuscarmodiActionPerformed(evt);
             }
         });
-        jPanel5.add(txt_Buscarmodi, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 330, 30));
+        jPanel5.add(txt_Buscarmodi, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 330, 30));
 
         jButton2.setBackground(new java.awt.Color(51, 153, 255));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Buscar");
-        jPanel5.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 80, 30));
+        jPanel5.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 80, 30));
 
         jLabel35.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel35.setText("No recuerdas cual es la identificación de el usuario que buscas?");
-        jPanel5.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 350, 20));
+        jLabel35.setText("No recuerdas la identificación de el usuario que buscas?");
+        jPanel5.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, 20));
 
         jButton3.setBackground(new java.awt.Color(51, 153, 255));
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
@@ -510,11 +520,67 @@ public class Vitstaadmin extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel5.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, -1, 20));
+        jPanel5.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 70, -1, 20));
 
         jPanel6.setBackground(new java.awt.Color(51, 153, 255));
-        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Modifica la información de usuario", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nueva información de usuario", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel6.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 260, 30));
+
+        jLabel37.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel37.setText("Nuevo nombre");
+        jPanel6.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+        jPanel6.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 260, 30));
+
+        jLabel43.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel43.setText("Nueva contraseña");
+        jPanel6.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, 20));
+
+        jButton5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(51, 153, 255));
+        jButton5.setText("Modificar ");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 250, 40));
+
+        jLabel39.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel39.setText("Cambio de tipo");
+        jPanel6.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
+
+        jComboBox2.setBackground(new java.awt.Color(204, 204, 255));
+        jComboBox2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CC", "TI", "CE", "PP" }));
+        jPanel6.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 60, 30));
+
+        jLabel51.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel51.setText("Cambio de cargo");
+        jPanel6.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 110, 20));
+
+        jComboBox4.setBackground(new java.awt.Color(204, 204, 255));
+        jComboBox4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estudiante", "Tutor" }));
+        jPanel6.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 130, 30));
+        jPanel6.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 262, 250, 30));
+
+        jLabel52.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel52.setText("Nuevo numero celular");
+        jPanel6.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
+
+        jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 280, 430));
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/students (3).png"))); // NOI18N
+        jPanel5.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 600, 70, 60));
+
+        jPanel13.setBackground(new java.awt.Color(51, 153, 255));
+        jPanel13.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Información actual de usuario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel36.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel36.setText("Nombre");
+        jPanel13.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
 
         jTextField3.setEditable(false);
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
@@ -522,67 +588,50 @@ public class Vitstaadmin extends javax.swing.JFrame {
                 jTextField3ActionPerformed(evt);
             }
         });
-        jPanel6.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 290, 30));
-        jPanel6.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 290, 30));
+        jPanel13.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 220, 30));
 
-        jLabel36.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel36.setText("Nombre actual");
-        jPanel6.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, -1, -1));
+        jLabel40.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel40.setText("Cargo actual");
+        jPanel13.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 90, -1));
 
-        jLabel37.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel37.setText("Nuevo nombre");
-        jPanel6.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
+        jTextField2.setEditable(false);
+        jPanel13.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 132, 150, 30));
+
+        jLabel50.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel50.setText("identificación");
+        jPanel13.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
+
+        jLabel38.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel38.setText("Numero celular");
+        jPanel13.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
 
         jTextField5.setEditable(false);
-        jPanel6.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 290, 30));
+        jPanel13.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 220, 30));
 
-        jLabel38.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel38.setText("Email actual");
-        jPanel6.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, -1, -1));
+        jLabel42.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel42.setText("Tipo");
+        jPanel13.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, -1, -1));
 
-        jLabel39.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel39.setText("Nuevo email");
-        jPanel6.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, -1, -1));
-        jPanel6.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 290, 30));
+        jLabel53.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel53.setText("No es posible mostrar la contraseña");
+        jPanel13.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, -1, -1));
 
-        jLabel40.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel40.setText("Cargo actual");
-        jPanel6.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 520, 70, -1));
-
-        jTextField7.setEditable(false);
-        jPanel6.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 540, 290, 30));
-
-        jButton4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton4.setText("Cambiar cargo");
-        jPanel6.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 570, 120, -1));
-
-        jLabel41.setFont(new java.awt.Font("Tahoma", 3, 15)); // NOI18N
-        jLabel41.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel41.setText("Deja vacios los campos que no desee modificar");
-        jLabel41.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 255), 1, true));
-        jPanel6.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 370, -1));
+        jLabel54.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel54.setText("POR SEGURIDAD");
+        jPanel13.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, -1, -1));
 
         jTextField8.setEditable(false);
-        jPanel6.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 290, 30));
-        jPanel6.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, 290, 30));
+        jPanel13.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 50, 30));
 
-        jLabel42.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel42.setText("Contraseña actual");
-        jPanel6.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, -1, -1));
+        jTextField10.setEditable(false);
+        jPanel13.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 100, 30));
 
-        jLabel43.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel43.setText("Nueva contraseña");
-        jPanel6.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, -1, -1));
+        jPanel5.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 240, 430));
 
-        jButton5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(51, 153, 255));
-        jButton5.setText("Modificar ");
-        jPanel6.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 630, 250, 40));
-
-        jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 400, 690));
-
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/students (3).png"))); // NOI18N
-        jPanel5.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 840, 70, 60));
+        jPanel14.setBackground(new java.awt.Color(51, 153, 255));
+        jPanel14.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Deja vacios los campos que no desee modificar", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 2, 18), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel5.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 520, 40));
 
         jScrollPane1.setViewportView(jPanel5);
 
@@ -615,7 +664,7 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jPanel19.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, -1, 30));
 
         jLabel45.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel45.setText("No recuerdas cual es la identificación de el usuario que buscas?");
+        jLabel45.setText("No recuerdas la identificación de el usuario que buscas?");
         jPanel19.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, -1));
 
         jButton7.setBackground(new java.awt.Color(51, 153, 255));
@@ -627,7 +676,7 @@ public class Vitstaadmin extends javax.swing.JFrame {
                 jButton7MouseClicked(evt);
             }
         });
-        jPanel19.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 80, -1, 20));
+        jPanel19.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, -1, 20));
 
         jPanel7.setBackground(new java.awt.Color(51, 153, 255));
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, " Información de usuario a eliminar", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -645,34 +694,40 @@ public class Vitstaadmin extends javax.swing.JFrame {
                 jTextField13ActionPerformed(evt);
             }
         });
-        jPanel7.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 180, -1));
+        jPanel7.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 130, -1));
 
-        jLabel46.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel46.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel46.setText("Nombre");
         jPanel7.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
 
         jTextField14.setEditable(false);
         jPanel7.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 180, -1));
 
-        jLabel47.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel47.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel47.setText("Identificación");
         jPanel7.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, -1, -1));
 
-        jLabel48.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel48.setText("Email");
+        jLabel48.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel48.setText("Numero celular");
         jPanel7.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
-        jLabel49.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel49.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel49.setText("Cargo");
         jPanel7.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, -1, -1));
 
-        jPanel19.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 430, 160));
-
-        jButton8.setBackground(new java.awt.Color(51, 153, 255));
-        jButton8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(255, 255, 255));
+        jButton8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(51, 153, 255));
         jButton8.setText("Eliminar usuario");
-        jPanel19.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 230, 30));
+        jPanel7.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 230, 30));
+
+        jLabel41.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel41.setText("Tipo");
+        jPanel7.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, -1, -1));
+
+        jTextField7.setEditable(false);
+        jPanel7.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, 80, -1));
+
+        jPanel19.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 430, 190));
 
         tab.addTab("elim", jPanel19);
 
@@ -844,6 +899,10 @@ public class Vitstaadmin extends javax.swing.JFrame {
     jPanel12.setBackground(new Color(51,204,255));
     }//GEN-LAST:event_jLabel7MouseExited
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -884,11 +943,12 @@ public class Vitstaadmin extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -934,6 +994,11 @@ public class Vitstaadmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -942,6 +1007,8 @@ public class Vitstaadmin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
@@ -963,10 +1030,12 @@ public class Vitstaadmin extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField14;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
