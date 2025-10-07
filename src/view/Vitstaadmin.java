@@ -435,8 +435,8 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jPanel17.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 90, 70));
         jPanel17.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 220, -1));
 
+        jTable2.setAutoCreateRowSorter(true);
         jTable2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jTable2.setForeground(new java.awt.Color(51, 153, 255));
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
