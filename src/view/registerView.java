@@ -1,20 +1,21 @@
 package view;
 
 import Vistas.textoSombra;
-import static controlador.controladorRegistro.crear;
+import static controlador.controladorRegistro.*;
 import javax.swing.JOptionPane;
+import static controlador.AuthRegistro.*;
 
 public class registerView extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(registerView.class.getName());
 
     public registerView() {
         initComponents();
         this.setLocationRelativeTo(this);
-        textoSombra telefono = new textoSombra("Nro de telefono",txt_telefono);
-        textoSombra contraseña = new textoSombra("Contraseña",txt_contraseña);
-        textoSombra cedula = new textoSombra("Cedula",txt_cedula);
-        textoSombra nombre = new textoSombra("Nombre Completo",txt_nombre);
+        textoSombra telefono = new textoSombra("Nro de telefono", txt_telefono);
+        textoSombra contraseña = new textoSombra("Contraseña", txt_contraseña);
+        textoSombra cedula = new textoSombra("Cedula", txt_cedula);
+        textoSombra nombre = new textoSombra("Nombre Completo", txt_nombre);
     }
 
     @SuppressWarnings("unchecked")
@@ -42,7 +43,7 @@ public class registerView extends javax.swing.JFrame {
 
         btn_volver.setBorder(null);
         btn_volver.setContentAreaFilled(false);
-        btn_volver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_volver.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_volver.setFocusPainted(false);
         btn_volver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,6 +71,7 @@ public class registerView extends javax.swing.JFrame {
 
         btn_registrar.setBorder(null);
         btn_registrar.setContentAreaFilled(false);
+        btn_registrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_registrar.setFocusPainted(false);
         btn_registrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,15 +128,18 @@ public class registerView extends javax.swing.JFrame {
         String nombre = txt_nombre.getText();
         String contraseña = txt_contraseña.getText();
         String cedula = txt_cedula.getText();
-        String telefono = txt_telefono.getText();
+        String celular = txt_telefono.getText();
+
         if (check_tutor.isSelected() && check_estudiante.isSelected()) {
             JOptionPane.showMessageDialog(null, "No es posible elegir dos opciones, Porfavor intente nuevamente");
-        }else if(!check_tutor.isSelected() && !check_estudiante.isSelected()){
-           JOptionPane.showMessageDialog(null,"Debes elegir una de las opciones presentadas"); 
-        }else if(check_tutor.isSelected()){
-            crear(cedula, nombre, contraseña, "Tutor", telefono);
-        }else if (check_estudiante.isSelected()){
-            crear(cedula, nombre, contraseña, "Estudiante", telefono);
+        } else if (!check_tutor.isSelected() && !check_estudiante.isSelected()) {
+            JOptionPane.showMessageDialog(null, "Debes elegir una de las opciones presentadas");
+        } else if (check_tutor.isSelected() && valTelefono(celular) && valCedula(cedula)) {
+            crearUsuario(cedula, nombre, contraseña, "Tutor", celular);
+            JOptionPane.showMessageDialog(null, "Registro exitoso");
+        } else if (check_estudiante.isSelected() && valTelefono(celular) && valCedula(cedula)) {
+            crearUsuario(cedula, nombre, contraseña, "Estudiante", celular);
+            JOptionPane.showMessageDialog(null, "Registro exitoso");
         }
     }//GEN-LAST:event_btn_registrarActionPerformed
 
