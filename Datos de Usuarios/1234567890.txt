@@ -1,0 +1,5 @@
+Cedula: 1234567890
+Contraseña: 123
+Rol: Estudiante
+Nombre Completo: Janda
+Numero de telefono: 0987654321

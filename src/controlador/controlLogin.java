@@ -1,13 +1,29 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package controlador;
 
-/**
- *
- * @author Juanda
- */
+import javax.swing.JOptionPane;
+import static modelo.Usuarios.*;
+import view.estudiantesView;
+
 public class controlLogin {
-    
+
+    public static boolean loginUsuarios(String cedula, String contraseña) {
+        for (int i = 0; i < contadorUsu; i++) {
+            if (usuario[i].cedula.equals(cedula) && usuario[i].contraseña.equals(contraseña)) {
+                String rol = usuario[i].cargo;
+                switch (rol) {
+                    case "Admin":
+                        return true;
+                    case "Estudiante":
+                        JOptionPane.showMessageDialog(null, "Bienvenido al sistema");
+                        estudiantesView estu = new estudiantesView();
+                        estu.setVisible(true);
+                        return true;
+                    case "Tutor":
+                        
+                        return true;
+                }
+            }
+        }
+        return false;
+    }
 }

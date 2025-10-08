@@ -5,6 +5,10 @@
 package view;
 import Vistas.textoSombra;
 import java.awt.Color;
+import controlador.ControladorAdmin;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import static modelo.Usuarios.usuario;
 public class Vitstaadmin extends javax.swing.JFrame {
 
     /**
@@ -68,15 +72,23 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jPanel16 = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        ListInac = new javax.swing.JTable();
+        jButton4 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jLabel55 = new javax.swing.JLabel();
+        jLabel56 = new javax.swing.JLabel();
         jPanel17 = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tabUsuACT = new javax.swing.JTable();
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
+        ActualizarTabACT = new javax.swing.JButton();
         jPanel18 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel5 = new javax.swing.JPanel();
@@ -87,51 +99,45 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jLabel35 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
-        jTextField4 = new javax.swing.JTextField();
+        txtNuevoNombre = new javax.swing.JTextField();
         jLabel37 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
+        txtNuevaContraseña = new javax.swing.JTextField();
         jLabel43 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
-        jLabel39 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
         jLabel51 = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox<>();
-        jTextField6 = new javax.swing.JTextField();
+        cmbCargoNuevo = new javax.swing.JComboBox<>();
+        txtNuevoCelular = new javax.swing.JTextField();
         jLabel52 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
         jLabel36 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        txtNombreActual = new javax.swing.JTextField();
         jLabel40 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtIdentificacionActual = new javax.swing.JTextField();
         jLabel50 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jLabel42 = new javax.swing.JLabel();
+        txtCelularActual = new javax.swing.JTextField();
         jLabel53 = new javax.swing.JLabel();
         jLabel54 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
+        txtCargoActual = new javax.swing.JTextField();
         jPanel14 = new javax.swing.JPanel();
         jPanel19 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         txt_Buscarelim = new javax.swing.JTextField();
-        jButton6 = new javax.swing.JButton();
+        btnBscarE = new javax.swing.JButton();
         jLabel45 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
+        NombreUser = new javax.swing.JTextField();
+        numeroUser = new javax.swing.JTextField();
+        IDuser = new javax.swing.JTextField();
         jLabel46 = new javax.swing.JLabel();
-        jTextField14 = new javax.swing.JTextField();
+        CargoUser = new javax.swing.JTextField();
         jLabel47 = new javax.swing.JLabel();
         jLabel48 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
         jButton8 = new javax.swing.JButton();
-        jLabel41 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -421,23 +427,9 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/add-account.png"))); // NOI18N
         jPanel16.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 50, 40));
 
-        tab.addTab("soli", jPanel16);
-
-        jPanel17.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel24.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel24.setForeground(new java.awt.Color(51, 153, 255));
-        jLabel24.setText("Listado de usuarios");
-        jPanel17.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/contact-list.png"))); // NOI18N
-        jPanel17.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 90, 70));
-        jPanel17.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 220, -1));
-
-        jTable2.setAutoCreateRowSorter(true);
-        jTable2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        ListInac.setAutoCreateRowSorter(true);
+        ListInac.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ListInac.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -456,22 +448,96 @@ public class Vitstaadmin extends javax.swing.JFrame {
                 "Nombre", "identificación", "N° Celular", "Cargo"
             }
         ));
-        jScrollPane3.setViewportView(jTable2);
+        jScrollPane4.setViewportView(ListInac);
+
+        jPanel16.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 550, 210));
+
+        jButton4.setBackground(new java.awt.Color(51, 153, 255));
+        jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("Aceptar");
+        jPanel16.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 130, 30));
+
+        jButton9.setBackground(new java.awt.Color(51, 153, 255));
+        jButton9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton9.setForeground(new java.awt.Color(255, 255, 255));
+        jButton9.setText("Declinar");
+        jPanel16.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, 110, 30));
+
+        jButton6.setBackground(new java.awt.Color(51, 153, 255));
+        jButton6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
+        jButton6.setText("Actualizar");
+        jPanel16.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 100, 30));
+
+        jLabel55.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/delete-user.png"))); // NOI18N
+        jPanel16.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 260, -1, 50));
+
+        jLabel56.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/add-account.png"))); // NOI18N
+        jPanel16.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 260, -1, 50));
+
+        tab.addTab("soli", jPanel16);
+
+        jPanel17.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel24.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(51, 153, 255));
+        jLabel24.setText("Listado de usuarios");
+        jPanel17.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/contact-list.png"))); // NOI18N
+        jPanel17.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 90, 70));
+        jPanel17.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 220, -1));
+
+        tabUsuACT.setAutoCreateRowSorter(true);
+        tabUsuACT.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tabUsuACT.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Nombre", "identificación", "N° Celular", "Cargo"
+            }
+        ));
+        jScrollPane3.setViewportView(tabUsuACT);
 
         jPanel17.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 550, 210));
 
         jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/contacts.png"))); // NOI18N
-        jPanel17.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 250, 70, 70));
+        jPanel17.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 240, 70, 70));
 
         jLabel33.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(51, 153, 255));
         jLabel33.setText("Aqui puedes observar el listado");
-        jPanel17.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, -1, -1));
+        jPanel17.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, -1, -1));
 
         jLabel34.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(51, 153, 255));
         jLabel34.setText("general de usuarios en el sistema");
-        jPanel17.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, -1, 30));
+        jPanel17.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, -1, 30));
+
+        ActualizarTabACT.setBackground(new java.awt.Color(51, 153, 255));
+        ActualizarTabACT.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        ActualizarTabACT.setForeground(new java.awt.Color(255, 255, 255));
+        ActualizarTabACT.setText("Actualizar");
+        ActualizarTabACT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ActualizarTabACTActionPerformed(evt);
+            }
+        });
+        jPanel17.add(ActualizarTabACT, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 100, 40));
 
         tab.addTab("list", jPanel17);
 
@@ -500,6 +566,11 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Buscar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel5.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 80, 30));
 
         jLabel35.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -525,16 +596,16 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(51, 153, 255));
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nueva información de usuario", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel6.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 260, 30));
+        jPanel6.add(txtNuevoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 260, 30));
 
         jLabel37.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel37.setText("Nuevo nombre");
         jPanel6.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
-        jPanel6.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 260, 30));
+        jPanel6.add(txtNuevaContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 260, 30));
 
         jLabel43.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel43.setText("Nueva contraseña");
-        jPanel6.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, 20));
+        jPanel6.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, 20));
 
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton5.setForeground(new java.awt.Color(51, 153, 255));
@@ -546,28 +617,19 @@ public class Vitstaadmin extends javax.swing.JFrame {
         });
         jPanel6.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 250, 40));
 
-        jLabel39.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel39.setText("Cambio de tipo");
-        jPanel6.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
-
-        jComboBox2.setBackground(new java.awt.Color(204, 204, 255));
-        jComboBox2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CC", "TI", "CE", "PP" }));
-        jPanel6.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 60, 30));
-
         jLabel51.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel51.setText("Cambio de cargo");
-        jPanel6.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 110, 20));
+        jPanel6.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 110, 20));
 
-        jComboBox4.setBackground(new java.awt.Color(204, 204, 255));
-        jComboBox4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estudiante", "Tutor" }));
-        jPanel6.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 130, 30));
-        jPanel6.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 262, 250, 30));
+        cmbCargoNuevo.setBackground(new java.awt.Color(204, 204, 255));
+        cmbCargoNuevo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cmbCargoNuevo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estudiante", "Tutor" }));
+        jPanel6.add(cmbCargoNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 130, 30));
+        jPanel6.add(txtNuevoCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 250, 30));
 
         jLabel52.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel52.setText("Nuevo numero celular");
-        jPanel6.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
+        jPanel6.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
 
         jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 280, 430));
 
@@ -582,20 +644,20 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jLabel36.setText("Nombre");
         jPanel13.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
 
-        jTextField3.setEditable(false);
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        txtNombreActual.setEditable(false);
+        txtNombreActual.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                txtNombreActualActionPerformed(evt);
             }
         });
-        jPanel13.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 220, 30));
+        jPanel13.add(txtNombreActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 220, 30));
 
         jLabel40.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel40.setText("Cargo actual");
         jPanel13.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 90, -1));
 
-        jTextField2.setEditable(false);
-        jPanel13.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 132, 150, 30));
+        txtIdentificacionActual.setEditable(false);
+        jPanel13.add(txtIdentificacionActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 132, 220, 30));
 
         jLabel50.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel50.setText("identificación");
@@ -605,12 +667,8 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jLabel38.setText("Numero celular");
         jPanel13.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
 
-        jTextField5.setEditable(false);
-        jPanel13.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 220, 30));
-
-        jLabel42.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel42.setText("Tipo");
-        jPanel13.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, -1, -1));
+        txtCelularActual.setEditable(false);
+        jPanel13.add(txtCelularActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 220, 30));
 
         jLabel53.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel53.setText("No es posible mostrar la contraseña");
@@ -620,11 +678,8 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jLabel54.setText("POR SEGURIDAD");
         jPanel13.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, -1, -1));
 
-        jTextField8.setEditable(false);
-        jPanel13.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 50, 30));
-
-        jTextField10.setEditable(false);
-        jPanel13.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 100, 30));
+        txtCargoActual.setEditable(false);
+        jPanel13.add(txtCargoActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 220, 30));
 
         jPanel5.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 240, 430));
 
@@ -657,11 +712,16 @@ public class Vitstaadmin extends javax.swing.JFrame {
         });
         jPanel19.add(txt_Buscarelim, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 340, 30));
 
-        jButton6.setBackground(new java.awt.Color(51, 153, 255));
-        jButton6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setText("Buscar");
-        jPanel19.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, -1, 30));
+        btnBscarE.setBackground(new java.awt.Color(51, 153, 255));
+        btnBscarE.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnBscarE.setForeground(new java.awt.Color(255, 255, 255));
+        btnBscarE.setText("Buscar");
+        btnBscarE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBscarEActionPerformed(evt);
+            }
+        });
+        jPanel19.add(btnBscarE, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, -1, 30));
 
         jLabel45.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel45.setText("No recuerdas la identificación de el usuario que buscas?");
@@ -682,26 +742,31 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, " Información de usuario a eliminar", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField11.setEditable(false);
-        jPanel7.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 160, -1));
+        NombreUser.setEditable(false);
+        jPanel7.add(NombreUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 160, -1));
 
-        jTextField12.setEditable(false);
-        jPanel7.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 160, -1));
+        numeroUser.setEditable(false);
+        jPanel7.add(numeroUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 160, -1));
 
-        jTextField13.setEditable(false);
-        jTextField13.addActionListener(new java.awt.event.ActionListener() {
+        IDuser.setEditable(false);
+        IDuser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField13ActionPerformed(evt);
+                IDuserActionPerformed(evt);
             }
         });
-        jPanel7.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 130, -1));
+        jPanel7.add(IDuser, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 180, -1));
 
         jLabel46.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel46.setText("Nombre");
         jPanel7.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
 
-        jTextField14.setEditable(false);
-        jPanel7.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 180, -1));
+        CargoUser.setEditable(false);
+        CargoUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CargoUserActionPerformed(evt);
+            }
+        });
+        jPanel7.add(CargoUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 180, -1));
 
         jLabel47.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel47.setText("Identificación");
@@ -718,14 +783,12 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jButton8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton8.setForeground(new java.awt.Color(51, 153, 255));
         jButton8.setText("Eliminar usuario");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
         jPanel7.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 230, 30));
-
-        jLabel41.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel41.setText("Tipo");
-        jPanel7.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, -1, -1));
-
-        jTextField7.setEditable(false);
-        jPanel7.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, 80, -1));
 
         jPanel19.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 430, 190));
 
@@ -755,17 +818,17 @@ public class Vitstaadmin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_BuscarmodiActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void txtNombreActualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActualActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_txtNombreActualActionPerformed
 
     private void txt_BuscarelimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_BuscarelimActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_BuscarelimActionPerformed
 
-    private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
+    private void IDuserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDuserActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField13ActionPerformed
+    }//GEN-LAST:event_IDuserActionPerformed
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
        tab.setSelectedIndex(0);// TODO add your handling code here:
@@ -900,8 +963,71 @@ public class Vitstaadmin extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel7MouseExited
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+    String id = txt_Buscarmodi.getText().trim();
+    String nuevoNombre = txtNuevoNombre.getText().trim();
+    String nuevoCelular = txtNuevoCelular.getText().trim();
+    String nuevaContraseña = txtNuevaContraseña.getText().trim();
+    String nuevoCargo = (String) cmbCargoNuevo.getSelectedItem();
+    ControladorAdmin.modificar(id, nuevoNombre, nuevaContraseña, nuevoCelular, nuevoCargo);
+    txtNuevoNombre.setText("");
+    txtNuevaContraseña.setText("");
+    txtNuevoCelular.setText("");
+    cmbCargoNuevo.setSelectedIndex(0);
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void btnBscarEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBscarEActionPerformed
+       String id = txt_Buscarelim.getText().trim();
+    int pos = ControladorAdmin.buscarPorCedula(id);
+    if (pos != -1) { 
+        NombreUser.setText(usuario[pos].nombre);
+        IDuser.setText(usuario[pos].cedula);
+        numeroUser.setText(usuario[pos].celular);
+        CargoUser.setText(usuario[pos].cargo);
+    }  
+    }//GEN-LAST:event_btnBscarEActionPerformed
+
+    private void ActualizarTabACTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarTabACTActionPerformed
+       DefaultTableModel modelo = (DefaultTableModel) tabUsuACT.getModel();
+      modelo.setRowCount(0);
+    ControladorAdmin.ListarAct();
+    }//GEN-LAST:event_ActualizarTabACTActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    String id = txt_Buscarmodi.getText().trim();
+    int pos = ControladorAdmin.buscarPorCedula(id);
+    if (pos != -1) { 
+        txtNombreActual.setText(usuario[pos].nombre);
+        txtIdentificacionActual.setText(usuario[pos].cedula);
+        txtCelularActual.setText(usuario[pos].celular);
+        txtCargoActual.setText(usuario[pos].cargo);
+    }        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+       String id = txt_Buscarelim.getText().trim();
+    int pos = ControladorAdmin.buscarPorCedula(id);
+
+    if (pos != -1) {
+        int confirm = JOptionPane.showConfirmDialog(this,
+                "¿Desea eliminar este usuario?",
+                "Confirmar eliminación",
+                JOptionPane.YES_NO_OPTION);
+
+        if (confirm == JOptionPane.YES_OPTION) {
+            ControladorAdmin.eliminar(id);
+
+           NombreUser.setText("");
+           IDuser.setText("");
+           numeroUser.setText("");
+           CargoUser.setText("");
+        }
+    }
+
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void CargoUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargoUserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CargoUserActionPerformed
 
     /**
      * @param args the command line arguments
@@ -939,16 +1065,23 @@ public class Vitstaadmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ActualizarTabACT;
+    private javax.swing.JTextField CargoUser;
+    private javax.swing.JTextField IDuser;
     private javax.swing.JPanel Inicioo;
+    public static javax.swing.JTable ListInac;
+    private javax.swing.JTextField NombreUser;
+    private javax.swing.JButton btnBscarE;
+    private javax.swing.JComboBox<String> cmbCargoNuevo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox4;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -981,11 +1114,8 @@ public class Vitstaadmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
@@ -999,6 +1129,8 @@ public class Vitstaadmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -1024,26 +1156,22 @@ public class Vitstaadmin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField numeroUser;
     private javax.swing.JTabbedPane tab;
+    public static javax.swing.JTable tabUsuACT;
+    private javax.swing.JTextField txtCargoActual;
+    private javax.swing.JTextField txtCelularActual;
+    private javax.swing.JTextField txtIdentificacionActual;
+    private javax.swing.JTextField txtNombreActual;
+    private javax.swing.JTextField txtNuevaContraseña;
+    private javax.swing.JTextField txtNuevoCelular;
+    private javax.swing.JTextField txtNuevoNombre;
     private javax.swing.JTextField txt_Buscarelim;
     private javax.swing.JTextField txt_Buscarmodi;
     // End of variables declaration//GEN-END:variables
