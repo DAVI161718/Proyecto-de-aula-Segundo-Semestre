@@ -2,6 +2,7 @@ package view;
 
 import Vistas.textoSombra;
 import static controlador.controlLogin.loginUsuarios;
+import javax.swing.JOptionPane;
 public class loginView extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(loginView.class.getName());
@@ -83,6 +84,8 @@ public class loginView extends javax.swing.JFrame {
         String contraseña = txt_contraseña.getText();
         if (loginUsuarios(cedula, contraseña) == true) {
             this.dispose();
+        }else{
+            JOptionPane.showMessageDialog(null, "Cedula o contraseña no valida");
         }
     }//GEN-LAST:event_btn_ingresarActionPerformed
 

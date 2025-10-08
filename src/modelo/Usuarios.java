@@ -10,4 +10,5 @@ public class Usuarios {
     public String contraseña;
     public String celular;
     public String cargo;
+    public String estado;
 }

@@ -80,12 +80,14 @@ public class registerView extends javax.swing.JFrame {
         });
         jPanel1.add(btn_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 400, 100, 20));
 
+        check_estudiante.setBackground(new java.awt.Color(255, 255, 255));
         check_estudiante.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         check_estudiante.setForeground(new java.awt.Color(0, 153, 255));
         check_estudiante.setText("Estudiante");
         check_estudiante.setBorder(null);
         jPanel1.add(check_estudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 370, -1, -1));
 
+        check_tutor.setBackground(new java.awt.Color(255, 255, 255));
         check_tutor.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         check_tutor.setForeground(new java.awt.Color(0, 153, 255));
         check_tutor.setText("Tutor");
@@ -129,17 +131,27 @@ public class registerView extends javax.swing.JFrame {
         String contraseña = txt_contraseña.getText();
         String cedula = txt_cedula.getText();
         String celular = txt_telefono.getText();
-
-        if (check_tutor.isSelected() && check_estudiante.isSelected()) {
-            JOptionPane.showMessageDialog(null, "No es posible elegir dos opciones, Porfavor intente nuevamente");
-        } else if (!check_tutor.isSelected() && !check_estudiante.isSelected()) {
-            JOptionPane.showMessageDialog(null, "Debes elegir una de las opciones presentadas");
-        } else if (check_tutor.isSelected() && valTelefono(celular) && valCedula(cedula)) {
-            crearUsuario(cedula, nombre, contraseña, "Tutor", celular);
-            JOptionPane.showMessageDialog(null, "Registro exitoso");
-        } else if (check_estudiante.isSelected() && valTelefono(celular) && valCedula(cedula)) {
-            crearUsuario(cedula, nombre, contraseña, "Estudiante", celular);
-            JOptionPane.showMessageDialog(null, "Registro exitoso");
+        if (valCedula(cedula) && valTelefono(celular)) {
+            if (!nombre.isEmpty() || !contraseña.isEmpty() || !cedula.isEmpty() || !celular.isEmpty()) {
+                loginView login = new loginView();
+                if (check_tutor.isSelected() && check_estudiante.isSelected()) {
+                    JOptionPane.showMessageDialog(null, "No es posible elegir dos opciones, Porfavor intente nuevamente");
+                } else if (!check_tutor.isSelected() && !check_estudiante.isSelected()) {
+                    JOptionPane.showMessageDialog(null, "Debes elegir una de las opciones presentadas");
+                } else if (check_tutor.isSelected()) {
+                    crearUsuario(cedula, nombre, contraseña, "Tutor", celular);
+                    JOptionPane.showMessageDialog(null, "Registro exitoso");
+                    login.setVisible(true);
+                    this.dispose();
+                } else if (check_estudiante.isSelected()) {
+                    crearUsuario(cedula, nombre, contraseña, "Estudiante", celular);
+                    JOptionPane.showMessageDialog(null, "Registro exitoso");
+                    login.setVisible(true);
+                    this.dispose();
+                }
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Informacion no valida porfavor intente nuevamente");
         }
     }//GEN-LAST:event_btn_registrarActionPerformed
 

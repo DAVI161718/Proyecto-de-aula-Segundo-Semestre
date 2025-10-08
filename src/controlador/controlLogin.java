@@ -19,7 +19,6 @@ public class controlLogin {
                         estu.setVisible(true);
                         return true;
                     case "Tutor":
-                        
                         return true;
                 }
             }
