@@ -12,6 +12,7 @@ public class ControladorAdmin {
    public static void ListarAct(){
         DefaultTableModel modelo = (DefaultTableModel) tabUsuACT.getModel();
         boolean hayEstudiantes = false;
+        modelo.setRowCount(0);
         for (int i = 0; i < contadorUsu; i++) {
             if(usuario[i].cargo.equalsIgnoreCase("estudiante")){
             modelo.addRow(new Object[]{
@@ -27,7 +28,7 @@ public class ControladorAdmin {
             
        }
          if (!hayEstudiantes) {
-        javax.swing.JOptionPane.showMessageDialog(null, "¡Ups! Este usuario no está activo");
+        javax.swing.JOptionPane.showMessageDialog(null, "¡Ups! no hay usuarios activos");
     }
    }
     public static int buscarPorCedula(String cedulaBuscada) {

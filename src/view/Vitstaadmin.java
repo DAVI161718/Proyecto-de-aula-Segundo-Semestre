@@ -16,6 +16,7 @@ public class Vitstaadmin extends javax.swing.JFrame {
      */
     public Vitstaadmin() {
         initComponents();
+        this.setLocationRelativeTo(this);
         textoSombra Blim = new textoSombra("Digite el numero de identificación del usuario",txt_Buscarelim);
         textoSombra Bmod = new textoSombra("Digite el numero de identificación del usuario",txt_Buscarmodi);
     }
@@ -338,11 +339,11 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jLabel1.setBackground(new java.awt.Color(51, 204, 255));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 204, 255));
-        jLabel1.setText("Sistema gestión de turorias tutorías ");
+        jLabel1.setText("Sistema gestión de tutorías ");
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
         jSeparator1.setForeground(new java.awt.Color(51, 204, 255));
-        jPanel3.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 440, 20));
+        jPanel3.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 340, 20));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 550, 50));
 
