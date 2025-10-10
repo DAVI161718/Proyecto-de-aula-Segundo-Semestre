@@ -22,6 +22,9 @@ public class controlLogin {
                         estu.setVisible(true);
                         return true;
                     case "Tutor":
+                        JOptionPane.showMessageDialog(null, "Bienvenido al sistema Tutor");
+                        tutorview tutor = new tutorview();
+                        tutor.setVisible(true);
                         return true;
                 }
             }
