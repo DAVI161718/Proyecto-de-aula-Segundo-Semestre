@@ -2,7 +2,7 @@ package controlador;
 
 import javax.swing.JOptionPane;
 import static modelo.Usuarios.*;
-import view.estudiantesView;
+import view.*;
 
 public class controlLogin {
 
@@ -12,6 +12,9 @@ public class controlLogin {
                 String rol = usuario[i].cargo;
                 switch (rol) {
                     case "Admin":
+                        JOptionPane.showMessageDialog(null, "Bienvenido al sistema ADMIN");
+                        Vitstaadmin admin = new Vitstaadmin();
+                        admin.setVisible(true);
                         return true;
                     case "Estudiante":
                         JOptionPane.showMessageDialog(null, "Bienvenido al sistema");
