@@ -33,6 +33,10 @@ public class registerView extends javax.swing.JFrame {
         check_estudiante = new javax.swing.JCheckBox();
         check_tutor = new javax.swing.JCheckBox();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         jCheckBox1.setText("jCheckBox1");
@@ -43,7 +47,7 @@ public class registerView extends javax.swing.JFrame {
 
         btn_volver.setBorder(null);
         btn_volver.setContentAreaFilled(false);
-        btn_volver.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_volver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_volver.setFocusPainted(false);
         btn_volver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,7 +89,7 @@ public class registerView extends javax.swing.JFrame {
         check_estudiante.setForeground(new java.awt.Color(0, 153, 255));
         check_estudiante.setText("Estudiante");
         check_estudiante.setBorder(null);
-        jPanel1.add(check_estudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 370, -1, -1));
+        jPanel1.add(check_estudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 370, 90, -1));
 
         check_tutor.setBackground(new java.awt.Color(255, 255, 255));
         check_tutor.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -97,7 +101,27 @@ public class registerView extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(153, 153, 153));
         jLabel2.setText("Elija una opcion de las casillas");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 350, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 350, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(51, 153, 255));
+        jLabel3.setText("Telefono*");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 290, 70, -1));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 153, 255));
+        jLabel4.setText("Nombre*");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 70, -1));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(51, 153, 255));
+        jLabel5.setText("Contraseña*");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 170, 100, -1));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(51, 153, 255));
+        jLabel6.setText("Cedula*");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 230, 60, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/registerImagen.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
@@ -168,6 +192,10 @@ public class registerView extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txt_cedula;
     private javax.swing.JPasswordField txt_contraseña;

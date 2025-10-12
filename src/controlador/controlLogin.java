@@ -17,12 +17,12 @@ public class controlLogin {
                         admin.setVisible(true);
                         return true;
                     case "Estudiante":
-                        JOptionPane.showMessageDialog(null, "Bienvenido al sistema");
+                        JOptionPane.showMessageDialog(null, "Bienvenido al sistema "+usuario[i].nombre);
                         estudiantesView estu = new estudiantesView();
                         estu.setVisible(true);
                         return true;
                     case "Tutor":
-                        JOptionPane.showMessageDialog(null, "Bienvenido al sistema Tutor");
+                        JOptionPane.showMessageDialog(null, "Bienvenido al sistema "+usuario[i].nombre);
                         tutorview tutor = new tutorview();
                         tutor.setVisible(true);
                         return true;
