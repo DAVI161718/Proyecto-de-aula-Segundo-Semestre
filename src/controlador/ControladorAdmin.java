@@ -8,26 +8,46 @@ import javax.swing.table.DefaultTableModel;
 import static modelo.Usuarios.*;
 import static view.Vitstaadmin.tabUsuACT;
 public class ControladorAdmin {
-   
+    
+      public static void ListarInac(){
+        DefaultTableModel modelo = (DefaultTableModel) tabUsuACT.getModel();
+        boolean HayUsuarios = false;
+        modelo.setRowCount(0);
+        for (int i = 0; i < contadorUsu; i++) {
+            if(usuario[i].cargo.equalsIgnoreCase("Tutor")){
+            modelo.addRow(new Object[]{
+                usuario[i].nombre,
+                usuario[i].cedula,
+                usuario[i].celular,
+                usuario[i].cargo,
+           });
+            HayUsuarios = true;
+
+            }
+            
+       }
+         if (!HayUsuarios) {
+        javax.swing.JOptionPane.showMessageDialog(null, "¡Ups! no hay nuevas solicitudes de usuarios");
+    }
+   }
    public static void ListarAct(){
         DefaultTableModel modelo = (DefaultTableModel) tabUsuACT.getModel();
-        boolean hayEstudiantes = false;
+        boolean hayActivos = false;
         modelo.setRowCount(0);
         for (int i = 0; i < contadorUsu; i++) {
             if(usuario[i].cargo.equalsIgnoreCase("estudiante")){
             modelo.addRow(new Object[]{
                 usuario[i].nombre,
                 usuario[i].cedula,
-                usuario[i].contraseña,
                 usuario[i].celular,
                 usuario[i].cargo,
            });
-            hayEstudiantes = true;
+            hayActivos = true;
 
             }
             
        }
-         if (!hayEstudiantes) {
+         if (!hayActivos) {
         javax.swing.JOptionPane.showMessageDialog(null, "¡Ups! no hay usuarios activos");
     }
    }

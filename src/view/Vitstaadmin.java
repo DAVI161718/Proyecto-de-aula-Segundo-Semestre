@@ -86,7 +86,6 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jLabel31 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tabUsuACT = new javax.swing.JTable();
-        jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         ActualizarTabACT = new javax.swing.JButton();
@@ -426,7 +425,7 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jPanel16.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/add-account.png"))); // NOI18N
-        jPanel16.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 50, 40));
+        jPanel16.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 30, 40));
 
         ListInac.setAutoCreateRowSorter(true);
         ListInac.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -451,31 +450,36 @@ public class Vitstaadmin extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(ListInac);
 
-        jPanel16.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 550, 210));
+        jPanel16.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 550, 220));
 
         jButton4.setBackground(new java.awt.Color(51, 153, 255));
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Aceptar");
-        jPanel16.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 130, 30));
+        jPanel16.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 130, 30));
 
         jButton9.setBackground(new java.awt.Color(51, 153, 255));
         jButton9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton9.setForeground(new java.awt.Color(255, 255, 255));
         jButton9.setText("Declinar");
-        jPanel16.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, 110, 30));
+        jPanel16.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 280, 110, 30));
 
         jButton6.setBackground(new java.awt.Color(51, 153, 255));
         jButton6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("Actualizar");
-        jPanel16.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 100, 30));
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        jPanel16.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 100, 30));
 
         jLabel55.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/delete-user.png"))); // NOI18N
-        jPanel16.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 260, -1, 50));
+        jPanel16.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, -1, 50));
 
         jLabel56.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/add-account.png"))); // NOI18N
-        jPanel16.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 260, -1, 50));
+        jPanel16.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, -1, 50));
 
         tab.addTab("soli", jPanel16);
 
@@ -488,7 +492,7 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jPanel17.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/contact-list.png"))); // NOI18N
-        jPanel17.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 90, 70));
+        jPanel17.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 90, 70));
         jPanel17.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 220, -1));
 
         tabUsuACT.setAutoCreateRowSorter(true);
@@ -514,20 +518,17 @@ public class Vitstaadmin extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(tabUsuACT);
 
-        jPanel17.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 550, 210));
-
-        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/contacts.png"))); // NOI18N
-        jPanel17.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 240, 70, 70));
+        jPanel17.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 550, 220));
 
         jLabel33.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(51, 153, 255));
         jLabel33.setText("Aqui puedes observar el listado");
-        jPanel17.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, -1, -1));
+        jPanel17.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, -1, -1));
 
         jLabel34.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(51, 153, 255));
         jLabel34.setText("general de usuarios en el sistema");
-        jPanel17.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, -1, 30));
+        jPanel17.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, -1, 20));
 
         ActualizarTabACT.setBackground(new java.awt.Color(51, 153, 255));
         ActualizarTabACT.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -538,7 +539,7 @@ public class Vitstaadmin extends javax.swing.JFrame {
                 ActualizarTabACTActionPerformed(evt);
             }
         });
-        jPanel17.add(ActualizarTabACT, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 100, 40));
+        jPanel17.add(ActualizarTabACT, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 100, 30));
 
         tab.addTab("list", jPanel17);
 
@@ -988,9 +989,9 @@ public class Vitstaadmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBscarEActionPerformed
 
     private void ActualizarTabACTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarTabACTActionPerformed
-       DefaultTableModel modelo = (DefaultTableModel) tabUsuACT.getModel();
-      modelo.setRowCount(0);
-    ControladorAdmin.ListarAct();
+     DefaultTableModel modelo = (DefaultTableModel) tabUsuACT.getModel();
+     modelo.setRowCount(0);
+     ControladorAdmin.ListarAct();
     }//GEN-LAST:event_ActualizarTabACTActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -1029,6 +1030,12 @@ public class Vitstaadmin extends javax.swing.JFrame {
     private void CargoUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargoUserActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CargoUserActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+     DefaultTableModel modelo = (DefaultTableModel) ListInac.getModel();
+     modelo.setRowCount(0);
+     ControladorAdmin.ListarInac();
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1108,7 +1115,6 @@ public class Vitstaadmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
