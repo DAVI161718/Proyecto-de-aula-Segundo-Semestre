@@ -163,12 +163,12 @@ public class registerView extends javax.swing.JFrame {
                 } else if (!check_tutor.isSelected() && !check_estudiante.isSelected()) {
                     JOptionPane.showMessageDialog(null, "Debes elegir una de las opciones presentadas");
                 } else if (check_tutor.isSelected()) {
-                    crearUsuario(cedula, nombre, contraseña, "Tutor", celular);
+                    crearUsuario(cedula, nombre, contraseña, "Tutor", celular, "Inactivo");
                     JOptionPane.showMessageDialog(null, "Registro exitoso");
                     login.setVisible(true);
                     this.dispose();
                 } else if (check_estudiante.isSelected()) {
-                    crearUsuario(cedula, nombre, contraseña, "Estudiante", celular);
+                    crearUsuario(cedula, nombre, contraseña, "Estudiante", celular,"Inactivo");
                     JOptionPane.showMessageDialog(null, "Registro exitoso");
                     login.setVisible(true);
                     this.dispose();

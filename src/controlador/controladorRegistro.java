@@ -15,5 +15,6 @@ public class controladorRegistro {
         nuevoUsuario.estado = estado;
         
         usuario[contadorUsu++] = nuevoUsuario;
+        contUsuInact++;
     }
 }

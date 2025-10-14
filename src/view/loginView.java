@@ -85,7 +85,7 @@ public class loginView extends javax.swing.JFrame {
         if (loginUsuarios(cedula, contraseña) == true) {
             this.dispose();
         }else{
-            JOptionPane.showMessageDialog(null, "Cedula o contraseña no valida");
+            JOptionPane.showMessageDialog(null, "Credenciales incorrectas o Usuario inactivo");
         }
     }//GEN-LAST:event_btn_ingresarActionPerformed
 
