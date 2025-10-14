@@ -1,19 +1,14 @@
 
 package modelo;
-
-
 /**
  *
  * @author Juanes
  */
 public class Horarios {
-    public static Usuarios usuario[] = new Usuarios[5];
-    public static int contadorUsuarios = 0;
-    
-    public String nombreTutor;
-    public String estado;
+    public static Horarios horario[] = new Horarios[5];
+    public static int contadorHorario = 0;
     public String dia;
     public String hora;
-    public String lugarTutoria; 
+    public String salon; 
 
 }
