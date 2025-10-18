@@ -45,7 +45,8 @@ public class authHorario {
             return false;
         }
     }
-    public void delateHorario(JTable delate_Horario, JTable tablaJuan, JTable ver_tablaHorario) {                                              
+
+    public void delateHorario(JTable delate_Horario, JTable tablaJuan, JTable ver_tablaHorario) {
         try {
             DefaultTableModel modeloPrincipal = (DefaultTableModel) delate_Horario.getModel();
             int filaSeleccionada = delate_Horario.getSelectedRow();
@@ -87,7 +88,8 @@ public class authHorario {
             JOptionPane.showMessageDialog(null, "Error al eliminar el horario: " + e.getMessage());
         }
     }
-      public static boolean validarHora(String hora) {
+
+    public static boolean validarHora(String hora) {
         // Formato HH:mm (ejemplo: 08:30 o 23:45)
         if (!hora.matches("^([01]\\d|2[0-3]):([0-5]\\d)$")) {
             JOptionPane.showMessageDialog(null,
@@ -109,7 +111,3 @@ public class authHorario {
 
     }
 }
-
-
-
-  

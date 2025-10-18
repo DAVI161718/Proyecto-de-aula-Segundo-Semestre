@@ -3,6 +3,7 @@ package modelo;
 import javax.swing.table.DefaultTableModel;
 import static modelo.Horarios.*;
 import static view.tutorview.*;
+
 /**
  *
  * @author Juanes
@@ -15,7 +16,6 @@ public class listarHorarios {
         modelo1.setRowCount(0);
         for (int i = 0; i < contadorHorario; i++) {
             String[] fila = {
-                horario[i].id,
                 horario[i].dia,
                 horario[i].mes,
                 horario[i].hora,
@@ -33,7 +33,6 @@ public class listarHorarios {
         modelo1.setRowCount(0);
         for (int i = 0; i < contadorHorario; i++) {
             String[] fila = {
-                horario[i].id,
                 horario[i].dia,
                 horario[i].mes,
                 horario[i].hora,
@@ -50,7 +49,6 @@ public class listarHorarios {
         modelo1.setRowCount(0);
         for (int i = 0; i < contadorHorario; i++) {
             String[] fila = {
-                horario[i].id,
                 horario[i].dia,
                 horario[i].mes,
                 horario[i].hora,

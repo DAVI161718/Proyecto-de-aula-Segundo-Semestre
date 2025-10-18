@@ -26,7 +26,6 @@ public class tutorview extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txt_ID = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -53,7 +52,7 @@ public class tutorview extends javax.swing.JFrame {
         jLabel31 = new javax.swing.JLabel();
         tabla_lista = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaListar = new javax.swing.JTable();
         gestion_horarios = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
@@ -71,38 +70,38 @@ public class tutorview extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         txt_notas = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jButton17 = new javax.swing.JButton();
+        boton_regresarNotas1 = new javax.swing.JButton();
         eliminar_notas = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txt_eliminarNotas = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
+        boton_regresarNotas2 = new javax.swing.JButton();
         tabla_buscarNotas = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        tabla_estudianteEncontrado = new javax.swing.JTable();
         jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txt_ingresarNotas = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
+        boton_regresarNotas3 = new javax.swing.JButton();
         finalizar_notas = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
+        tabla_notasEncontradas = new javax.swing.JTable();
         jLabel17 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
-        jButton20 = new javax.swing.JButton();
+        boton_regresarNotas4 = new javax.swing.JButton();
         buscar_notas = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
-        jButton21 = new javax.swing.JButton();
+        boton_regresarNotas5 = new javax.swing.JButton();
         notas_creadas = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTable5 = new javax.swing.JTable();
-        jButton22 = new javax.swing.JButton();
+        boton_regresarNotas6 = new javax.swing.JButton();
         ver_horarios = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
         ver_tablaHorario = new javax.swing.JTable();
@@ -129,12 +128,6 @@ public class tutorview extends javax.swing.JFrame {
         tablaJuan = new javax.swing.JTable();
         jLabel36 = new javax.swing.JLabel();
         txt_mes = new javax.swing.JTextField();
-
-        txt_ID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_IDActionPerformed(evt);
-            }
-        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -292,8 +285,8 @@ public class tutorview extends javax.swing.JFrame {
         tabla_lista.setBackground(new java.awt.Color(255, 255, 255));
         tabla_lista.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setAutoCreateRowSorter(true);
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaListar.setAutoCreateRowSorter(true);
+        tablaListar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -330,7 +323,7 @@ public class tutorview extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tablaListar);
 
         tabla_lista.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 550, 350));
 
@@ -460,16 +453,16 @@ public class tutorview extends javax.swing.JFrame {
         });
         crear_notas.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, -1, -1));
 
-        jButton17.setBackground(new java.awt.Color(51, 153, 255));
-        jButton17.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton17.setForeground(new java.awt.Color(255, 255, 255));
-        jButton17.setText("Regresar a la gestión");
-        jButton17.addActionListener(new java.awt.event.ActionListener() {
+        boton_regresarNotas1.setBackground(new java.awt.Color(51, 153, 255));
+        boton_regresarNotas1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        boton_regresarNotas1.setForeground(new java.awt.Color(255, 255, 255));
+        boton_regresarNotas1.setText("Regresar a la gestión");
+        boton_regresarNotas1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton17ActionPerformed(evt);
+                boton_regresarNotas1ActionPerformed(evt);
             }
         });
-        crear_notas.add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 170, -1));
+        crear_notas.add(boton_regresarNotas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 170, -1));
 
         jTabbedPane.addTab("4", crear_notas);
 
@@ -483,7 +476,7 @@ public class tutorview extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel13.setText("Ingrese el número de identificación del estudiante:");
         eliminar_notas.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, -1, -1));
-        eliminar_notas.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 200, 30));
+        eliminar_notas.add(txt_eliminarNotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 200, 30));
 
         jButton3.setBackground(new java.awt.Color(51, 153, 255));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -496,23 +489,23 @@ public class tutorview extends javax.swing.JFrame {
         });
         eliminar_notas.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, -1, -1));
 
-        jButton18.setBackground(new java.awt.Color(51, 153, 255));
-        jButton18.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton18.setForeground(new java.awt.Color(255, 255, 255));
-        jButton18.setText("Regresar a la gestión");
-        jButton18.addActionListener(new java.awt.event.ActionListener() {
+        boton_regresarNotas2.setBackground(new java.awt.Color(51, 153, 255));
+        boton_regresarNotas2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        boton_regresarNotas2.setForeground(new java.awt.Color(255, 255, 255));
+        boton_regresarNotas2.setText("Regresar a la gestión");
+        boton_regresarNotas2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton18ActionPerformed(evt);
+                boton_regresarNotas2ActionPerformed(evt);
             }
         });
-        eliminar_notas.add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 170, -1));
+        eliminar_notas.add(boton_regresarNotas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 170, -1));
 
         jTabbedPane.addTab("5", eliminar_notas);
 
         tabla_buscarNotas.setBackground(new java.awt.Color(255, 255, 255));
         tabla_buscarNotas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        tabla_estudianteEncontrado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null}
             },
@@ -520,7 +513,7 @@ public class tutorview extends javax.swing.JFrame {
                 "Apellidos", "Nombres"
             }
         ));
-        jScrollPane3.setViewportView(jTable3);
+        jScrollPane3.setViewportView(tabla_estudianteEncontrado);
 
         tabla_buscarNotas.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 550, 70));
 
@@ -531,7 +524,7 @@ public class tutorview extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel10.setText("Ingrese la nota que le desea crear a este estudiante:");
         tabla_buscarNotas.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
-        tabla_buscarNotas.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 430, 30));
+        tabla_buscarNotas.add(txt_ingresarNotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 430, 30));
 
         jButton2.setBackground(new java.awt.Color(51, 153, 255));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -539,16 +532,16 @@ public class tutorview extends javax.swing.JFrame {
         jButton2.setText("Crear nota");
         tabla_buscarNotas.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, -1, -1));
 
-        jButton19.setBackground(new java.awt.Color(51, 153, 255));
-        jButton19.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton19.setForeground(new java.awt.Color(255, 255, 255));
-        jButton19.setText("Regresar a la gestión");
-        jButton19.addActionListener(new java.awt.event.ActionListener() {
+        boton_regresarNotas3.setBackground(new java.awt.Color(51, 153, 255));
+        boton_regresarNotas3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        boton_regresarNotas3.setForeground(new java.awt.Color(255, 255, 255));
+        boton_regresarNotas3.setText("Regresar a la gestión");
+        boton_regresarNotas3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton19ActionPerformed(evt);
+                boton_regresarNotas3ActionPerformed(evt);
             }
         });
-        tabla_buscarNotas.add(jButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 170, -1));
+        tabla_buscarNotas.add(boton_regresarNotas3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 170, -1));
 
         jTabbedPane.addTab("6", tabla_buscarNotas);
 
@@ -559,7 +552,7 @@ public class tutorview extends javax.swing.JFrame {
         jLabel16.setText("Estas son las notas que han sido creadas para este estudiante:");
         finalizar_notas.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+        tabla_notasEncontradas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null}
             },
@@ -582,7 +575,7 @@ public class tutorview extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane4.setViewportView(jTable4);
+        jScrollPane4.setViewportView(tabla_notasEncontradas);
 
         finalizar_notas.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 510, 80));
 
@@ -596,16 +589,16 @@ public class tutorview extends javax.swing.JFrame {
         jButton4.setText("Eliminar nota");
         finalizar_notas.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 220, -1, -1));
 
-        jButton20.setBackground(new java.awt.Color(51, 153, 255));
-        jButton20.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton20.setForeground(new java.awt.Color(255, 255, 255));
-        jButton20.setText("Regresar a la gestión");
-        jButton20.addActionListener(new java.awt.event.ActionListener() {
+        boton_regresarNotas4.setBackground(new java.awt.Color(51, 153, 255));
+        boton_regresarNotas4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        boton_regresarNotas4.setForeground(new java.awt.Color(255, 255, 255));
+        boton_regresarNotas4.setText("Regresar a la gestión");
+        boton_regresarNotas4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton20ActionPerformed(evt);
+                boton_regresarNotas4ActionPerformed(evt);
             }
         });
-        finalizar_notas.add(jButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 290, 170, -1));
+        finalizar_notas.add(boton_regresarNotas4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 290, 170, -1));
 
         jTabbedPane.addTab("7", finalizar_notas);
 
@@ -628,16 +621,16 @@ public class tutorview extends javax.swing.JFrame {
         });
         buscar_notas.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, -1, 30));
 
-        jButton21.setBackground(new java.awt.Color(51, 153, 255));
-        jButton21.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton21.setForeground(new java.awt.Color(255, 255, 255));
-        jButton21.setText("Regresar a la gestión");
-        jButton21.addActionListener(new java.awt.event.ActionListener() {
+        boton_regresarNotas5.setBackground(new java.awt.Color(51, 153, 255));
+        boton_regresarNotas5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        boton_regresarNotas5.setForeground(new java.awt.Color(255, 255, 255));
+        boton_regresarNotas5.setText("Regresar a la gestión");
+        boton_regresarNotas5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton21ActionPerformed(evt);
+                boton_regresarNotas5ActionPerformed(evt);
             }
         });
-        buscar_notas.add(jButton21, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 170, -1));
+        buscar_notas.add(boton_regresarNotas5, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 170, -1));
 
         jTabbedPane.addTab("8", buscar_notas);
 
@@ -675,16 +668,16 @@ public class tutorview extends javax.swing.JFrame {
 
         notas_creadas.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 510, 80));
 
-        jButton22.setBackground(new java.awt.Color(51, 153, 255));
-        jButton22.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton22.setForeground(new java.awt.Color(255, 255, 255));
-        jButton22.setText("Regresar a la gestión");
-        jButton22.addActionListener(new java.awt.event.ActionListener() {
+        boton_regresarNotas6.setBackground(new java.awt.Color(51, 153, 255));
+        boton_regresarNotas6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        boton_regresarNotas6.setForeground(new java.awt.Color(255, 255, 255));
+        boton_regresarNotas6.setText("Regresar a la gestión");
+        boton_regresarNotas6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton22ActionPerformed(evt);
+                boton_regresarNotas6ActionPerformed(evt);
             }
         });
-        notas_creadas.add(jButton22, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, 170, -1));
+        notas_creadas.add(boton_regresarNotas6, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, 170, 30));
 
         jTabbedPane.addTab("9", notas_creadas);
 
@@ -693,21 +686,21 @@ public class tutorview extends javax.swing.JFrame {
 
         ver_tablaHorario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "ID", "Dia", "Mes", "Hora", "Salón"
+                "Dia", "Mes", "Hora", "Salón"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -752,20 +745,21 @@ public class tutorview extends javax.swing.JFrame {
 
         delate_Horario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "ID", "Dia", "Mes", "Hora", "Salón"
+                "Dia", "Mes", "Hora", "Salón"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -868,21 +862,21 @@ public class tutorview extends javax.swing.JFrame {
 
         tablaJuan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "ID", "Dia", "Mes", "Hora", "Salón tutoria"
+                "Dia", "Mes", "Hora", "Salón tutoria"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -1008,38 +1002,37 @@ public class tutorview extends javax.swing.JFrame {
         jTabbedPane.setSelectedIndex(2);
     }//GEN-LAST:event_jButton16ActionPerformed
 
-    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+    private void boton_regresarNotas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_regresarNotas1ActionPerformed
         jTabbedPane.setSelectedIndex(3);
 
-    }//GEN-LAST:event_jButton17ActionPerformed
+    }//GEN-LAST:event_boton_regresarNotas1ActionPerformed
 
-    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+    private void boton_regresarNotas2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_regresarNotas2ActionPerformed
         jTabbedPane.setSelectedIndex(3);
 
-    }//GEN-LAST:event_jButton18ActionPerformed
+    }//GEN-LAST:event_boton_regresarNotas2ActionPerformed
 
-    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+    private void boton_regresarNotas3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_regresarNotas3ActionPerformed
         jTabbedPane.setSelectedIndex(3);
-    }//GEN-LAST:event_jButton19ActionPerformed
+    }//GEN-LAST:event_boton_regresarNotas3ActionPerformed
 
-    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+    private void boton_regresarNotas4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_regresarNotas4ActionPerformed
         jTabbedPane.setSelectedIndex(3);
-    }//GEN-LAST:event_jButton20ActionPerformed
+    }//GEN-LAST:event_boton_regresarNotas4ActionPerformed
 
-    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
+    private void boton_regresarNotas5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_regresarNotas5ActionPerformed
         jTabbedPane.setSelectedIndex(3);
-    }//GEN-LAST:event_jButton21ActionPerformed
+    }//GEN-LAST:event_boton_regresarNotas5ActionPerformed
 
-    private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
+    private void boton_regresarNotas6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_regresarNotas6ActionPerformed
         jTabbedPane.setSelectedIndex(3);
-    }//GEN-LAST:event_jButton22ActionPerformed
+    }//GEN-LAST:event_boton_regresarNotas6ActionPerformed
 
     private void boton_horarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_horarioActionPerformed
         if (contadorHorario >= 5) {
             JOptionPane.showMessageDialog(this, "Cantidad máxima de horarios creados permitidos");
         } else {
 
-            String id = txt_ID.getText().trim();
             String dia = txt_dia.getText().trim();
             String mes = txt_mes.getText().trim();
             String hora = txt_hora.getText().trim();
@@ -1067,7 +1060,7 @@ public class tutorview extends javax.swing.JFrame {
                 return;
             }
             if (authHorario.validarIgualdad(hora, salon) == false) {
-                registrarHorario(id, dia, mes, hora, salon);
+                registrarHorario(dia, mes, hora, salon);
                 cargarDatos();
                 cargarDatos2();
                 cargarDatos3();
@@ -1094,10 +1087,6 @@ public class tutorview extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_horaActionPerformed
 
-    private void txt_IDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_IDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_IDActionPerformed
-
     private void boton_HorarioEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_HorarioEliminarActionPerformed
         authHorario controlador = new authHorario();
 
@@ -1116,6 +1105,12 @@ public class tutorview extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boton_HorarioEliminar;
     private javax.swing.JButton boton_horario;
+    private javax.swing.JButton boton_regresarNotas1;
+    private javax.swing.JButton boton_regresarNotas2;
+    private javax.swing.JButton boton_regresarNotas3;
+    private javax.swing.JButton boton_regresarNotas4;
+    private javax.swing.JButton boton_regresarNotas5;
+    private javax.swing.JButton boton_regresarNotas6;
     private javax.swing.JPanel buscar_notas;
     private javax.swing.JPanel crear_horario;
     private javax.swing.JPanel crear_notas;
@@ -1131,13 +1126,7 @@ public class tutorview extends javax.swing.JFrame {
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton22;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -1193,12 +1182,7 @@ public class tutorview extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTabbedPane jTabbedPane;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JPanel notas_creadas;
     private javax.swing.JPanel panel_horario;
@@ -1207,11 +1191,15 @@ public class tutorview extends javax.swing.JFrame {
     private javax.swing.JPanel panel_notas;
     private javax.swing.JPanel panel_principal;
     public static javax.swing.JTable tablaJuan;
+    public static javax.swing.JTable tablaListar;
     private javax.swing.JPanel tabla_buscarNotas;
+    private javax.swing.JTable tabla_estudianteEncontrado;
     private javax.swing.JPanel tabla_lista;
-    private javax.swing.JTextField txt_ID;
+    private javax.swing.JTable tabla_notasEncontradas;
     private javax.swing.JTextField txt_dia;
+    private javax.swing.JTextField txt_eliminarNotas;
     private javax.swing.JTextField txt_hora;
+    private javax.swing.JTextField txt_ingresarNotas;
     private javax.swing.JTextField txt_mes;
     private javax.swing.JTextField txt_notas;
     private javax.swing.JTextField txt_salon;
