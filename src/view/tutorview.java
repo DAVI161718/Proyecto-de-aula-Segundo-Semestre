@@ -4,11 +4,13 @@
  */
 package view;
 
+import controlador.authHorario;
 import java.awt.Color;
 import Vistas.textoSombra;
 import javax.swing.JOptionPane;
 import static modelo.Horarios.contadorHorario;
 import modelo.listarHorarios;
+import controlador.authHorario;
 import static modelo.listarHorarios.*;
 import static modelo.registrarHorario.registrarHorario;
 
@@ -24,6 +26,7 @@ public class tutorview extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        txt_ID = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -102,15 +105,15 @@ public class tutorview extends javax.swing.JFrame {
         jButton22 = new javax.swing.JButton();
         ver_horarios = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jTable6 = new javax.swing.JTable();
+        ver_tablaHorario = new javax.swing.JTable();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jButton15 = new javax.swing.JButton();
         eliminar_horarios = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
-        jTable7 = new javax.swing.JTable();
-        jButton12 = new javax.swing.JButton();
+        delate_Horario = new javax.swing.JTable();
+        boton_HorarioEliminar = new javax.swing.JButton();
         jButton16 = new javax.swing.JButton();
         crear_horario = new javax.swing.JPanel();
         jButton14 = new javax.swing.JButton();
@@ -124,6 +127,14 @@ public class tutorview extends javax.swing.JFrame {
         jLabel35 = new javax.swing.JLabel();
         jScrollPane8 = new javax.swing.JScrollPane();
         tablaJuan = new javax.swing.JTable();
+        jLabel36 = new javax.swing.JLabel();
+        txt_mes = new javax.swing.JTextField();
+
+        txt_ID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_IDActionPerformed(evt);
+            }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -680,22 +691,23 @@ public class tutorview extends javax.swing.JFrame {
         ver_horarios.setBackground(new java.awt.Color(255, 255, 255));
         ver_horarios.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable6.setModel(new javax.swing.table.DefaultTableModel(
+        ver_tablaHorario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "ID", "Fecha de clases", "Salón"
+                "ID", "Dia", "Mes", "Hora", "Salón"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -706,9 +718,9 @@ public class tutorview extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane6.setViewportView(jTable6);
+        jScrollPane6.setViewportView(ver_tablaHorario);
 
-        ver_horarios.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 550, 180));
+        ver_horarios.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 550, 220));
 
         jLabel26.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel26.setText("Ver horarios");
@@ -738,34 +750,46 @@ public class tutorview extends javax.swing.JFrame {
         jLabel28.setText("Eliminar horarios");
         eliminar_horarios.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
 
-        jTable7.setModel(new javax.swing.table.DefaultTableModel(
+        delate_Horario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Fecha de clases", "Salón"
+                "ID", "Dia", "Mes", "Hora", "Salón"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
         });
-        jScrollPane7.setViewportView(jTable7);
+        jScrollPane7.setViewportView(delate_Horario);
 
         eliminar_horarios.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 550, 190));
 
-        jButton12.setBackground(new java.awt.Color(51, 153, 255));
-        jButton12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton12.setForeground(new java.awt.Color(255, 255, 255));
-        jButton12.setText("Eliminar horario");
-        eliminar_horarios.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, 140, 30));
+        boton_HorarioEliminar.setBackground(new java.awt.Color(51, 153, 255));
+        boton_HorarioEliminar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        boton_HorarioEliminar.setForeground(new java.awt.Color(255, 255, 255));
+        boton_HorarioEliminar.setText("Eliminar horario");
+        boton_HorarioEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_HorarioEliminarActionPerformed(evt);
+            }
+        });
+        eliminar_horarios.add(boton_HorarioEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, 140, 30));
 
         jButton16.setBackground(new java.awt.Color(51, 153, 255));
         jButton16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -800,7 +824,7 @@ public class tutorview extends javax.swing.JFrame {
 
         jLabel33.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel33.setText("Hora");
-        crear_horario.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, -1, -1));
+        crear_horario.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, -1, -1));
 
         jLabel34.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel34.setText("Lugar");
@@ -811,8 +835,14 @@ public class tutorview extends javax.swing.JFrame {
                 txt_diaActionPerformed(evt);
             }
         });
-        crear_horario.add(txt_dia, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 100, -1));
-        crear_horario.add(txt_hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 80, -1));
+        crear_horario.add(txt_dia, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 80, -1));
+
+        txt_hora.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_horaActionPerformed(evt);
+            }
+        });
+        crear_horario.add(txt_hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 80, -1));
 
         txt_salon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -838,20 +868,21 @@ public class tutorview extends javax.swing.JFrame {
 
         tablaJuan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Dia", "Hora", "Salón tutoria"
+                "ID", "Dia", "Mes", "Hora", "Salón tutoria"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -864,7 +895,12 @@ public class tutorview extends javax.swing.JFrame {
         });
         jScrollPane8.setViewportView(tablaJuan);
 
-        crear_horario.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, 180));
+        crear_horario.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, 180));
+
+        jLabel36.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel36.setText("Mes");
+        crear_horario.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, -1, -1));
+        crear_horario.add(txt_mes, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 80, -1));
 
         jTabbedPane.addTab("12", crear_horario);
 
@@ -876,30 +912,30 @@ public class tutorview extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void panel_listaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_listaMouseMoved
-        panel_lista.setBackground(new Color (51,153,255));
+        panel_lista.setBackground(new Color(51, 153, 255));
     }//GEN-LAST:event_panel_listaMouseMoved
 
     private void panel_listaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_listaMouseExited
-        panel_lista.setBackground(new Color (51,204,255));
+        panel_lista.setBackground(new Color(51, 204, 255));
     }//GEN-LAST:event_panel_listaMouseExited
 
     private void panel_horarioMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_horarioMouseMoved
-        panel_horario.setBackground(new Color (51,153,255));
+        panel_horario.setBackground(new Color(51, 153, 255));
 
     }//GEN-LAST:event_panel_horarioMouseMoved
 
     private void panel_horarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_horarioMouseExited
-        panel_horario.setBackground(new Color (51,204,255));
+        panel_horario.setBackground(new Color(51, 204, 255));
 
     }//GEN-LAST:event_panel_horarioMouseExited
 
     private void panel_notasMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_notasMouseMoved
-        panel_notas.setBackground(new Color (51,153,255));
+        panel_notas.setBackground(new Color(51, 153, 255));
 
     }//GEN-LAST:event_panel_notasMouseMoved
 
     private void panel_notasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_notasMouseExited
-        panel_notas.setBackground(new Color (51,204,255));
+        panel_notas.setBackground(new Color(51, 204, 255));
 
     }//GEN-LAST:event_panel_notasMouseExited
 
@@ -999,28 +1035,47 @@ public class tutorview extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton22ActionPerformed
 
     private void boton_horarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_horarioActionPerformed
-      if (contadorHorario >= 5) {
-        JOptionPane.showMessageDialog(this, "Cantidad máxima de horarios creados permitidos");
-    } else {
-        String dia = txt_dia.getText().trim();
-        String hora = txt_hora.getText().trim();
-        String salon = txt_salon.getText().trim();
+        if (contadorHorario >= 5) {
+            JOptionPane.showMessageDialog(this, "Cantidad máxima de horarios creados permitidos");
+        } else {
 
-        // 🔹 Validar hora antes de registrar
-        listarHorarios logica = new listarHorarios();
-        if (!logica.validarHora(hora)) {
-            JOptionPane.showMessageDialog(this,
-                "❌ Hora inválida. Usa el formato HH:mm (por ejemplo 08:30 o 23:45)",
-                "Error", JOptionPane.ERROR_MESSAGE);
-            txt_hora.requestFocus();
-            return; // detenemos el registro
+            String id = txt_ID.getText().trim();
+            String dia = txt_dia.getText().trim();
+            String mes = txt_mes.getText().trim();
+            String hora = txt_hora.getText().trim();
+            String salon = txt_salon.getText().trim();
+
+            //si esta vacio, ñao ñao
+            if (dia.isEmpty() || mes.isEmpty() || hora.isEmpty() || salon.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Por favor, completa todos los campos antes de continuar.");
+                return;
+            }
+
+            // 🔹 Validar antes de registrar
+            authHorario validador = new authHorario();
+
+            if (!authHorario.validarDias(dia)) {
+                txt_dia.requestFocus();
+                return;
+            }
+            if (!authHorario.validarHora(hora)) {
+                txt_hora.requestFocus();
+                return;
+            }
+            if (!authHorario.validarMes(mes)) {
+                txt_mes.requestFocus();
+                return;
+            }
+            if (authHorario.validarIgualdad(hora, salon) == false) {
+                registrarHorario(id, dia, mes, hora, salon);
+                cargarDatos();
+                cargarDatos2();
+                cargarDatos3();
+            }
+            //  Si valida todo, continuamos
+
         }
 
-        // ✅ Si la hora es válida, continuamos
-        registrarHorario(dia, hora, salon);
-        cargarDatos();
-    }
-        
     }//GEN-LAST:event_boton_horarioActionPerformed
 
     private void txt_diaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_diaActionPerformed
@@ -1035,7 +1090,21 @@ public class tutorview extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_salonActionPerformed
 
-    
+    private void txt_horaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_horaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_horaActionPerformed
+
+    private void txt_IDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_IDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_IDActionPerformed
+
+    private void boton_HorarioEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_HorarioEliminarActionPerformed
+        authHorario controlador = new authHorario();
+
+        controlador.delateHorario(delate_Horario, tablaJuan, ver_tablaHorario);
+
+    }//GEN-LAST:event_boton_HorarioEliminarActionPerformed
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -1045,10 +1114,12 @@ public class tutorview extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton boton_HorarioEliminar;
     private javax.swing.JButton boton_horario;
     private javax.swing.JPanel buscar_notas;
     private javax.swing.JPanel crear_horario;
     private javax.swing.JPanel crear_notas;
+    public static javax.swing.JTable delate_Horario;
     private javax.swing.JPanel eliminar_horarios;
     private javax.swing.JPanel eliminar_notas;
     private javax.swing.JPanel finalizar_notas;
@@ -1057,7 +1128,6 @@ public class tutorview extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
@@ -1104,6 +1174,7 @@ public class tutorview extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1126,8 +1197,6 @@ public class tutorview extends javax.swing.JFrame {
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
-    private javax.swing.JTable jTable6;
-    private javax.swing.JTable jTable7;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
@@ -1140,10 +1209,13 @@ public class tutorview extends javax.swing.JFrame {
     public static javax.swing.JTable tablaJuan;
     private javax.swing.JPanel tabla_buscarNotas;
     private javax.swing.JPanel tabla_lista;
+    private javax.swing.JTextField txt_ID;
     private javax.swing.JTextField txt_dia;
     private javax.swing.JTextField txt_hora;
+    private javax.swing.JTextField txt_mes;
     private javax.swing.JTextField txt_notas;
     private javax.swing.JTextField txt_salon;
     private javax.swing.JPanel ver_horarios;
+    public static javax.swing.JTable ver_tablaHorario;
     // End of variables declaration//GEN-END:variables
 }
