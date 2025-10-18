@@ -12,4 +12,5 @@ public class Usuarios {
     public String celular;
     public String cargo;
     public String estado;
+    public String semestre;
 }
