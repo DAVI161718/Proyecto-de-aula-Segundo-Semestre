@@ -14,7 +14,7 @@ public class ControladorAdmin {
         boolean HayUsuarios = false;
         modelo.setRowCount(0);
         for (int i = 0; i < contadorUsu; i++) {
-            if(usuario[i].cargo.equalsIgnoreCase("Tutor")){
+            if(usuario[i].estado.equalsIgnoreCase("Inactivo")){
             modelo.addRow(new Object[]{
                 usuario[i].nombre,
                 usuario[i].cedula,
@@ -35,7 +35,7 @@ public class ControladorAdmin {
         boolean hayActivos = false;
         modelo.setRowCount(0);
         for (int i = 0; i < contadorUsu; i++) {
-            if(usuario[i].cargo.equalsIgnoreCase("estudiante")){
+            if(usuario[i].estado.equalsIgnoreCase("Activo")){
             modelo.addRow(new Object[]{
                 usuario[i].nombre,
                 usuario[i].cedula,
