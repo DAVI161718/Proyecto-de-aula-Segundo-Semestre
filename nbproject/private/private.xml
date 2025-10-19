@@ -3,8 +3,28 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+            <file>file:/C:/Users/Juanda/Desktop/Nueva%20carpeta%20(3)/Proyecto-de-aula-Segundo-Semestre/src/view/loginView.java</file>
+            <file>file:/C:/Users/Juanda/Desktop/Nueva%20carpeta%20(3)/Proyecto-de-aula-Segundo-Semestre/src/controlador/controlLogin.java</file>
+            <file>file:/C:/Users/Juanda/Desktop/Nueva%20carpeta%20(3)/Proyecto-de-aula-Segundo-Semestre/src/main/Principal.java</file>
+            <file>file:/C:/Users/Juanda/Desktop/Nueva%20carpeta%20(3)/Proyecto-de-aula-Segundo-Semestre/src/controlador/ControladorAdmin.java</file>
+            <file>file:/C:/Users/Juanda/Desktop/Nueva%20carpeta%20(3)/Proyecto-de-aula-Segundo-Semestre/src/view/estudiantesView.java</file>
+            <file>file:/C:/Users/Juanda/Desktop/Nueva%20carpeta%20(3)/Proyecto-de-aula-Segundo-Semestre/src/view/Vitstaadmin.java</file>
+=======
+            <file>file:/C:/Users/User/OneDrive/Desktop/Proyecto%20de%20aula/Proyecto-de-aula-Segundo-Semestre/src/controlador/controlLogin.java</file>
+            <file>file:/C:/Users/User/OneDrive/Desktop/Proyecto%20de%20aula/Proyecto-de-aula-Segundo-Semestre/src/view/estudiantesView.java</file>
+            <file>file:/C:/Users/User/OneDrive/Desktop/Proyecto%20de%20aula/Proyecto-de-aula-Segundo-Semestre/src/modelo/Usuarios.java</file>
+            <file>file:/C:/Users/User/OneDrive/Desktop/Proyecto%20de%20aula/Proyecto-de-aula-Segundo-Semestre/src/main/Principal.java</file>
+>>>>>>> 02a2f5afc5e6ea718543f8cdd6991058122de15f
             <file>file:/C:/Users/User/OneDrive/Desktop/Proyecto%20de%20aula/Proyecto-de-aula-Segundo-Semestre/src/controlador/ControladorAdmin.java</file>
             <file>file:/C:/Users/User/OneDrive/Desktop/Proyecto%20de%20aula/Proyecto-de-aula-Segundo-Semestre/src/view/Vitstaadmin.java</file>
+<<<<<<< HEAD
+=======
+            <file>file:/C:/Users/User/OneDrive/Desktop/Proyecto%20de%20aula/Proyecto-de-aula-Segundo-Semestre/src/controlador/AuthRegistro.java</file>
+>>>>>>> c7373cf34ab9385f6052f1bb048f543d68375774
+>>>>>>> 02a2f5afc5e6ea718543f8cdd6991058122de15f
         </group>
     </open-files>
 </project-private>
