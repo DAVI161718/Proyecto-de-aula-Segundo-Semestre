@@ -1,5 +1,6 @@
-package modelo;
+package controlador;
 
+import modelo.Notas;
 import static modelo.Notas.*;
 
 /**

@@ -3,10 +3,8 @@ package controlador;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import modelo.Horarios;
 import static modelo.Horarios.*;
-import static view.tutorview.delate_Horario;
-import static view.tutorview.tablaJuan;
-import static view.tutorview.ver_tablaHorario;
 
 /**
  *
@@ -19,7 +17,7 @@ public class authHorario {
         if (dia.matches("\\d{1,2}")) {
             int numero = Integer.parseInt(dia);
             if (numero >= 1 && numero <= 31) {
-                return true; // válido
+                return true; //
             } else {
                 JOptionPane.showMessageDialog(null, "El número no puede ser mayor que 31");
                 return false;
@@ -35,7 +33,7 @@ public class authHorario {
         if (mes.matches("\\d{1,2}")) {
             int numero = Integer.parseInt(mes);
             if (numero >= 1 && numero <= 12) {
-                return true; // válido
+                return true; // válido bb
             } else {
                 JOptionPane.showMessageDialog(null, "El número de meses máximos es 12.");
                 return false;
@@ -48,7 +46,7 @@ public class authHorario {
 
     public void delateHorario(JTable delate_Horario, JTable tablaJuan, JTable ver_tablaHorario) {
         try {
-            DefaultTableModel modeloPrincipal = (DefaultTableModel) delate_Horario.getModel();
+            DefaultTableModel modelo = (DefaultTableModel) delate_Horario.getModel();
             int filaSeleccionada = delate_Horario.getSelectedRow();
 
             if (filaSeleccionada == -1) {
@@ -56,36 +54,37 @@ public class authHorario {
                 return;
             }
 
-            int confirmacion = JOptionPane.showConfirmDialog(null, "¿Seguro que deseas eliminar este horario?", "Confirmar eliminación", JOptionPane.YES_NO_OPTION
+            int confirmacion = JOptionPane.showConfirmDialog(
+                    null,
+                    "¿Seguro que deseas eliminar este horario?",
+                    "Confirmar eliminación",
+                    JOptionPane.YES_NO_OPTION
             );
 
             if (confirmacion == JOptionPane.YES_OPTION) {
-                modeloPrincipal.removeRow(filaSeleccionada);
+                
+                modelo.removeRow(filaSeleccionada);
 
-                // Eliminar la misma fila (si existe) en las otras tablas
-                try {
-                    DefaultTableModel modeloJuan = (DefaultTableModel) tablaJuan.getModel();
-                    if (filaSeleccionada < modeloJuan.getRowCount()) {
-                        modeloJuan.removeRow(filaSeleccionada);
-                    }
-                } catch (Exception e) {
-                    JOptionPane.showMessageDialog(null, "No se pudo eliminar en tablaJuan: " + e.getMessage());
-                }
+                eliminarDelArreglo(filaSeleccionada);
 
-                try {
-                    DefaultTableModel modeloVer = (DefaultTableModel) ver_tablaHorario.getModel();
-                    if (filaSeleccionada < modeloVer.getRowCount()) {
-                        modeloVer.removeRow(filaSeleccionada);
-                    }
-                } catch (Exception e) {
-                    JOptionPane.showMessageDialog(null, "No se pudo eliminar en ver_tablaHorario: " + e.getMessage());
-                }
+                ((DefaultTableModel) tablaJuan.getModel()).removeRow(filaSeleccionada);
+                ((DefaultTableModel) ver_tablaHorario.getModel()).removeRow(filaSeleccionada);
 
                 JOptionPane.showMessageDialog(null, "Horario eliminado correctamente");
             }
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error al eliminar el horario: " + e.getMessage());
+        }
+    }
+
+    private void eliminarDelArreglo(int indice) {
+        if (indice >= 0 && indice < Horarios.contadorHorario) {
+            for (int i = indice; i < Horarios.contadorHorario - 1; i++) {
+                Horarios.horario[i] = Horarios.horario[i + 1];
+            }
+            Horarios.horario[Horarios.contadorHorario - 1] = null;
+            Horarios.contadorHorario--;
         }
     }
 

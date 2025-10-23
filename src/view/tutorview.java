@@ -4,15 +4,14 @@
  */
 package view;
 
-import controlador.authHorario;
 import java.awt.Color;
 import Vistas.textoSombra;
 import javax.swing.JOptionPane;
-import static modelo.Horarios.contadorHorario;
-import modelo.listarHorarios;
+import static modelo.Horarios.*;
 import controlador.authHorario;
-import static modelo.listarHorarios.*;
-import static modelo.registrarHorario.registrarHorario;
+import static controlador.listarHorarios.*;
+import static controlador.registrosHorario.*;
+
 
 public class tutorview extends javax.swing.JFrame {
 
@@ -120,14 +119,16 @@ public class tutorview extends javax.swing.JFrame {
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         txt_dia = new javax.swing.JTextField();
-        txt_hora = new javax.swing.JTextField();
-        txt_salon = new javax.swing.JTextField();
         boton_horario = new javax.swing.JButton();
         jLabel35 = new javax.swing.JLabel();
         jScrollPane8 = new javax.swing.JScrollPane();
         tablaJuan = new javax.swing.JTable();
         jLabel36 = new javax.swing.JLabel();
-        txt_mes = new javax.swing.JTextField();
+        caja_Salon = new javax.swing.JComboBox<>();
+        caja_Mes = new javax.swing.JComboBox<>();
+        caja_Hora = new javax.swing.JComboBox<>();
+        jLabel37 = new javax.swing.JLabel();
+        caja_SEM = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -686,21 +687,17 @@ public class tutorview extends javax.swing.JFrame {
 
         ver_tablaHorario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Dia", "Mes", "Hora", "Salón"
+                "Dia", "Mes", "Hora", "Salón", "Semestre"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -745,21 +742,17 @@ public class tutorview extends javax.swing.JFrame {
 
         delate_Horario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Dia", "Mes", "Hora", "Salón"
+                "Dia", "Mes", "Hora", "Salón", "Semestre"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -814,36 +807,22 @@ public class tutorview extends javax.swing.JFrame {
 
         jLabel32.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel32.setText("Dia");
-        crear_horario.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, -1, -1));
+        crear_horario.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, -1, -1));
 
         jLabel33.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel33.setText("Hora");
-        crear_horario.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, -1, -1));
+        crear_horario.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, -1, -1));
 
         jLabel34.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel34.setText("Lugar");
-        crear_horario.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 50, -1, -1));
+        crear_horario.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, -1, 20));
 
         txt_dia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_diaActionPerformed(evt);
             }
         });
-        crear_horario.add(txt_dia, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 80, -1));
-
-        txt_hora.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_horaActionPerformed(evt);
-            }
-        });
-        crear_horario.add(txt_hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 80, -1));
-
-        txt_salon.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_salonActionPerformed(evt);
-            }
-        });
-        crear_horario.add(txt_salon, new org.netbeans.lib.awtextra.AbsoluteConstraints(414, 80, 100, -1));
+        crear_horario.add(txt_dia, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 80, -1));
 
         boton_horario.setBackground(new java.awt.Color(51, 153, 255));
         boton_horario.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -862,21 +841,17 @@ public class tutorview extends javax.swing.JFrame {
 
         tablaJuan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Dia", "Mes", "Hora", "Salón tutoria"
+                "Dia", "Mes", "Hora", "Salón tutoria", "Semestre"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -893,8 +868,30 @@ public class tutorview extends javax.swing.JFrame {
 
         jLabel36.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel36.setText("Mes");
-        crear_horario.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, -1, -1));
-        crear_horario.add(txt_mes, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 80, -1));
+        crear_horario.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, -1, -1));
+
+        caja_Salon.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        caja_Salon.setMaximumRowCount(12);
+        caja_Salon.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A106", "A107", "A307" }));
+        crear_horario.add(caja_Salon, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 80, -1, -1));
+
+        caja_Mes.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        caja_Mes.setMaximumRowCount(12);
+        caja_Mes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
+        crear_horario.add(caja_Mes, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, -1, -1));
+
+        caja_Hora.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        caja_Hora.setMaximumRowCount(3);
+        caja_Hora.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "12:40 PM", "2:40 PM", "4:40PM" }));
+        crear_horario.add(caja_Hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, -1, -1));
+
+        jLabel37.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel37.setText("Semestre");
+        crear_horario.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 50, -1, -1));
+
+        caja_SEM.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        caja_SEM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Semestre 1", "Semestre 2", "Semestre 3", "Semestre 4", " " }));
+        crear_horario.add(caja_SEM, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 80, -1, -1));
 
         jTabbedPane.addTab("12", crear_horario);
 
@@ -1034,12 +1031,13 @@ public class tutorview extends javax.swing.JFrame {
         } else {
 
             String dia = txt_dia.getText().trim();
-            String mes = txt_mes.getText().trim();
-            String hora = txt_hora.getText().trim();
-            String salon = txt_salon.getText().trim();
+            String mes = caja_Mes.getSelectedItem().toString();            
+            String hora = caja_Hora.getSelectedItem().toString();
+            String salon = caja_Salon.getSelectedItem().toString();
+            String semestre = caja_SEM.getSelectedItem().toString();
 
             //si esta vacio, ñao ñao
-            if (dia.isEmpty() || mes.isEmpty() || hora.isEmpty() || salon.isEmpty()) {
+            if (dia.isEmpty() || mes.isEmpty() || hora.isEmpty() || salon.isEmpty() || semestre.isEmpty()) {
                 JOptionPane.showMessageDialog(this, "Por favor, completa todos los campos antes de continuar.");
                 return;
             }
@@ -1051,17 +1049,10 @@ public class tutorview extends javax.swing.JFrame {
                 txt_dia.requestFocus();
                 return;
             }
-            if (!authHorario.validarHora(hora)) {
-                txt_hora.requestFocus();
-                return;
-            }
-            if (!authHorario.validarMes(mes)) {
-                txt_mes.requestFocus();
-                return;
-            }
+     
             if (authHorario.validarIgualdad(hora, salon) == false) {
-                registrarHorario(dia, mes, hora, salon);
-                cargarDatos();
+                registrosHorario(dia, mes, hora, salon, semestre);
+                cargarDatos1();
                 cargarDatos2();
                 cargarDatos3();
             }
@@ -1078,14 +1069,6 @@ public class tutorview extends javax.swing.JFrame {
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
         jTabbedPane.setSelectedIndex(2);
     }//GEN-LAST:event_jButton15ActionPerformed
-
-    private void txt_salonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_salonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_salonActionPerformed
-
-    private void txt_horaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_horaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_horaActionPerformed
 
     private void boton_HorarioEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_HorarioEliminarActionPerformed
         authHorario controlador = new authHorario();
@@ -1112,6 +1095,10 @@ public class tutorview extends javax.swing.JFrame {
     private javax.swing.JButton boton_regresarNotas5;
     private javax.swing.JButton boton_regresarNotas6;
     private javax.swing.JPanel buscar_notas;
+    private javax.swing.JComboBox<String> caja_Hora;
+    private javax.swing.JComboBox<String> caja_Mes;
+    private javax.swing.JComboBox<String> caja_SEM;
+    private javax.swing.JComboBox<String> caja_Salon;
     private javax.swing.JPanel crear_horario;
     private javax.swing.JPanel crear_notas;
     public static javax.swing.JTable delate_Horario;
@@ -1164,6 +1151,7 @@ public class tutorview extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1198,11 +1186,8 @@ public class tutorview extends javax.swing.JFrame {
     private javax.swing.JTable tabla_notasEncontradas;
     private javax.swing.JTextField txt_dia;
     private javax.swing.JTextField txt_eliminarNotas;
-    private javax.swing.JTextField txt_hora;
     private javax.swing.JTextField txt_ingresarNotas;
-    private javax.swing.JTextField txt_mes;
     private javax.swing.JTextField txt_notas;
-    private javax.swing.JTextField txt_salon;
     private javax.swing.JPanel ver_horarios;
     public static javax.swing.JTable ver_tablaHorario;
     // End of variables declaration//GEN-END:variables

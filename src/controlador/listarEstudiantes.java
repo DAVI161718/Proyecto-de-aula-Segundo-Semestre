@@ -1,5 +1,5 @@
 
-package modelo;
+package controlador;
 
 import javax.swing.table.DefaultTableModel;
 import static modelo.listaEstudiantes.*;
