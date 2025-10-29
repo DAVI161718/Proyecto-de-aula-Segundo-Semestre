@@ -8,15 +8,23 @@ import java.awt.Color;
 import Vistas.textoSombra;
 import javax.swing.JOptionPane;
 import static modelo.Horarios.*;
-import controlador.authHorario;
+import static controlador.authHorario.*;
+import controlador.authNotas;
+import static controlador.controladorRegistro.crearUsuario;
+import static controlador.listarEstudianteNota.*;
 import static controlador.listarHorarios.*;
+import controlador.registrarNotas;
 import static controlador.registrosHorario.*;
-
 
 public class tutorview extends javax.swing.JFrame {
 
     public tutorview() {
         initComponents();
+        crearUsuario("1234567890", "Juan Navia", "123", "Estudiante", "1234567890", "Activo", "Semestre 1");
+        crearUsuario("1234567890", "b Navia", "123", "Estudiante", "1234567890", "Activo", "Semestre 2");
+        crearUsuario("1234567890", "a Navia", "123", "Estudiante", "1234567890", "Activo", "Semestre 3");
+        crearUsuario("1234567890", "c Navia", "123", "Estudiante", "1234567890", "Activo", "Semestre 4");
+
         this.setLocationRelativeTo(this);
         textoSombra Notas = new textoSombra("Digite documento", txt_notas);
     }
@@ -77,13 +85,15 @@ public class tutorview extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         boton_regresarNotas2 = new javax.swing.JButton();
         tabla_buscarNotas = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        tabla_estudianteEncontrado = new javax.swing.JTable();
         jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         txt_ingresarNotas = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         boton_regresarNotas3 = new javax.swing.JButton();
+        caja_Sem = new javax.swing.JComboBox<>();
+        jButton12 = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tabla_estudianteEncontrado = new javax.swing.JTable();
         finalizar_notas = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
@@ -91,28 +101,26 @@ public class tutorview extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         boton_regresarNotas4 = new javax.swing.JButton();
-        buscar_notas = new javax.swing.JPanel();
-        jLabel21 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jButton5 = new javax.swing.JButton();
-        boton_regresarNotas5 = new javax.swing.JButton();
+        Actualizar = new javax.swing.JButton();
+        semestreCombo = new javax.swing.JComboBox<>();
         notas_creadas = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
+        tablaListarNota = new javax.swing.JTable();
         boton_regresarNotas6 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
         ver_horarios = new javax.swing.JPanel();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        ver_tablaHorario = new javax.swing.JTable();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jButton15 = new javax.swing.JButton();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        ver_tablaHorario = new javax.swing.JTable();
         eliminar_horarios = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        delate_Horario = new javax.swing.JTable();
         boton_HorarioEliminar = new javax.swing.JButton();
         jButton16 = new javax.swing.JButton();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        delate_Horario = new javax.swing.JTable();
         crear_horario = new javax.swing.JPanel();
         jButton14 = new javax.swing.JButton();
         jLabel32 = new javax.swing.JLabel();
@@ -121,14 +129,14 @@ public class tutorview extends javax.swing.JFrame {
         txt_dia = new javax.swing.JTextField();
         boton_horario = new javax.swing.JButton();
         jLabel35 = new javax.swing.JLabel();
-        jScrollPane8 = new javax.swing.JScrollPane();
-        tablaJuan = new javax.swing.JTable();
         jLabel36 = new javax.swing.JLabel();
         caja_Salon = new javax.swing.JComboBox<>();
         caja_Mes = new javax.swing.JComboBox<>();
         caja_Hora = new javax.swing.JComboBox<>();
         jLabel37 = new javax.swing.JLabel();
         caja_SEM = new javax.swing.JComboBox<>();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        tablaJuan = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -326,7 +334,7 @@ public class tutorview extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tablaListar);
 
-        tabla_lista.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 550, 350));
+        tabla_lista.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 350));
 
         jTabbedPane.addTab("1", tabla_lista);
 
@@ -427,7 +435,7 @@ public class tutorview extends javax.swing.JFrame {
         crear_notas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("Ingresa el numero de identidad (sin puntos ni comas)");
+        jLabel1.setText("Ingresa el numero del semestre (sin puntos ni comas)");
         crear_notas.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 500, 40));
 
         txt_notas.addActionListener(new java.awt.event.ActionListener() {
@@ -506,32 +514,25 @@ public class tutorview extends javax.swing.JFrame {
         tabla_buscarNotas.setBackground(new java.awt.Color(255, 255, 255));
         tabla_buscarNotas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tabla_estudianteEncontrado.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null}
-            },
-            new String [] {
-                "Apellidos", "Nombres"
-            }
-        ));
-        jScrollPane3.setViewportView(tabla_estudianteEncontrado);
-
-        tabla_buscarNotas.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 550, 70));
-
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel8.setText("¡¡Estudiante encontrado!!");
-        tabla_buscarNotas.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
+        jLabel8.setText("Elija el semestre a dar la nota:");
+        tabla_buscarNotas.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel10.setText("Ingrese la nota que le desea crear a este estudiante:");
-        tabla_buscarNotas.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
-        tabla_buscarNotas.add(txt_ingresarNotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 430, 30));
+        jLabel10.setText("Ingrese la nota que le desea crear a este semestre:");
+        tabla_buscarNotas.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
+        tabla_buscarNotas.add(txt_ingresarNotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 430, 30));
 
         jButton2.setBackground(new java.awt.Color(51, 153, 255));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Crear nota");
-        tabla_buscarNotas.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, -1, -1));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        tabla_buscarNotas.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 290, -1, -1));
 
         boton_regresarNotas3.setBackground(new java.awt.Color(51, 153, 255));
         boton_regresarNotas3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -544,28 +545,66 @@ public class tutorview extends javax.swing.JFrame {
         });
         tabla_buscarNotas.add(boton_regresarNotas3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 170, -1));
 
+        caja_Sem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Semestre 1", "Semestre 2", "Semestre 3", "Semestre 4" }));
+        caja_Sem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                caja_SemActionPerformed(evt);
+            }
+        });
+        tabla_buscarNotas.add(caja_Sem, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+
+        jButton12.setBackground(new java.awt.Color(51, 153, 255));
+        jButton12.setForeground(new java.awt.Color(255, 255, 255));
+        jButton12.setText("Actualizar");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+        tabla_buscarNotas.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 40, -1, -1));
+
+        tabla_estudianteEncontrado.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombres completos", "Cedula"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(tabla_estudianteEncontrado);
+
+        tabla_buscarNotas.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 550, 110));
+
         jTabbedPane.addTab("6", tabla_buscarNotas);
 
         finalizar_notas.setBackground(new java.awt.Color(255, 255, 255));
         finalizar_notas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel16.setText("Estas son las notas que han sido creadas para este estudiante:");
+        jLabel16.setText("Estas son las notas que han sido creadas para este semestre:");
         finalizar_notas.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
         tabla_notasEncontradas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null}
+
             },
             new String [] {
-                "Nombre", "Apellido", "Nota"
+                "Nota"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -578,17 +617,22 @@ public class tutorview extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(tabla_notasEncontradas);
 
-        finalizar_notas.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 510, 80));
+        finalizar_notas.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 550, 130));
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel17.setText("En la tabla anterior, seleccione la nota que desea eliminar.");
-        finalizar_notas.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
+        finalizar_notas.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, -1));
 
         jButton4.setBackground(new java.awt.Color(51, 153, 255));
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Eliminar nota");
-        finalizar_notas.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 220, -1, -1));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        finalizar_notas.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, -1, -1));
 
         boton_regresarNotas4.setBackground(new java.awt.Color(51, 153, 255));
         boton_regresarNotas4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -601,60 +645,42 @@ public class tutorview extends javax.swing.JFrame {
         });
         finalizar_notas.add(boton_regresarNotas4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 290, 170, -1));
 
+        Actualizar.setBackground(new java.awt.Color(51, 153, 255));
+        Actualizar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Actualizar.setForeground(new java.awt.Color(255, 255, 255));
+        Actualizar.setText("Actualizar");
+        Actualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ActualizarActionPerformed(evt);
+            }
+        });
+        finalizar_notas.add(Actualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, -1, -1));
+
+        semestreCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Semestre 1", "Semestre 2", "Semestre 3", "Semestre 4" }));
+        finalizar_notas.add(semestreCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+
         jTabbedPane.addTab("7", finalizar_notas);
-
-        buscar_notas.setBackground(new java.awt.Color(255, 255, 255));
-        buscar_notas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel21.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel21.setText("Ingrese el documento del estudiante al cual desea buscar sus notas:");
-        buscar_notas.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
-        buscar_notas.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 200, -1));
-
-        jButton5.setBackground(new java.awt.Color(51, 153, 255));
-        jButton5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("Buscar estudiante");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-        buscar_notas.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, -1, 30));
-
-        boton_regresarNotas5.setBackground(new java.awt.Color(51, 153, 255));
-        boton_regresarNotas5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        boton_regresarNotas5.setForeground(new java.awt.Color(255, 255, 255));
-        boton_regresarNotas5.setText("Regresar a la gestión");
-        boton_regresarNotas5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                boton_regresarNotas5ActionPerformed(evt);
-            }
-        });
-        buscar_notas.add(boton_regresarNotas5, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 170, -1));
-
-        jTabbedPane.addTab("8", buscar_notas);
 
         notas_creadas.setBackground(new java.awt.Color(255, 255, 255));
         notas_creadas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel22.setText("Estas son las notas que han sido creadas para este estudiante:");
+        jLabel22.setText("Estas son las notas que han sido creadas para este semestre:");
         notas_creadas.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+        tablaListarNota.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null}
+
             },
             new String [] {
-                "Nombre", "Apellido", "Nota"
+                "Nota"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -665,9 +691,9 @@ public class tutorview extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane5.setViewportView(jTable5);
+        jScrollPane5.setViewportView(tablaListarNota);
 
-        notas_creadas.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 510, 80));
+        notas_creadas.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 550, 140));
 
         boton_regresarNotas6.setBackground(new java.awt.Color(51, 153, 255));
         boton_regresarNotas6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -678,12 +704,42 @@ public class tutorview extends javax.swing.JFrame {
                 boton_regresarNotas6ActionPerformed(evt);
             }
         });
-        notas_creadas.add(boton_regresarNotas6, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, 170, 30));
+        notas_creadas.add(boton_regresarNotas6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 210, 170, 30));
 
-        jTabbedPane.addTab("9", notas_creadas);
+        jButton5.setBackground(new java.awt.Color(51, 153, 255));
+        jButton5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setText("Actualizar");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        notas_creadas.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
+
+        jTabbedPane.addTab("8", notas_creadas);
 
         ver_horarios.setBackground(new java.awt.Color(255, 255, 255));
         ver_horarios.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel26.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel26.setText("Ver horarios");
+        ver_horarios.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        jLabel27.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel27.setText("En la siguiente tabla podrá ver sus horarios:");
+        ver_horarios.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, -1, -1));
+
+        jButton15.setBackground(new java.awt.Color(51, 153, 255));
+        jButton15.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton15.setForeground(new java.awt.Color(255, 255, 255));
+        jButton15.setText("Regresar a la gestión");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
+        ver_horarios.add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 170, -1));
 
         ver_tablaHorario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -712,25 +768,6 @@ public class tutorview extends javax.swing.JFrame {
 
         ver_horarios.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 550, 220));
 
-        jLabel26.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel26.setText("Ver horarios");
-        ver_horarios.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
-
-        jLabel27.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel27.setText("En la siguiente tabla podrá ver sus horarios:");
-        ver_horarios.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, -1, -1));
-
-        jButton15.setBackground(new java.awt.Color(51, 153, 255));
-        jButton15.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton15.setForeground(new java.awt.Color(255, 255, 255));
-        jButton15.setText("Regresar a la gestión");
-        jButton15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton15ActionPerformed(evt);
-            }
-        });
-        ver_horarios.add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 170, -1));
-
         jTabbedPane.addTab("10", ver_horarios);
 
         eliminar_horarios.setBackground(new java.awt.Color(255, 255, 255));
@@ -739,6 +776,28 @@ public class tutorview extends javax.swing.JFrame {
         jLabel28.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel28.setText("Eliminar horarios");
         eliminar_horarios.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
+
+        boton_HorarioEliminar.setBackground(new java.awt.Color(51, 153, 255));
+        boton_HorarioEliminar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        boton_HorarioEliminar.setForeground(new java.awt.Color(255, 255, 255));
+        boton_HorarioEliminar.setText("Eliminar horario");
+        boton_HorarioEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_HorarioEliminarActionPerformed(evt);
+            }
+        });
+        eliminar_horarios.add(boton_HorarioEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, 140, 30));
+
+        jButton16.setBackground(new java.awt.Color(51, 153, 255));
+        jButton16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton16.setForeground(new java.awt.Color(255, 255, 255));
+        jButton16.setText("Regresar a la gestión");
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
+        eliminar_horarios.add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 170, -1));
 
         delate_Horario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -766,28 +825,6 @@ public class tutorview extends javax.swing.JFrame {
         jScrollPane7.setViewportView(delate_Horario);
 
         eliminar_horarios.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 550, 190));
-
-        boton_HorarioEliminar.setBackground(new java.awt.Color(51, 153, 255));
-        boton_HorarioEliminar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        boton_HorarioEliminar.setForeground(new java.awt.Color(255, 255, 255));
-        boton_HorarioEliminar.setText("Eliminar horario");
-        boton_HorarioEliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                boton_HorarioEliminarActionPerformed(evt);
-            }
-        });
-        eliminar_horarios.add(boton_HorarioEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, 140, 30));
-
-        jButton16.setBackground(new java.awt.Color(51, 153, 255));
-        jButton16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton16.setForeground(new java.awt.Color(255, 255, 255));
-        jButton16.setText("Regresar a la gestión");
-        jButton16.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton16ActionPerformed(evt);
-            }
-        });
-        eliminar_horarios.add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 170, -1));
 
         jTabbedPane.addTab("11", eliminar_horarios);
 
@@ -839,33 +876,6 @@ public class tutorview extends javax.swing.JFrame {
         jLabel35.setText("Crear horarios");
         crear_horario.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        tablaJuan.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Dia", "Mes", "Hora", "Salón tutoria", "Semestre"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane8.setViewportView(tablaJuan);
-
-        crear_horario.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, 180));
-
         jLabel36.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel36.setText("Mes");
         crear_horario.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, -1, -1));
@@ -892,6 +902,33 @@ public class tutorview extends javax.swing.JFrame {
         caja_SEM.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         caja_SEM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Semestre 1", "Semestre 2", "Semestre 3", "Semestre 4", " " }));
         crear_horario.add(caja_SEM, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 80, -1, -1));
+
+        tablaJuan.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Dia", "Mes", "Hora", "Salón tutoria", "Semestre"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane8.setViewportView(tablaJuan);
+
+        crear_horario.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, 180));
 
         jTabbedPane.addTab("12", crear_horario);
 
@@ -944,94 +981,13 @@ public class tutorview extends javax.swing.JFrame {
 
     }//GEN-LAST:event_panel_notasMouseClicked
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        jTabbedPane.setSelectedIndex(3);
-    }//GEN-LAST:event_jButton1MouseClicked
-
-    private void txt_notasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_notasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_notasActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        jTabbedPane.setSelectedIndex(4);
-
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        jTabbedPane.setSelectedIndex(5);
-
-    }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        jTabbedPane.setSelectedIndex(8);
-    }//GEN-LAST:event_jButton8ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        jTabbedPane.setSelectedIndex(6);
-
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        jTabbedPane.setSelectedIndex(7);
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        jTabbedPane.setSelectedIndex(9);
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        jTabbedPane.setSelectedIndex(10);
-    }//GEN-LAST:event_jButton11ActionPerformed
-
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        jTabbedPane.setSelectedIndex(11);
-    }//GEN-LAST:event_jButton9ActionPerformed
-
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        jTabbedPane.setSelectedIndex(12);
-    }//GEN-LAST:event_jButton10ActionPerformed
-
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        jTabbedPane.setSelectedIndex(2);
-    }//GEN-LAST:event_jButton14ActionPerformed
-
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-        jTabbedPane.setSelectedIndex(2);
-    }//GEN-LAST:event_jButton16ActionPerformed
-
-    private void boton_regresarNotas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_regresarNotas1ActionPerformed
-        jTabbedPane.setSelectedIndex(3);
-
-    }//GEN-LAST:event_boton_regresarNotas1ActionPerformed
-
-    private void boton_regresarNotas2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_regresarNotas2ActionPerformed
-        jTabbedPane.setSelectedIndex(3);
-
-    }//GEN-LAST:event_boton_regresarNotas2ActionPerformed
-
-    private void boton_regresarNotas3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_regresarNotas3ActionPerformed
-        jTabbedPane.setSelectedIndex(3);
-    }//GEN-LAST:event_boton_regresarNotas3ActionPerformed
-
-    private void boton_regresarNotas4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_regresarNotas4ActionPerformed
-        jTabbedPane.setSelectedIndex(3);
-    }//GEN-LAST:event_boton_regresarNotas4ActionPerformed
-
-    private void boton_regresarNotas5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_regresarNotas5ActionPerformed
-        jTabbedPane.setSelectedIndex(3);
-    }//GEN-LAST:event_boton_regresarNotas5ActionPerformed
-
-    private void boton_regresarNotas6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_regresarNotas6ActionPerformed
-        jTabbedPane.setSelectedIndex(3);
-    }//GEN-LAST:event_boton_regresarNotas6ActionPerformed
-
     private void boton_horarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_horarioActionPerformed
         if (contadorHorario >= 5) {
             JOptionPane.showMessageDialog(this, "Cantidad máxima de horarios creados permitidos");
         } else {
 
             String dia = txt_dia.getText().trim();
-            String mes = caja_Mes.getSelectedItem().toString();            
+            String mes = caja_Mes.getSelectedItem().toString();
             String hora = caja_Hora.getSelectedItem().toString();
             String salon = caja_Salon.getSelectedItem().toString();
             String semestre = caja_SEM.getSelectedItem().toString();
@@ -1042,15 +998,13 @@ public class tutorview extends javax.swing.JFrame {
                 return;
             }
 
-            // 🔹 Validar antes de registrar
-            authHorario validador = new authHorario();
-
-            if (!authHorario.validarDias(dia)) {
+ 
+            if (!validarDias(dia)) {
                 txt_dia.requestFocus();
                 return;
             }
-     
-            if (authHorario.validarIgualdad(hora, salon) == false) {
+
+            if (validarIgualdad(hora, salon) == false) {
                 registrosHorario(dia, mes, hora, salon, semestre);
                 cargarDatos1();
                 cargarDatos2();
@@ -1059,23 +1013,141 @@ public class tutorview extends javax.swing.JFrame {
             //  Si valida todo, continuamos
 
         }
-
     }//GEN-LAST:event_boton_horarioActionPerformed
 
     private void txt_diaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_diaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_diaActionPerformed
 
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        jTabbedPane.setSelectedIndex(2);
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        jTabbedPane.setSelectedIndex(2);
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void boton_HorarioEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_HorarioEliminarActionPerformed
+
+       delateHorario(delate_Horario, tablaJuan, ver_tablaHorario);
+    }//GEN-LAST:event_boton_HorarioEliminarActionPerformed
+
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
         jTabbedPane.setSelectedIndex(2);
     }//GEN-LAST:event_jButton15ActionPerformed
 
-    private void boton_HorarioEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_HorarioEliminarActionPerformed
-        authHorario controlador = new authHorario();
+    private void boton_regresarNotas6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_regresarNotas6ActionPerformed
+        jTabbedPane.setSelectedIndex(3);
+    }//GEN-LAST:event_boton_regresarNotas6ActionPerformed
 
-        controlador.delateHorario(delate_Horario, tablaJuan, ver_tablaHorario);
+    private void boton_regresarNotas4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_regresarNotas4ActionPerformed
+        jTabbedPane.setSelectedIndex(3);
+    }//GEN-LAST:event_boton_regresarNotas4ActionPerformed
 
-    }//GEN-LAST:event_boton_HorarioEliminarActionPerformed
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        String semestre = caja_Sem.getSelectedItem().toString();
+        if (semestre.equals("Semestre 1")) {
+            listarEstudianteNota1(semestre);
+
+        } else if (semestre.equals("Semestre 2")) {
+            listarEstudianteNota2(semestre);
+
+        } else if (semestre.equals("Semestre 3")) {
+            listarEstudianteNota3(semestre);
+
+        } else if (semestre.equals("Semestre 4")) {
+            listarEstudianteNota4(semestre);
+
+        }
+
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void caja_SemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caja_SemActionPerformed
+
+    }//GEN-LAST:event_caja_SemActionPerformed
+
+    private void boton_regresarNotas3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_regresarNotas3ActionPerformed
+        jTabbedPane.setSelectedIndex(3);
+    }//GEN-LAST:event_boton_regresarNotas3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String mensaje = txt_ingresarNotas.getText();
+        String semestre = caja_Sem.getSelectedItem().toString();
+
+
+        registrarNotas.registrarNotas(semestre, mensaje);
+        
+
+   
+        listarTabla1(mensaje);
+        listarTabla2(mensaje);
+        listarTabla3(mensaje);
+        
+        //que las notas se me creen en las dos tabalas
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void boton_regresarNotas2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_regresarNotas2ActionPerformed
+        jTabbedPane.setSelectedIndex(3);
+    }//GEN-LAST:event_boton_regresarNotas2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        jTabbedPane.setSelectedIndex(7);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void boton_regresarNotas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_regresarNotas1ActionPerformed
+        jTabbedPane.setSelectedIndex(3);
+    }//GEN-LAST:event_boton_regresarNotas1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        jTabbedPane.setSelectedIndex(6);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        jTabbedPane.setSelectedIndex(3);
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void txt_notasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_notasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_notasActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        jTabbedPane.setSelectedIndex(8);
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        jTabbedPane.setSelectedIndex(7);
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        jTabbedPane.setSelectedIndex(6);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        jTabbedPane.setSelectedIndex(10);
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        jTabbedPane.setSelectedIndex(12);
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        jTabbedPane.setSelectedIndex(11);
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        crearNotas();
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void ActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarActionPerformed
+        crearNotas();
+    }//GEN-LAST:event_ActualizarActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        int seleccion = tabla_notasEncontradas.getSelectedRow();
+        authNotas.eliminarDelArreglo(seleccion);
+        String semestre = semestreCombo.getSelectedItem().toString();
+        listarEstudianteNota1(semestre);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -1086,19 +1158,19 @@ public class tutorview extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Actualizar;
     private javax.swing.JButton boton_HorarioEliminar;
     private javax.swing.JButton boton_horario;
     private javax.swing.JButton boton_regresarNotas1;
     private javax.swing.JButton boton_regresarNotas2;
     private javax.swing.JButton boton_regresarNotas3;
     private javax.swing.JButton boton_regresarNotas4;
-    private javax.swing.JButton boton_regresarNotas5;
     private javax.swing.JButton boton_regresarNotas6;
-    private javax.swing.JPanel buscar_notas;
     private javax.swing.JComboBox<String> caja_Hora;
     private javax.swing.JComboBox<String> caja_Mes;
     private javax.swing.JComboBox<String> caja_SEM;
     private javax.swing.JComboBox<String> caja_Salon;
+    private javax.swing.JComboBox<String> caja_Sem;
     private javax.swing.JPanel crear_horario;
     private javax.swing.JPanel crear_notas;
     public static javax.swing.JTable delate_Horario;
@@ -1110,6 +1182,7 @@ public class tutorview extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
@@ -1134,7 +1207,6 @@ public class tutorview extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -1170,20 +1242,20 @@ public class tutorview extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTabbedPane jTabbedPane;
-    private javax.swing.JTable jTable5;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JPanel notas_creadas;
     private javax.swing.JPanel panel_horario;
     private javax.swing.JPanel panel_horizontal;
     private javax.swing.JPanel panel_lista;
     private javax.swing.JPanel panel_notas;
     private javax.swing.JPanel panel_principal;
+    private javax.swing.JComboBox<String> semestreCombo;
     public static javax.swing.JTable tablaJuan;
     public static javax.swing.JTable tablaListar;
+    public static javax.swing.JTable tablaListarNota;
     private javax.swing.JPanel tabla_buscarNotas;
-    private javax.swing.JTable tabla_estudianteEncontrado;
+    public static javax.swing.JTable tabla_estudianteEncontrado;
     private javax.swing.JPanel tabla_lista;
-    private javax.swing.JTable tabla_notasEncontradas;
+    public static javax.swing.JTable tabla_notasEncontradas;
     private javax.swing.JTextField txt_dia;
     private javax.swing.JTextField txt_eliminarNotas;
     private javax.swing.JTextField txt_ingresarNotas;

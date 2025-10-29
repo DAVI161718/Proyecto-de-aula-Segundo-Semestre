@@ -44,7 +44,7 @@ public class authHorario {
         }
     }
 
-    public void delateHorario(JTable delate_Horario, JTable tablaJuan, JTable ver_tablaHorario) {
+    public static void delateHorario(JTable delate_Horario, JTable tablaJuan, JTable ver_tablaHorario) {
         try {
             DefaultTableModel modelo = (DefaultTableModel) delate_Horario.getModel();
             int filaSeleccionada = delate_Horario.getSelectedRow();
@@ -78,7 +78,7 @@ public class authHorario {
         }
     }
 
-    private void eliminarDelArreglo(int indice) {
+    private static void eliminarDelArreglo(int indice) {
         if (indice >= 0 && indice < Horarios.contadorHorario) {
             for (int i = indice; i < Horarios.contadorHorario - 1; i++) {
                 Horarios.horario[i] = Horarios.horario[i + 1];
