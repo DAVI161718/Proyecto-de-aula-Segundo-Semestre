@@ -1,4 +1,4 @@
-package modelo;
+package controlador;
 
 import javax.swing.table.DefaultTableModel;
 import static modelo.Horarios.*;
@@ -10,7 +10,7 @@ import static view.tutorview.*;
  */
 public class listarHorarios {
 
-    public static void cargarDatos() {
+    public static void cargarDatos1() {
         DefaultTableModel modelo1 = (DefaultTableModel) tablaJuan.getModel();
         //Lo que hago es obtener el modelo de la tablaUsu que son el nombre apellido y cedula
         modelo1.setRowCount(0);
@@ -19,8 +19,8 @@ public class listarHorarios {
                 horario[i].dia,
                 horario[i].mes,
                 horario[i].hora,
-                horario[i].salon
-            };
+                horario[i].salon,
+                horario[i].semestre,};
 
             modelo1.addRow(fila);
         }
@@ -36,8 +36,8 @@ public class listarHorarios {
                 horario[i].dia,
                 horario[i].mes,
                 horario[i].hora,
-                horario[i].salon
-            };
+                horario[i].salon,
+                horario[i].semestre,};
             modelo1.addRow(fila);
         }
 
@@ -52,8 +52,8 @@ public class listarHorarios {
                 horario[i].dia,
                 horario[i].mes,
                 horario[i].hora,
-                horario[i].salon
-            };
+                horario[i].salon,
+                horario[i].semestre,};
 
             modelo1.addRow(fila);
         }

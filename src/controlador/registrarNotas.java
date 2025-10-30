@@ -1,5 +1,6 @@
-package modelo;
+package controlador;
 
+import modelo.Notas;
 import static modelo.Notas.*;
 
 /**
@@ -8,10 +9,10 @@ import static modelo.Notas.*;
  */
 public class registrarNotas {
 
-    public static void registrarNotas(String id, String mensaje) {
+    public static void registrarNotas(String semestre, String mensaje) {
 
         Notas notas = new Notas();
-        notas.id = id;
+        notas.semestre = semestre;
         notas.mensaje = mensaje;
 
         nota[contadorNotas++] = notas;
