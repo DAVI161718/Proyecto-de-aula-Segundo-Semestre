@@ -8,26 +8,46 @@ import javax.swing.table.DefaultTableModel;
 import static modelo.Usuarios.*;
 import static view.Vitstaadmin.tabUsuACT;
 public class ControladorAdmin {
-   
-   public static void ListarAct(){
+    
+      public static void ListarInac(){
         DefaultTableModel modelo = (DefaultTableModel) tabUsuACT.getModel();
-        boolean hayEstudiantes = false;
+        boolean HayUsuarios = false;
         modelo.setRowCount(0);
         for (int i = 0; i < contadorUsu; i++) {
-            if(usuario[i].cargo.equalsIgnoreCase("estudiante")){
+            if(usuario[i].estado.equalsIgnoreCase("Inactivo")){
             modelo.addRow(new Object[]{
                 usuario[i].nombre,
                 usuario[i].cedula,
-                usuario[i].contraseña,
                 usuario[i].celular,
                 usuario[i].cargo,
            });
-            hayEstudiantes = true;
+            HayUsuarios = true;
 
             }
             
        }
-         if (!hayEstudiantes) {
+         if (!HayUsuarios) {
+        javax.swing.JOptionPane.showMessageDialog(null, "¡Ups! no hay nuevas solicitudes de usuarios");
+    }
+   }
+   public static void ListarAct(){
+        DefaultTableModel modelo = (DefaultTableModel) tabUsuACT.getModel();
+        boolean hayActivos = false;
+        modelo.setRowCount(0);
+        for (int i = 0; i < contadorUsu; i++) {
+            if(usuario[i].estado.equalsIgnoreCase("Activo")){
+            modelo.addRow(new Object[]{
+                usuario[i].nombre,
+                usuario[i].cedula,
+                usuario[i].celular,
+                usuario[i].cargo,
+           });
+            hayActivos = true;
+
+            }
+            
+       }
+         if (!hayActivos) {
         javax.swing.JOptionPane.showMessageDialog(null, "¡Ups! no hay usuarios activos");
     }
    }
@@ -85,6 +105,27 @@ public class ControladorAdmin {
             JOptionPane.showMessageDialog(null, "No se realizó ningún cambio.");
         }
     }
+}  public static void AceptarSolicitud(String cedulaBuscada) {
+    int pos = buscarPorCedula(cedulaBuscada);
+    if (pos != -1) {
+        if (usuario[pos].estado.equalsIgnoreCase("Inactivo")) {
+            usuario[pos].estado = "Activo";
+            JOptionPane.showMessageDialog(null, "Solicitud aceptada. El usuario ahora está activo.");
+        } else {
+            JOptionPane.showMessageDialog(null, "El usuario ya se encuentra activo.");
+        }
+    }
+} public static void DeclinarSolicitud(String cedulaBuscada) {
+    int pos = buscarPorCedula(cedulaBuscada);
+    if (pos != -1) {
+        for (int i = pos; i < contadorUsu - 1; i++) {
+            usuario[i] = usuario[i + 1];
+        }
+        contadorUsu--;
+        JOptionPane.showMessageDialog(null, "Solicitud declinada. El usuario ha sido eliminado.");
+    }
+} public static int NuevosUsuarios(){
+  return modelo.Usuarios.contUsuInact;
 }
 
 }

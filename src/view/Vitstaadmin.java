@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import static modelo.Usuarios.usuario;
 public class Vitstaadmin extends javax.swing.JFrame {
+     private String cedulaSeleccionada="";
 
     /**
      * Creates new form Vitstaadmin
@@ -62,7 +63,7 @@ public class Vitstaadmin extends javax.swing.JFrame {
         Inicioo = new javax.swing.JPanel();
         jPanel15 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        ContadorDeSoli = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -75,8 +76,8 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jLabel27 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         ListInac = new javax.swing.JTable();
-        jButton4 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
+        SoliAceptar = new javax.swing.JButton();
+        SoliDeclinar = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jLabel55 = new javax.swing.JLabel();
         jLabel56 = new javax.swing.JLabel();
@@ -86,7 +87,6 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jLabel31 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tabUsuACT = new javax.swing.JTable();
-        jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         ActualizarTabACT = new javax.swing.JButton();
@@ -363,6 +363,12 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 550, 90));
         jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, -1, -1));
 
+        tab.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                ParaSolis(evt);
+            }
+        });
+
         Inicioo.setBackground(new java.awt.Color(255, 255, 255));
         Inicioo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -375,9 +381,14 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jLabel16.setText("Tienes");
         jPanel15.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 50, 20));
 
-        jTextField1.setEditable(false);
-        jTextField1.setBackground(new java.awt.Color(51, 153, 255));
-        jPanel15.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 50, -1));
+        ContadorDeSoli.setEditable(false);
+        ContadorDeSoli.setBackground(new java.awt.Color(51, 153, 255));
+        ContadorDeSoli.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ContadorDeSoliActionPerformed(evt);
+            }
+        });
+        jPanel15.add(ContadorDeSoli, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 50, -1));
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
@@ -426,7 +437,7 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jPanel16.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/add-account.png"))); // NOI18N
-        jPanel16.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 50, 40));
+        jPanel16.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 30, 40));
 
         ListInac.setAutoCreateRowSorter(true);
         ListInac.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -449,33 +460,53 @@ public class Vitstaadmin extends javax.swing.JFrame {
                 "Nombre", "identificación", "N° Celular", "Cargo"
             }
         ));
+        ListInac.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ListInacMouseClicked(evt);
+            }
+        });
         jScrollPane4.setViewportView(ListInac);
 
-        jPanel16.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 550, 210));
+        jPanel16.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 550, 220));
 
-        jButton4.setBackground(new java.awt.Color(51, 153, 255));
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Aceptar");
-        jPanel16.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 130, 30));
+        SoliAceptar.setBackground(new java.awt.Color(51, 153, 255));
+        SoliAceptar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        SoliAceptar.setForeground(new java.awt.Color(255, 255, 255));
+        SoliAceptar.setText("Aceptar");
+        SoliAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SoliAceptarActionPerformed(evt);
+            }
+        });
+        jPanel16.add(SoliAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 130, 30));
 
-        jButton9.setBackground(new java.awt.Color(51, 153, 255));
-        jButton9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton9.setForeground(new java.awt.Color(255, 255, 255));
-        jButton9.setText("Declinar");
-        jPanel16.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, 110, 30));
+        SoliDeclinar.setBackground(new java.awt.Color(51, 153, 255));
+        SoliDeclinar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        SoliDeclinar.setForeground(new java.awt.Color(255, 255, 255));
+        SoliDeclinar.setText("Declinar");
+        SoliDeclinar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SoliDeclinarActionPerformed(evt);
+            }
+        });
+        jPanel16.add(SoliDeclinar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 280, 110, 30));
 
         jButton6.setBackground(new java.awt.Color(51, 153, 255));
         jButton6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("Actualizar");
-        jPanel16.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 100, 30));
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        jPanel16.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 100, 30));
 
         jLabel55.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/delete-user.png"))); // NOI18N
-        jPanel16.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 260, -1, 50));
+        jPanel16.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, -1, 50));
 
         jLabel56.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/add-account.png"))); // NOI18N
-        jPanel16.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 260, -1, 50));
+        jPanel16.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, -1, 50));
 
         tab.addTab("soli", jPanel16);
 
@@ -488,7 +519,7 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jPanel17.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/contact-list.png"))); // NOI18N
-        jPanel17.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 90, 70));
+        jPanel17.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 90, 70));
         jPanel17.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 220, -1));
 
         tabUsuACT.setAutoCreateRowSorter(true);
@@ -514,20 +545,17 @@ public class Vitstaadmin extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(tabUsuACT);
 
-        jPanel17.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 550, 210));
-
-        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/contacts.png"))); // NOI18N
-        jPanel17.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 240, 70, 70));
+        jPanel17.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 550, 220));
 
         jLabel33.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(51, 153, 255));
         jLabel33.setText("Aqui puedes observar el listado");
-        jPanel17.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, -1, -1));
+        jPanel17.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, -1, -1));
 
         jLabel34.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(51, 153, 255));
         jLabel34.setText("general de usuarios en el sistema");
-        jPanel17.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, -1, 30));
+        jPanel17.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, -1, 20));
 
         ActualizarTabACT.setBackground(new java.awt.Color(51, 153, 255));
         ActualizarTabACT.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -538,7 +566,7 @@ public class Vitstaadmin extends javax.swing.JFrame {
                 ActualizarTabACTActionPerformed(evt);
             }
         });
-        jPanel17.add(ActualizarTabACT, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 100, 40));
+        jPanel17.add(ActualizarTabACT, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 100, 30));
 
         tab.addTab("list", jPanel17);
 
@@ -988,9 +1016,9 @@ public class Vitstaadmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBscarEActionPerformed
 
     private void ActualizarTabACTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarTabACTActionPerformed
-       DefaultTableModel modelo = (DefaultTableModel) tabUsuACT.getModel();
-      modelo.setRowCount(0);
-    ControladorAdmin.ListarAct();
+     DefaultTableModel modelo = (DefaultTableModel) tabUsuACT.getModel();
+     modelo.setRowCount(0);
+     ControladorAdmin.ListarAct();
     }//GEN-LAST:event_ActualizarTabACTActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -1030,6 +1058,61 @@ public class Vitstaadmin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CargoUserActionPerformed
 
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+     DefaultTableModel modelo = (DefaultTableModel) ListInac.getModel();
+     modelo.setRowCount(0);
+     ControladorAdmin.ListarInac();
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void ListInacMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListInacMouseClicked
+       int fila = ListInac.getSelectedRow();
+       if (fila != -1) {  
+       cedulaSeleccionada = ListInac.getValueAt(fila, 1).toString();
+        System.out.println("Cédula seleccionada: " + cedulaSeleccionada);
+       }
+    }//GEN-LAST:event_ListInacMouseClicked
+
+    private void SoliAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SoliAceptarActionPerformed
+      if (cedulaSeleccionada == null || cedulaSeleccionada.isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Por favor seleccione un usuario antes de aceptar.");
+    } else {
+        ControladorAdmin.AceptarSolicitud(cedulaSeleccionada);
+        ControladorAdmin.ListarInac();
+        ControladorAdmin.ListarAct();
+        ListInac.clearSelection();
+        cedulaSeleccionada="";  
+}
+    }//GEN-LAST:event_SoliAceptarActionPerformed
+
+    private void SoliDeclinarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SoliDeclinarActionPerformed
+         if (cedulaSeleccionada == null || cedulaSeleccionada.isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Por favor seleccione un usuario antes de declinar.");
+    } else {
+        int confirmar = JOptionPane.showConfirmDialog(
+            null, 
+            "¿Seguro que desea declinar esta solicitud?", 
+            "Confirmar acción", 
+            JOptionPane.YES_NO_OPTION
+        );
+        
+        if (confirmar == JOptionPane.YES_OPTION) {
+            ControladorAdmin.DeclinarSolicitud(cedulaSeleccionada);
+            ControladorAdmin.ListarInac(); // recargar lista
+            ListInac.clearSelection();
+            cedulaSeleccionada = "";
+  }
+}
+
+    }//GEN-LAST:event_SoliDeclinarActionPerformed
+
+    private void ContadorDeSoliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContadorDeSoliActionPerformed
+       
+    }//GEN-LAST:event_ContadorDeSoliActionPerformed
+
+    private void ParaSolis(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ParaSolis
+     ContadorDeSoli.setText(String.valueOf(controlador.ControladorAdmin.NuevosUsuarios()));
+    }//GEN-LAST:event_ParaSolis
+
     /**
      * @param args the command line arguments
      */
@@ -1068,21 +1151,22 @@ public class Vitstaadmin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ActualizarTabACT;
     private javax.swing.JTextField CargoUser;
+    private javax.swing.JTextField ContadorDeSoli;
     private javax.swing.JTextField IDuser;
     private javax.swing.JPanel Inicioo;
     public static javax.swing.JTable ListInac;
     private javax.swing.JTextField NombreUser;
+    private javax.swing.JButton SoliAceptar;
+    private javax.swing.JButton SoliDeclinar;
     private javax.swing.JButton btnBscarE;
     private javax.swing.JComboBox<String> cmbCargoNuevo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1108,7 +1192,6 @@ public class Vitstaadmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
@@ -1162,7 +1245,6 @@ public class Vitstaadmin extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField numeroUser;
     private javax.swing.JTabbedPane tab;
     public static javax.swing.JTable tabUsuACT;
