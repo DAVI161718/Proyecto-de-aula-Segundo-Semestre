@@ -1,5 +1,0 @@
-Cedula: 1234567890
-Contraseña: 123
-Numero de Telefono: 0987654321
-Nombre: Juan Cantillo
-Rol: Tutor
