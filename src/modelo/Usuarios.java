@@ -1,13 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package modelo;
 
-/**
- *
- * @author Juanda
- */
 public class Usuarios {
+
+    public static Usuarios usuario[] = new Usuarios[100];
+    public static int contadorUsu = 0;
+    public static int contadorEstu = 0;
+    public static int contadorTutor = 0;
+    public static int contUsuInact = 0;
     
+    public String nombre;
+    public String cedula;
+    public String contraseña;
+    public String celular;
+    public String cargo;
+    public String estado;
+    public String semestre;
 }
