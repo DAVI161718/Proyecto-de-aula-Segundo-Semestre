@@ -12,5 +12,10 @@ public class Horarios {
     public String mes;
     public String hora;
     public String salon;
+    public String semestre;
+    
+    
+   
+
 
 }

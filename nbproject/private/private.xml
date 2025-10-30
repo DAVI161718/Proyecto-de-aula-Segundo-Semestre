@@ -7,6 +7,7 @@
         <group>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             <file>file:/C:/Users/Juanda/Desktop/Nueva%20carpeta%20(3)/Proyecto-de-aula-Segundo-Semestre/src/view/loginView.java</file>
             <file>file:/C:/Users/Juanda/Desktop/Nueva%20carpeta%20(3)/Proyecto-de-aula-Segundo-Semestre/src/controlador/controlLogin.java</file>
             <file>file:/C:/Users/Juanda/Desktop/Nueva%20carpeta%20(3)/Proyecto-de-aula-Segundo-Semestre/src/main/Principal.java</file>
@@ -30,6 +31,11 @@
             <file>file:/C:/Users/Estudiante/Desktop/Juanes/Proyecto-de-aula-Segundo-Semestre/src/modelo/registrarHorario.java</file>
             <file>file:/C:/Users/Estudiante/Desktop/Juanes/Proyecto-de-aula-Segundo-Semestre/src/controlador/authHorario.java</file>
 >>>>>>> 95af23b9a4c65fe0eed1a44fe7b95d8ab08a565d
+=======
+            <file>file:/C:/Users/Juanda/Desktop/pro/Proyecto-de-aula-Segundo-Semestre/src/controlador/controladorRegistro.java</file>
+            <file>file:/C:/Users/Juanda/Desktop/pro/Proyecto-de-aula-Segundo-Semestre/src/modelo/Usuarios.java</file>
+            <file>file:/C:/Users/Juanda/Desktop/pro/Proyecto-de-aula-Segundo-Semestre/src/controlador/listarHorarioEstudiante.java</file>
+>>>>>>> abc1332b51aa86442eb1f28f51551b97a0c31e0b
         </group>
     </open-files>
 >>>>>>> 02a2f5afc5e6ea718543f8cdd6991058122de15f
