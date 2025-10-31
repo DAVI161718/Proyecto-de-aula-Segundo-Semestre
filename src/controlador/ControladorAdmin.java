@@ -6,11 +6,12 @@ package controlador;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import static modelo.Usuarios.*;
+import static view.Vitstaadmin.ListInac;
 import static view.Vitstaadmin.tabUsuACT;
 public class ControladorAdmin {
     
       public static void ListarInac(){
-        DefaultTableModel modelo = (DefaultTableModel) tabUsuACT.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) ListInac.getModel();
         boolean HayUsuarios = false;
         modelo.setRowCount(0);
         for (int i = 0; i < contadorUsu; i++) {
@@ -126,7 +127,7 @@ public class ControladorAdmin {
     }
 } public static int NuevosUsuarios(){
   return modelo.Usuarios.contUsuInact;
-}
+} 
 
 }
    
