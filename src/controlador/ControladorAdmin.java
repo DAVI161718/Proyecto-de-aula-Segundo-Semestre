@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package controlador;
+import static controlador.AuthRegistro.*;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import static modelo.Usuarios.*;
@@ -52,19 +53,24 @@ public class ControladorAdmin {
         javax.swing.JOptionPane.showMessageDialog(null, "¡Ups! no hay usuarios activos");
     }
    }
-    public static int buscarPorCedula(String cedulaBuscada) {
-        for (int i = 0; i < contadorUsu; i++) {
-            if (usuario[i].cedula.equals(cedulaBuscada)) {
+   public static int buscarPorCedulaActiva(String cedulaBuscada) {
+    for (int i = 0; i < contadorUsu; i++) {
+        if (usuario[i].cedula.equals(cedulaBuscada)) {
+            if (usuario[i].estado.equalsIgnoreCase("Activo")) {
                 return i;
+            } else {
+                JOptionPane.showMessageDialog(null, "El usuario está inactivo y no puede modificarse ni eliminarse.");
+                return -1;
             }
         }
-        JOptionPane.showMessageDialog(null, "Usuario no encontrado.");
-        return -1;
     }
+    JOptionPane.showMessageDialog(null, "Usuario no encontrado.");
+    return -1;
+}
 
 
     public static void eliminar(String cedulaBuscada) {
-        int pos = buscarPorCedula(cedulaBuscada);
+        int pos = buscarPorCedulaActiva(cedulaBuscada);
         if (pos != -1) {
             for (int i = pos; i < contadorUsu - 1; i++) {
                 usuario[i] = usuario[i + 1];
@@ -76,7 +82,7 @@ public class ControladorAdmin {
 
 
     public static void modificar(String cedulaBuscada, String nuevoNombre, String nuevaContraseña, String nuevoCelular, String nuevoCargo) {
-    int pos = buscarPorCedula(cedulaBuscada);
+    int pos = buscarPorCedulaActiva(cedulaBuscada);
     if (pos != -1) {
         boolean modificado = false;
 
@@ -86,15 +92,20 @@ public class ControladorAdmin {
         }
 
         if (nuevoCelular != null && !nuevoCelular.trim().isEmpty()) {
-            usuario[pos].celular = nuevoCelular.trim();
-            modificado = true;
+            if (valTelefono(nuevoCelular.trim())) {
+                usuario[pos].celular = nuevoCelular.trim();
+                modificado = true;
+            } else {
+                JOptionPane.showMessageDialog(null, "El número de celular debe tener 10 dígitos.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
         }
 
         if (nuevaContraseña != null && !nuevaContraseña.trim().isEmpty()) {
             usuario[pos].contraseña = nuevaContraseña.trim();
             modificado = true;
         }
-        
+
         if (nuevoCargo != null && !nuevoCargo.equals("Seleccione") && !nuevoCargo.equals(usuario[pos].cargo)) {
             usuario[pos].cargo = nuevoCargo;
             modificado = true;
@@ -105,9 +116,21 @@ public class ControladorAdmin {
         } else {
             JOptionPane.showMessageDialog(null, "No se realizó ningún cambio.");
         }
+    } else {
+        JOptionPane.showMessageDialog(null, "No se encontró un usuario con esa cédula.");
     }
-} public static void AceptarSolicitud(String cedulaBuscada) {
-    int pos = buscarPorCedula(cedulaBuscada);
+}  public static int buscarPorCedulaSolis(String cedulaBuscada) {
+    for (int i = 0; i < contadorUsu; i++) {
+        if (usuario[i].cedula.equals(cedulaBuscada)) {
+            return i;
+        }
+    }
+    JOptionPane.showMessageDialog(null, "Usuario no encontrado.");
+    return -1;
+}
+    
+    public static void AceptarSolicitud(String cedulaBuscada) {
+    int pos = buscarPorCedulaSolis(cedulaBuscada);
     if (pos != -1) {
         if (usuario[pos].estado.equalsIgnoreCase("Inactivo")) {
             usuario[pos].estado = "Activo";
@@ -120,7 +143,7 @@ public class ControladorAdmin {
 }
 
 public static void DeclinarSolicitud(String cedulaBuscada) {
-    int pos = buscarPorCedula(cedulaBuscada);
+    int pos = buscarPorCedulaSolis(cedulaBuscada);
     if (pos != -1) {
         for (int i = pos; i < contadorUsu - 1; i++) {
             usuario[i] = usuario[i + 1];
