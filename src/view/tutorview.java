@@ -766,7 +766,7 @@ public class tutorview extends javax.swing.JFrame {
 
         ver_horarios.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 550, 220));
 
-        jTabbedPane.addTab("10", ver_horarios);
+        jTabbedPane.addTab("9", ver_horarios);
 
         eliminar_horarios.setBackground(new java.awt.Color(255, 255, 255));
         eliminar_horarios.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -824,7 +824,7 @@ public class tutorview extends javax.swing.JFrame {
 
         eliminar_horarios.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 550, 190));
 
-        jTabbedPane.addTab("11", eliminar_horarios);
+        jTabbedPane.addTab("10", eliminar_horarios);
 
         crear_horario.setBackground(new java.awt.Color(255, 255, 255));
         crear_horario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -928,7 +928,7 @@ public class tutorview extends javax.swing.JFrame {
 
         crear_horario.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, 180));
 
-        jTabbedPane.addTab("12", crear_horario);
+        jTabbedPane.addTab("11", crear_horario);
 
         jPanel1.add(jTabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 550, 390));
 
@@ -1115,15 +1115,15 @@ public class tutorview extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        jTabbedPane.setSelectedIndex(10);
+        jTabbedPane.setSelectedIndex(9);
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        jTabbedPane.setSelectedIndex(12);
+        jTabbedPane.setSelectedIndex(11);
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        jTabbedPane.setSelectedIndex(11);
+        jTabbedPane.setSelectedIndex(10);
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
