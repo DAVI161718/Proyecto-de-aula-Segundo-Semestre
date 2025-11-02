@@ -332,7 +332,7 @@ String cedulaSeleccionada="";
 
         jPanel2.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 250, 50));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 510));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 540));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -646,7 +646,7 @@ String cedulaSeleccionada="";
 
         cmbCargoNuevo.setBackground(new java.awt.Color(204, 204, 255));
         cmbCargoNuevo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        cmbCargoNuevo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estudiante", "Tutor" }));
+        cmbCargoNuevo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estudiante", "Tutor", "Admin" }));
         jPanel6.add(cmbCargoNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 130, 30));
         jPanel6.add(txtNuevoCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 250, 30));
 
@@ -980,11 +980,7 @@ String cedulaSeleccionada="";
         String nuevoCelular = txtNuevoCelular.getText().trim();
         String nuevaContraseña = txtNuevaContraseña.getText().trim();
         String nuevoCargo = (String) cmbCargoNuevo.getSelectedItem();
-        if(valTelefono(nuevoCelular)) {
         modificar(id, nuevoNombre, nuevaContraseña, nuevoCelular, nuevoCargo);
-        } else{
-         JOptionPane.showMessageDialog(null, "El numero de celular debe tener 10 Digitos");
-        }
         txtNuevoNombre.setText("");
         txtNuevaContraseña.setText("");
         txtNuevoCelular.setText("");
@@ -1001,7 +997,7 @@ String cedulaSeleccionada="";
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         String id = txt_Buscarmodi.getText().trim();
-        int pos = buscarPorCedula(id);
+        int pos = buscarPorCedulaActiva(id);
         if (pos != -1) {
             txtNombreActual.setText(usuario[pos].nombre);
             txtIdentificacionActual.setText(usuario[pos].cedula);
@@ -1016,7 +1012,7 @@ String cedulaSeleccionada="";
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         String id = txt_Buscarelim.getText().trim();
-        int pos = buscarPorCedula(id);
+        int pos = buscarPorCedulaActiva(id);
 
         if (pos != -1) {
             int confirm = JOptionPane.showConfirmDialog(this,
@@ -1049,7 +1045,7 @@ String cedulaSeleccionada="";
 
     private void btnBscarEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBscarEActionPerformed
         String id = txt_Buscarelim.getText().trim();
-        int pos = buscarPorCedula(id);
+        int pos = buscarPorCedulaActiva(id);
         if (pos != -1) {
             NombreUser.setText(usuario[pos].nombre);
             IDuser.setText(usuario[pos].cedula);
