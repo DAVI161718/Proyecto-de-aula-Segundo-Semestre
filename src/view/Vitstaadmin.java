@@ -6,6 +6,7 @@ package view;
 import Vistas.textoSombra;
 import java.awt.Color;
 import controlador.ControladorAdmin;
+import static controlador.AuthRegistro.valTelefono;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import static modelo.Usuarios.usuario;
@@ -54,10 +55,6 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jSeparator2 = new javax.swing.JSeparator();
-        jLabel44 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         tab = new javax.swing.JTabbedPane();
         Inicioo = new javax.swing.JPanel();
@@ -74,23 +71,24 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jPanel16 = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        ListInac = new javax.swing.JTable();
         SoliAceptar = new javax.swing.JButton();
         SoliDeclinar = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jLabel55 = new javax.swing.JLabel();
         jLabel56 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        ListInac = new javax.swing.JTable();
         jPanel17 = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        tabUsuACT = new javax.swing.JTable();
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         ActualizarTabACT = new javax.swing.JButton();
-        jPanel18 = new javax.swing.JPanel();
+        jButton10 = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tabUsuACT = new javax.swing.JTable();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel5 = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
@@ -122,6 +120,7 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jLabel54 = new javax.swing.JLabel();
         txtCargoActual = new javax.swing.JTextField();
         jPanel14 = new javax.swing.JPanel();
+        jButton9 = new javax.swing.JButton();
         jPanel19 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
@@ -139,6 +138,11 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jLabel48 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
         jButton8 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel44 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -346,21 +350,6 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jPanel3.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 340, 20));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 550, 50));
-
-        jPanel4.setBackground(new java.awt.Color(51, 153, 255));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Panel Administrador");
-        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, -1, -1));
-        jPanel4.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 180, 10));
-
-        jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/admin (1).png"))); // NOI18N
-        jPanel4.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, 70, 60));
-
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 550, 90));
         jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, -1, -1));
 
         tab.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -439,36 +428,6 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/add-account.png"))); // NOI18N
         jPanel16.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 30, 40));
 
-        ListInac.setAutoCreateRowSorter(true);
-        ListInac.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        ListInac.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Nombre", "identificación", "N° Celular", "Cargo"
-            }
-        ));
-        ListInac.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ListInacMouseClicked(evt);
-            }
-        });
-        jScrollPane4.setViewportView(ListInac);
-
-        jPanel16.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 550, 220));
-
         SoliAceptar.setBackground(new java.awt.Color(51, 153, 255));
         SoliAceptar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         SoliAceptar.setForeground(new java.awt.Color(255, 255, 255));
@@ -508,6 +467,43 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jLabel56.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/add-account.png"))); // NOI18N
         jPanel16.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, -1, 50));
 
+        jButton4.setBackground(new java.awt.Color(51, 153, 255));
+        jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("Inicio");
+        jButton4.setAutoscrolls(true);
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
+        jPanel16.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 0, -1, -1));
+
+        ListInac.setAutoCreateRowSorter(true);
+        ListInac.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ListInac.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Nombre", "identificación", "N° Celular", "Cargo"
+            }
+        ));
+        jScrollPane4.setViewportView(ListInac);
+
+        jPanel16.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 550, 220));
+
         tab.addTab("soli", jPanel16);
 
         jPanel17.setBackground(new java.awt.Color(255, 255, 255));
@@ -521,6 +517,39 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/contact-list.png"))); // NOI18N
         jPanel17.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 90, 70));
         jPanel17.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 220, -1));
+
+        jLabel33.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(51, 153, 255));
+        jLabel33.setText("Aqui puedes observar el listado");
+        jPanel17.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, -1, -1));
+
+        jLabel34.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(51, 153, 255));
+        jLabel34.setText("general de usuarios en el sistema");
+        jPanel17.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, -1, 20));
+
+        ActualizarTabACT.setBackground(new java.awt.Color(51, 153, 255));
+        ActualizarTabACT.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        ActualizarTabACT.setForeground(new java.awt.Color(255, 255, 255));
+        ActualizarTabACT.setText("Actualizar");
+        ActualizarTabACT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ActualizarTabACTActionPerformed(evt);
+            }
+        });
+        jPanel17.add(ActualizarTabACT, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 100, 30));
+
+        jButton10.setBackground(new java.awt.Color(51, 153, 255));
+        jButton10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton10.setForeground(new java.awt.Color(255, 255, 255));
+        jButton10.setText("Inicio");
+        jButton10.setAutoscrolls(true);
+        jButton10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton10MouseClicked(evt);
+            }
+        });
+        jPanel17.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 0, -1, -1));
 
         tabUsuACT.setAutoCreateRowSorter(true);
         tabUsuACT.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -547,31 +576,7 @@ public class Vitstaadmin extends javax.swing.JFrame {
 
         jPanel17.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 550, 220));
 
-        jLabel33.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel33.setForeground(new java.awt.Color(51, 153, 255));
-        jLabel33.setText("Aqui puedes observar el listado");
-        jPanel17.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, -1, -1));
-
-        jLabel34.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel34.setForeground(new java.awt.Color(51, 153, 255));
-        jLabel34.setText("general de usuarios en el sistema");
-        jPanel17.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, -1, 20));
-
-        ActualizarTabACT.setBackground(new java.awt.Color(51, 153, 255));
-        ActualizarTabACT.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        ActualizarTabACT.setForeground(new java.awt.Color(255, 255, 255));
-        ActualizarTabACT.setText("Actualizar");
-        ActualizarTabACT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ActualizarTabACTActionPerformed(evt);
-            }
-        });
-        jPanel17.add(ActualizarTabACT, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 100, 30));
-
         tab.addTab("list", jPanel17);
-
-        jPanel18.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel18.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -717,11 +722,21 @@ public class Vitstaadmin extends javax.swing.JFrame {
         jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel5.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 520, 40));
 
+        jButton9.setBackground(new java.awt.Color(51, 153, 255));
+        jButton9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton9.setForeground(new java.awt.Color(255, 255, 255));
+        jButton9.setText("Inicio");
+        jButton9.setAutoscrolls(true);
+        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton9MouseClicked(evt);
+            }
+        });
+        jPanel5.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, -1, -1));
+
         jScrollPane1.setViewportView(jPanel5);
 
-        jPanel18.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 430));
-
-        tab.addTab("mo", jPanel18);
+        tab.addTab("mo", jScrollPane1);
 
         jPanel19.setBackground(new java.awt.Color(255, 255, 255));
         jPanel19.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -821,9 +836,36 @@ public class Vitstaadmin extends javax.swing.JFrame {
 
         jPanel19.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 430, 190));
 
+        jButton11.setBackground(new java.awt.Color(51, 153, 255));
+        jButton11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton11.setForeground(new java.awt.Color(255, 255, 255));
+        jButton11.setText("Inicio");
+        jButton11.setAutoscrolls(true);
+        jButton11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton11MouseClicked(evt);
+            }
+        });
+        jPanel19.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 0, -1, -1));
+
         tab.addTab("elim", jPanel19);
 
-        jPanel1.add(tab, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 550, 370));
+        jPanel1.add(tab, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 550, 400));
+
+        jPanel4.setBackground(new java.awt.Color(51, 153, 255));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Panel Administrador");
+        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, -1, -1));
+        jPanel4.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 180, 10));
+
+        jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/admin (1).png"))); // NOI18N
+        jPanel4.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, 70, 60));
+
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 550, 100));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -838,26 +880,6 @@ public class Vitstaadmin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void txt_BuscarmodiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_BuscarmodiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_BuscarmodiActionPerformed
-
-    private void txtNombreActualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActualActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreActualActionPerformed
-
-    private void txt_BuscarelimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_BuscarelimActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_BuscarelimActionPerformed
-
-    private void IDuserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDuserActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_IDuserActionPerformed
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
        tab.setSelectedIndex(0);// TODO add your handling code here:
@@ -878,18 +900,6 @@ public class Vitstaadmin extends javax.swing.JFrame {
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
        tab.setSelectedIndex(4);
     }//GEN-LAST:event_jLabel7MouseClicked
-
-    private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
-       tab.setSelectedIndex(2);
-    }//GEN-LAST:event_jButton7MouseClicked
-
-    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-        tab.setSelectedIndex(2);
-    }//GEN-LAST:event_jButton3MouseClicked
-
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        tab.setSelectedIndex(1);
-    }//GEN-LAST:event_jButton1MouseClicked
 
     private void jPanel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel8MouseClicked
         tab.setSelectedIndex(0);
@@ -991,127 +1001,169 @@ public class Vitstaadmin extends javax.swing.JFrame {
     jPanel12.setBackground(new Color(51,204,255));
     }//GEN-LAST:event_jLabel7MouseExited
 
+    private void ParaSolis(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ParaSolis
+        ContadorDeSoli.setText(String.valueOf(controlador.ControladorAdmin.NuevosUsuarios()));
+    }//GEN-LAST:event_ParaSolis
+
+    private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
+        tab.setSelectedIndex(0);
+    }//GEN-LAST:event_jButton9MouseClicked
+
+    private void txtNombreActualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActualActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreActualActionPerformed
+
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-    String id = txt_Buscarmodi.getText().trim();
-    String nuevoNombre = txtNuevoNombre.getText().trim();
-    String nuevoCelular = txtNuevoCelular.getText().trim();
-    String nuevaContraseña = txtNuevaContraseña.getText().trim();
-    String nuevoCargo = (String) cmbCargoNuevo.getSelectedItem();
-    ControladorAdmin.modificar(id, nuevoNombre, nuevaContraseña, nuevoCelular, nuevoCargo);
-    txtNuevoNombre.setText("");
-    txtNuevaContraseña.setText("");
-    txtNuevoCelular.setText("");
-    cmbCargoNuevo.setSelectedIndex(0);
+        String id = txt_Buscarmodi.getText().trim();
+        String nuevoNombre = txtNuevoNombre.getText().trim();
+        String nuevoCelular = txtNuevoCelular.getText().trim();
+        String nuevaContraseña = txtNuevaContraseña.getText().trim();
+        String nuevoCargo = (String) cmbCargoNuevo.getSelectedItem();
+        if(valTelefono(nuevoCelular)) {
+        ControladorAdmin.modificar(id, nuevoNombre, nuevaContraseña, nuevoCelular, nuevoCargo);
+        } else{
+         JOptionPane.showMessageDialog(null, "El numero de celular debe tener 10 Digitos");
+        }
+        txtNuevoNombre.setText("");
+        txtNuevaContraseña.setText("");
+        txtNuevoCelular.setText("");
+        cmbCargoNuevo.setSelectedIndex(0);
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void btnBscarEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBscarEActionPerformed
-       String id = txt_Buscarelim.getText().trim();
-    int pos = ControladorAdmin.buscarPorCedula(id);
-    if (pos != -1) { 
-        NombreUser.setText(usuario[pos].nombre);
-        IDuser.setText(usuario[pos].cedula);
-        numeroUser.setText(usuario[pos].celular);
-        CargoUser.setText(usuario[pos].cargo);
-    }  
-    }//GEN-LAST:event_btnBscarEActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void ActualizarTabACTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarTabACTActionPerformed
-     DefaultTableModel modelo = (DefaultTableModel) tabUsuACT.getModel();
-     modelo.setRowCount(0);
-     ControladorAdmin.ListarAct();
-    }//GEN-LAST:event_ActualizarTabACTActionPerformed
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        tab.setSelectedIndex(2);
+    }//GEN-LAST:event_jButton3MouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-    String id = txt_Buscarmodi.getText().trim();
-    int pos = ControladorAdmin.buscarPorCedula(id);
-    if (pos != -1) { 
-        txtNombreActual.setText(usuario[pos].nombre);
-        txtIdentificacionActual.setText(usuario[pos].cedula);
-        txtCelularActual.setText(usuario[pos].celular);
-        txtCargoActual.setText(usuario[pos].cargo);
-    }        
+        String id = txt_Buscarmodi.getText().trim();
+        int pos = ControladorAdmin.buscarPorCedula(id);
+        if (pos != -1) {
+            txtNombreActual.setText(usuario[pos].nombre);
+            txtIdentificacionActual.setText(usuario[pos].cedula);
+            txtCelularActual.setText(usuario[pos].celular);
+            txtCargoActual.setText(usuario[pos].cargo);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-       String id = txt_Buscarelim.getText().trim();
-    int pos = ControladorAdmin.buscarPorCedula(id);
+    private void txt_BuscarmodiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_BuscarmodiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_BuscarmodiActionPerformed
 
-    if (pos != -1) {
-        int confirm = JOptionPane.showConfirmDialog(this,
+    private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseClicked
+        tab.setSelectedIndex(0);
+    }//GEN-LAST:event_jButton11MouseClicked
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        String id = txt_Buscarelim.getText().trim();
+        int pos = ControladorAdmin.buscarPorCedula(id);
+
+        if (pos != -1) {
+            int confirm = JOptionPane.showConfirmDialog(this,
                 "¿Desea eliminar este usuario?",
                 "Confirmar eliminación",
                 JOptionPane.YES_NO_OPTION);
 
-        if (confirm == JOptionPane.YES_OPTION) {
-            ControladorAdmin.eliminar(id);
+            if (confirm == JOptionPane.YES_OPTION) {
+                ControladorAdmin.eliminar(id);
 
-           NombreUser.setText("");
-           IDuser.setText("");
-           numeroUser.setText("");
-           CargoUser.setText("");
+                NombreUser.setText("");
+                IDuser.setText("");
+                numeroUser.setText("");
+                CargoUser.setText("");
+            }
         }
-    }
-
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void CargoUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargoUserActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CargoUserActionPerformed
 
+    private void IDuserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDuserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IDuserActionPerformed
+
+    private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
+        tab.setSelectedIndex(2);
+    }//GEN-LAST:event_jButton7MouseClicked
+
+    private void btnBscarEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBscarEActionPerformed
+        String id = txt_Buscarelim.getText().trim();
+        int pos = ControladorAdmin.buscarPorCedula(id);
+        if (pos != -1) {
+            NombreUser.setText(usuario[pos].nombre);
+            IDuser.setText(usuario[pos].cedula);
+            numeroUser.setText(usuario[pos].celular);
+            CargoUser.setText(usuario[pos].cargo);
+        }
+    }//GEN-LAST:event_btnBscarEActionPerformed
+
+    private void txt_BuscarelimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_BuscarelimActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_BuscarelimActionPerformed
+
+    private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
+        tab.setSelectedIndex(0);
+    }//GEN-LAST:event_jButton10MouseClicked
+
+    private void ActualizarTabACTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarTabACTActionPerformed
+        DefaultTableModel modelo = (DefaultTableModel) tabUsuACT.getModel();
+        modelo.setRowCount(0);
+        ControladorAdmin.ListarAct();
+    }//GEN-LAST:event_ActualizarTabACTActionPerformed
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        tab.setSelectedIndex(0);
+    }//GEN-LAST:event_jButton4MouseClicked
+
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-     DefaultTableModel modelo = (DefaultTableModel) ListInac.getModel();
-     modelo.setRowCount(0);
-     ControladorAdmin.ListarInac();
+        DefaultTableModel modelo = (DefaultTableModel) ListInac.getModel();
+        modelo.setRowCount(0);
+        ControladorAdmin.ListarInac();
     }//GEN-LAST:event_jButton6ActionPerformed
 
-    private void ListInacMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListInacMouseClicked
-       int fila = ListInac.getSelectedRow();
-       if (fila != -1) {  
-       cedulaSeleccionada = ListInac.getValueAt(fila, 1).toString();
-        System.out.println("Cédula seleccionada: " + cedulaSeleccionada);
-       }
-    }//GEN-LAST:event_ListInacMouseClicked
-
-    private void SoliAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SoliAceptarActionPerformed
-      if (cedulaSeleccionada == null || cedulaSeleccionada.isEmpty()) {
-        JOptionPane.showMessageDialog(null, "Por favor seleccione un usuario antes de aceptar.");
-    } else {
-        ControladorAdmin.AceptarSolicitud(cedulaSeleccionada);
-        ControladorAdmin.ListarInac();
-        ControladorAdmin.ListarAct();
-        ListInac.clearSelection();
-        cedulaSeleccionada="";  
-}
-    }//GEN-LAST:event_SoliAceptarActionPerformed
-
     private void SoliDeclinarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SoliDeclinarActionPerformed
-         if (cedulaSeleccionada == null || cedulaSeleccionada.isEmpty()) {
-        JOptionPane.showMessageDialog(null, "Por favor seleccione un usuario antes de declinar.");
-    } else {
-        int confirmar = JOptionPane.showConfirmDialog(
-            null, 
-            "¿Seguro que desea declinar esta solicitud?", 
-            "Confirmar acción", 
-            JOptionPane.YES_NO_OPTION
-        );
-        
-        if (confirmar == JOptionPane.YES_OPTION) {
-            ControladorAdmin.DeclinarSolicitud(cedulaSeleccionada);
-            ControladorAdmin.ListarInac(); // recargar lista
-            ListInac.clearSelection();
-            cedulaSeleccionada = "";
-  }
-}
+        if (cedulaSeleccionada == null || cedulaSeleccionada.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Por favor seleccione un usuario antes de declinar.");
+        } else {
+            int confirmar = JOptionPane.showConfirmDialog(
+                null,
+                "¿Seguro que desea declinar esta solicitud?",
+                "Confirmar acción",
+                JOptionPane.YES_NO_OPTION
+            );
 
+            if (confirmar == JOptionPane.YES_OPTION) {
+                ControladorAdmin.DeclinarSolicitud(cedulaSeleccionada);
+                ControladorAdmin.ListarInac(); // recargar lista
+                ListInac.clearSelection();
+                cedulaSeleccionada = "";
+            }
+        }
     }//GEN-LAST:event_SoliDeclinarActionPerformed
 
-    private void ContadorDeSoliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContadorDeSoliActionPerformed
-       
-    }//GEN-LAST:event_ContadorDeSoliActionPerformed
+    private void SoliAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SoliAceptarActionPerformed
+        if (cedulaSeleccionada == null || cedulaSeleccionada.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Por favor seleccione un usuario antes de aceptar.");
+        } else {
+            ControladorAdmin.AceptarSolicitud(cedulaSeleccionada);
+            ControladorAdmin.ListarInac();
+            ControladorAdmin.ListarAct();
+            ListInac.clearSelection();
+            cedulaSeleccionada="";
+        }
+    }//GEN-LAST:event_SoliAceptarActionPerformed
 
-    private void ParaSolis(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ParaSolis
-     ContadorDeSoli.setText(String.valueOf(controlador.ControladorAdmin.NuevosUsuarios()));
-    }//GEN-LAST:event_ParaSolis
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        tab.setSelectedIndex(1);
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void ContadorDeSoliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContadorDeSoliActionPerformed
+
+    }//GEN-LAST:event_ContadorDeSoliActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1161,12 +1213,16 @@ public class Vitstaadmin extends javax.swing.JFrame {
     private javax.swing.JButton btnBscarE;
     private javax.swing.JComboBox<String> cmbCargoNuevo;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1228,7 +1284,6 @@ public class Vitstaadmin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
-    private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
