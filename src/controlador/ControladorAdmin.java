@@ -112,6 +112,7 @@ public class ControladorAdmin {
         if (usuario[pos].estado.equalsIgnoreCase("Inactivo")) {
             usuario[pos].estado = "Activo";
             JOptionPane.showMessageDialog(null, "Solicitud aceptada. El usuario ahora está activo.");
+            contUsuInact--;
         } else {
             JOptionPane.showMessageDialog(null, "El usuario ya se encuentra activo.");
         }
@@ -126,11 +127,12 @@ public static void DeclinarSolicitud(String cedulaBuscada) {
         }
         usuario[contadorUsu - 1] = null;
         contadorUsu--;
-        JOptionPane.showMessageDialog(null, "Solicitud declinada. El usuario ha sido eliminado.");
+        contUsuInact--;
+        
 }
 
 } public static int NuevosUsuarios(){
-  return modelo.Usuarios.contUsuInact;
+  return contUsuInact-1;
 } 
 
 }

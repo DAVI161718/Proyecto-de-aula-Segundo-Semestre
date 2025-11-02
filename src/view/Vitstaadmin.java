@@ -5,8 +5,8 @@
 package view;
 import Vistas.textoSombra;
 import java.awt.Color;
-import controlador.ControladorAdmin;
 import static controlador.AuthRegistro.valTelefono;
+import static controlador.ControladorAdmin.*;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import static modelo.Usuarios.usuario;
@@ -467,7 +467,7 @@ String cedulaSeleccionada="";
                 jButton6ActionPerformed(evt);
             }
         });
-        jPanel16.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 100, 30));
+        jPanel16.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 120, 30));
 
         jLabel55.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/delete-user.png"))); // NOI18N
         jPanel16.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, -1, 50));
@@ -538,7 +538,7 @@ String cedulaSeleccionada="";
                 ActualizarTabACTActionPerformed(evt);
             }
         });
-        jPanel17.add(ActualizarTabACT, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 100, 30));
+        jPanel17.add(ActualizarTabACT, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 130, 30));
 
         tabUsuACT.setAutoCreateRowSorter(true);
         tabUsuACT.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -967,7 +967,7 @@ String cedulaSeleccionada="";
     }//GEN-LAST:event_jLabel7MouseExited
 
     private void ParaSolis(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ParaSolis
-        ContadorDeSoli.setText(String.valueOf(controlador.ControladorAdmin.NuevosUsuarios()));
+        ContadorDeSoli.setText(String.valueOf(NuevosUsuarios()));
     }//GEN-LAST:event_ParaSolis
 
     private void txtNombreActualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActualActionPerformed
@@ -981,7 +981,7 @@ String cedulaSeleccionada="";
         String nuevaContraseña = txtNuevaContraseña.getText().trim();
         String nuevoCargo = (String) cmbCargoNuevo.getSelectedItem();
         if(valTelefono(nuevoCelular)) {
-        ControladorAdmin.modificar(id, nuevoNombre, nuevaContraseña, nuevoCelular, nuevoCargo);
+        modificar(id, nuevoNombre, nuevaContraseña, nuevoCelular, nuevoCargo);
         } else{
          JOptionPane.showMessageDialog(null, "El numero de celular debe tener 10 Digitos");
         }
@@ -1001,7 +1001,7 @@ String cedulaSeleccionada="";
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         String id = txt_Buscarmodi.getText().trim();
-        int pos = ControladorAdmin.buscarPorCedula(id);
+        int pos = buscarPorCedula(id);
         if (pos != -1) {
             txtNombreActual.setText(usuario[pos].nombre);
             txtIdentificacionActual.setText(usuario[pos].cedula);
@@ -1016,7 +1016,7 @@ String cedulaSeleccionada="";
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         String id = txt_Buscarelim.getText().trim();
-        int pos = ControladorAdmin.buscarPorCedula(id);
+        int pos = buscarPorCedula(id);
 
         if (pos != -1) {
             int confirm = JOptionPane.showConfirmDialog(this,
@@ -1025,7 +1025,7 @@ String cedulaSeleccionada="";
                 JOptionPane.YES_NO_OPTION);
 
             if (confirm == JOptionPane.YES_OPTION) {
-                ControladorAdmin.eliminar(id);
+                eliminar(id);
 
                 NombreUser.setText("");
                 IDuser.setText("");
@@ -1049,7 +1049,7 @@ String cedulaSeleccionada="";
 
     private void btnBscarEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBscarEActionPerformed
         String id = txt_Buscarelim.getText().trim();
-        int pos = ControladorAdmin.buscarPorCedula(id);
+        int pos = buscarPorCedula(id);
         if (pos != -1) {
             NombreUser.setText(usuario[pos].nombre);
             IDuser.setText(usuario[pos].cedula);
@@ -1065,25 +1065,26 @@ String cedulaSeleccionada="";
     private void ActualizarTabACTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarTabACTActionPerformed
         DefaultTableModel modelo = (DefaultTableModel) tabUsuACT.getModel();
         modelo.setRowCount(0);
-        ControladorAdmin.ListarAct();
+        ListarAct();
     }//GEN-LAST:event_ActualizarTabACTActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         DefaultTableModel modelo = (DefaultTableModel) ListInac.getModel();
         modelo.setRowCount(0);
-        ControladorAdmin.ListarInac();
+        ListarInac();
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void SoliDeclinarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SoliDeclinarActionPerformed
      if (cedulaSeleccionada == null || cedulaSeleccionada.isEmpty()) {
         JOptionPane.showMessageDialog(this, "Por favor seleccione un usuario antes de declinar.");
     } else {
-        ControladorAdmin.DeclinarSolicitud(cedulaSeleccionada);
-        ControladorAdmin.ListarInac();
-        ControladorAdmin.ListarAct();
+        DeclinarSolicitud(cedulaSeleccionada);
+        ListarInac();
+        ListarAct();
         ListInac.clearSelection();
         cedulaSeleccionada = "";
         JOptionPane.showMessageDialog(this, "Solicitud declinada correctamente.");
+        ContadorDeSoli.setText(String.valueOf(NuevosUsuarios()));
      }
     }//GEN-LAST:event_SoliDeclinarActionPerformed
 
@@ -1091,11 +1092,13 @@ String cedulaSeleccionada="";
        if (cedulaSeleccionada == null || cedulaSeleccionada.isEmpty()) {
         JOptionPane.showMessageDialog(null, "Por favor seleccione un usuario antes de aceptar.");
     } else {
-        ControladorAdmin.AceptarSolicitud(cedulaSeleccionada);
-        ControladorAdmin.ListarInac(); 
-        ControladorAdmin.ListarAct();  
+        AceptarSolicitud(cedulaSeleccionada);
+        ListarInac(); 
+        ListarAct();  
         ListInac.clearSelection();
         cedulaSeleccionada="";
+        ContadorDeSoli.setText(String.valueOf(NuevosUsuarios()));
+        
        }
 
     }//GEN-LAST:event_SoliAceptarActionPerformed
@@ -1112,7 +1115,6 @@ String cedulaSeleccionada="";
       int fila = ListInac.getSelectedRow();
       if (fila != -1) {
         cedulaSeleccionada = ListInac.getValueAt(fila, 1).toString(); 
-        System.out.println("Cédula seleccionada: " + cedulaSeleccionada);
     }
 
     }//GEN-LAST:event_ListInacMouseClicked
