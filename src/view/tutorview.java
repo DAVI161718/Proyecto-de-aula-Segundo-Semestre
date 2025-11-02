@@ -139,6 +139,7 @@ public class tutorview extends javax.swing.JFrame {
         caja_SEM = new javax.swing.JComboBox<>();
         jScrollPane8 = new javax.swing.JScrollPane();
         tablaJuan = new javax.swing.JTable();
+        jButton13 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -264,7 +265,7 @@ public class tutorview extends javax.swing.JFrame {
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/profesor.png"))); // NOI18N
         panel_horizontal.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, -1, -1));
 
-        jPanel1.add(panel_horizontal, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 550, 50));
+        jPanel1.add(panel_horizontal, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 550, 80));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 204, 255));
@@ -932,6 +933,17 @@ public class tutorview extends javax.swing.JFrame {
 
         jPanel1.add(jTabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 550, 390));
 
+        jButton13.setBackground(new java.awt.Color(51, 153, 255));
+        jButton13.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton13.setForeground(new java.awt.Color(255, 255, 255));
+        jButton13.setText("Volver al login");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 20, -1, -1));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
 
         pack();
@@ -1154,6 +1166,13 @@ public class tutorview extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        loginView loginVista =new loginView();
+        loginVista.setVisible(true);
+        this.dispose();
+
+    }//GEN-LAST:event_jButton13ActionPerformed
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -1189,6 +1208,7 @@ public class tutorview extends javax.swing.JFrame {
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
