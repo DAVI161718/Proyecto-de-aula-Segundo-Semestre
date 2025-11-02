@@ -13,6 +13,7 @@ import controlador.authNotas;
 import static controlador.controladorRegistro.crearUsuario;
 import static controlador.listarEstudianteNota.*;
 import static controlador.listarHorarios.*;
+import controlador.listarSemestre;
 import controlador.registrarNotas;
 import static controlador.registrosHorario.*;
 
@@ -109,6 +110,7 @@ public class tutorview extends javax.swing.JFrame {
         tablaListarNota = new javax.swing.JTable();
         boton_regresarNotas6 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        comboSemestre = new javax.swing.JComboBox<>();
         ver_horarios = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
@@ -297,24 +299,10 @@ public class tutorview extends javax.swing.JFrame {
         tablaListar.setAutoCreateRowSorter(true);
         tablaListar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Nombre", "Identificación", "Email", "# de celular"
+                "Semestre", "Nombre", "Identificación", "# de celular"
             }
         ) {
             Class[] types = new Class [] {
@@ -568,15 +556,22 @@ public class tutorview extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nombres completos", "Cedula"
+                "Nota", "Semestre"
             }
         ) {
             Class[] types = new Class [] {
                 java.lang.String.class, java.lang.String.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
         jScrollPane3.setViewportView(tabla_estudianteEncontrado);
@@ -693,7 +688,7 @@ public class tutorview extends javax.swing.JFrame {
         });
         jScrollPane5.setViewportView(tablaListarNota);
 
-        notas_creadas.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 550, 140));
+        notas_creadas.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 550, 140));
 
         boton_regresarNotas6.setBackground(new java.awt.Color(51, 153, 255));
         boton_regresarNotas6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -704,7 +699,7 @@ public class tutorview extends javax.swing.JFrame {
                 boton_regresarNotas6ActionPerformed(evt);
             }
         });
-        notas_creadas.add(boton_regresarNotas6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 210, 170, 30));
+        notas_creadas.add(boton_regresarNotas6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 170, 30));
 
         jButton5.setBackground(new java.awt.Color(51, 153, 255));
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -715,7 +710,10 @@ public class tutorview extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        notas_creadas.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
+        notas_creadas.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
+
+        comboSemestre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Semestre 1", "Semestre 2", "Semestre 3", "Semestre 4" }));
+        notas_creadas.add(comboSemestre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
 
         jTabbedPane.addTab("8", notas_creadas);
 
@@ -998,7 +996,6 @@ public class tutorview extends javax.swing.JFrame {
                 return;
             }
 
- 
             if (!validarDias(dia)) {
                 txt_dia.requestFocus();
                 return;
@@ -1029,7 +1026,7 @@ public class tutorview extends javax.swing.JFrame {
 
     private void boton_HorarioEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_HorarioEliminarActionPerformed
 
-       delateHorario(delate_Horario, tablaJuan, ver_tablaHorario);
+        delateHorario(delate_Horario, tablaJuan, ver_tablaHorario);
     }//GEN-LAST:event_boton_HorarioEliminarActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
@@ -1045,20 +1042,12 @@ public class tutorview extends javax.swing.JFrame {
     }//GEN-LAST:event_boton_regresarNotas4ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+
         String semestre = caja_Sem.getSelectedItem().toString();
-        if (semestre.equals("Semestre 1")) {
-            listarEstudianteNota1(semestre);
 
-        } else if (semestre.equals("Semestre 2")) {
-            listarEstudianteNota2(semestre);
+        listarSemestre.listarNotaCrear(semestre);
+       
 
-        } else if (semestre.equals("Semestre 3")) {
-            listarEstudianteNota3(semestre);
-
-        } else if (semestre.equals("Semestre 4")) {
-            listarEstudianteNota4(semestre);
-
-        }
 
     }//GEN-LAST:event_jButton12ActionPerformed
 
@@ -1073,16 +1062,19 @@ public class tutorview extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         String mensaje = txt_ingresarNotas.getText();
         String semestre = caja_Sem.getSelectedItem().toString();
+        
+        if (!mensaje.isEmpty()) {
+            registrarNotas.registrarNotas(semestre, mensaje);
 
-
-        registrarNotas.registrarNotas(semestre, mensaje);
+        listarSemestre.listarNotaCrear(semestre);
+        
+        JOptionPane.showMessageDialog(null, "¡¡Nota creada exitosamente!!");
+        }else{
+            JOptionPane.showMessageDialog(null, "No se puedn colocar mensajes vacios.");
+        }
+      
         
 
-   
-        listarTabla1(mensaje);
-        listarTabla2(mensaje);
-        listarTabla3(mensaje);
-        
         //que las notas se me creen en las dos tabalas
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -1135,18 +1127,31 @@ public class tutorview extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        crearNotas();
+        String semestre = comboSemestre.getSelectedItem().toString();
+
+        listarSemestre.listarNotaSemestre(semestre);
+
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void ActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarActionPerformed
-        crearNotas();
+
+        String semestre = semestreCombo.getSelectedItem().toString();
+
+        listarSemestre.listarNotaEliminar(semestre);
+
     }//GEN-LAST:event_ActualizarActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         int seleccion = tabla_notasEncontradas.getSelectedRow();
-        authNotas.eliminarDelArreglo(seleccion);
+        if (seleccion>-1) {
+                   authNotas.eliminarDelArreglo(seleccion);
         String semestre = semestreCombo.getSelectedItem().toString();
-        listarEstudianteNota1(semestre);
+        listarSemestre.listarNotaEliminar(semestre); 
+        
+        JOptionPane.showMessageDialog(null, "Nota eliminada exitosamente.");
+        }else{
+            JOptionPane.showMessageDialog(null, "Debes de seleccionar alguna nota para eliminar.");
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     public static void main(String args[]) {
@@ -1171,6 +1176,7 @@ public class tutorview extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> caja_SEM;
     private javax.swing.JComboBox<String> caja_Salon;
     private javax.swing.JComboBox<String> caja_Sem;
+    private javax.swing.JComboBox<String> comboSemestre;
     private javax.swing.JPanel crear_horario;
     private javax.swing.JPanel crear_notas;
     public static javax.swing.JTable delate_Horario;

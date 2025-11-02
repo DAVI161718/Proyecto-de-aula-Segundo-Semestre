@@ -16,6 +16,8 @@ import static view.tutorview.*;
  * @author Juanes
  */
 public class authNotas {
+    
+    
 
     public static void eliminarDelArreglo(int indice) {
         if (indice >= 0 && indice < Notas.contadorNotas) {
