@@ -155,7 +155,7 @@ public static void DeclinarSolicitud(String cedulaBuscada) {
 }
 
 } public static int NuevosUsuarios(){
-  return contUsuInact-1;
+  return contUsuInact;
 } 
 
 }

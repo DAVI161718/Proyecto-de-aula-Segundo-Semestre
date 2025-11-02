@@ -37,6 +37,8 @@ public class registerView extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         box_rol = new javax.swing.JComboBox<>();
         box_semestre = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         jCheckBox1.setText("jCheckBox1");
@@ -84,10 +86,10 @@ public class registerView extends javax.swing.JFrame {
         });
         jPanel1.add(btn_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 400, 100, 20));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel2.setText("Elija una opcion de cada casilla");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 350, -1, -1));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 153, 153));
+        jLabel2.setText("la casilla de semestre vacia");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 430, -1, 20));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 153, 255));
@@ -121,8 +123,23 @@ public class registerView extends javax.swing.JFrame {
 
         box_semestre.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         box_semestre.setForeground(new java.awt.Color(51, 153, 255));
-        box_semestre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Semestre 1", "Semestre 2", "Semestre 3", "Semestre 4" }));
+        box_semestre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Semestre 1", "Semestre 2", "Semestre 3", "Semestre 4", "" }));
+        box_semestre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                box_semestreActionPerformed(evt);
+            }
+        });
         jPanel1.add(box_semestre, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 370, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel7.setText("Elija una opcion de las casillas");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 350, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 153, 153));
+        jLabel8.setText("Si usted es tutor porfavor coloque");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 420, -1, 20));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/registerImagen.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
@@ -161,10 +178,12 @@ public class registerView extends javax.swing.JFrame {
                 String cargo = box_rol.getSelectedItem().toString();
                 String semestre = box_semestre.getSelectedItem().toString();
                 if (valUsuario(cedula) == true) {
-                   JOptionPane.showMessageDialog(null, "Usuario ya existente");
-                }else{
-                    crearUsuario(cedula, nombre, contraseña, cargo, celular, "Inactivo", semestre);
-                    JOptionPane.showMessageDialog(null, "Usuario creado con exito");
+                    JOptionPane.showMessageDialog(null, "Usuario ya existente");
+                } else {
+                    if (valInfo(cargo, semestre) == true) {
+                        crearUsuario(cedula, nombre, contraseña, cargo, celular, "Inactivo", semestre);
+                        JOptionPane.showMessageDialog(null, "Usuario creado con exito");
+                    }
                 }
             }
         } else {
@@ -175,6 +194,10 @@ public class registerView extends javax.swing.JFrame {
     private void box_rolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box_rolActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_box_rolActionPerformed
+
+    private void box_semestreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box_semestreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_box_semestreActionPerformed
 
     public static void main(String args[]) {
 
@@ -193,6 +216,8 @@ public class registerView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txt_cedula;
     private javax.swing.JPasswordField txt_contraseña;
