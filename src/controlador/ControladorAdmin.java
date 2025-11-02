@@ -106,7 +106,7 @@ public class ControladorAdmin {
             JOptionPane.showMessageDialog(null, "No se realizó ningún cambio.");
         }
     }
-}  public static void AceptarSolicitud(String cedulaBuscada) {
+} public static void AceptarSolicitud(String cedulaBuscada) {
     int pos = buscarPorCedula(cedulaBuscada);
     if (pos != -1) {
         if (usuario[pos].estado.equalsIgnoreCase("Inactivo")) {
@@ -116,15 +116,19 @@ public class ControladorAdmin {
             JOptionPane.showMessageDialog(null, "El usuario ya se encuentra activo.");
         }
     }
-} public static void DeclinarSolicitud(String cedulaBuscada) {
+}
+
+public static void DeclinarSolicitud(String cedulaBuscada) {
     int pos = buscarPorCedula(cedulaBuscada);
     if (pos != -1) {
         for (int i = pos; i < contadorUsu - 1; i++) {
             usuario[i] = usuario[i + 1];
         }
+        usuario[contadorUsu - 1] = null;
         contadorUsu--;
         JOptionPane.showMessageDialog(null, "Solicitud declinada. El usuario ha sido eliminado.");
-    }
+}
+
 } public static int NuevosUsuarios(){
   return modelo.Usuarios.contUsuInact;
 } 
