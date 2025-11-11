@@ -15,8 +15,6 @@ public class estudiantesView extends javax.swing.JFrame {
      */
     public estudiantesView() {
         initComponents();
-        listarHorarioEstudiante();
-        listarNotaEstudiante();
         this.setLocationRelativeTo(this);
     }
 
@@ -51,13 +49,11 @@ public class estudiantesView extends javax.swing.JFrame {
         tabla_notaESTU = new javax.swing.JTable();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla_horarioESTU = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
         jButton1 = new javax.swing.JButton();
@@ -171,19 +167,6 @@ public class estudiantesView extends javax.swing.JFrame {
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/libro (3).png"))); // NOI18N
         jPanel6.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 60, 70));
 
-        jButton3.setBackground(new java.awt.Color(51, 153, 255));
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Actualizar");
-        jButton3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jButton3.setFocusPainted(false);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        jPanel6.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 40, 80, 30));
-
         tablita.addTab("tab1", jPanel6);
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
@@ -209,18 +192,6 @@ public class estudiantesView extends javax.swing.JFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/calendario (5).png"))); // NOI18N
         jPanel7.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, -1, 70));
-
-        jButton2.setBackground(new java.awt.Color(51, 153, 255));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Actualizar");
-        jButton2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 40, 80, 30));
 
         tablita.addTab("tab2", jPanel7);
 
@@ -282,14 +253,6 @@ public class estudiantesView extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        listarHorarioEstudiante();
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        listarNotaEstudiante();
-    }//GEN-LAST:event_jButton3ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -317,8 +280,6 @@ public class estudiantesView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
