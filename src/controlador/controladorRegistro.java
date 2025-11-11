@@ -1,6 +1,7 @@
 package controlador;
 
 import javax.swing.JOptionPane;
+
 import modelo.Usuarios;
 import static modelo.Usuarios.*;
 
@@ -55,5 +56,5 @@ public class controladorRegistro {
                 }
                 break;
         }
-    }
+}
 }
