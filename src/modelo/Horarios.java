@@ -13,9 +13,5 @@ public class Horarios {
     public String hora;
     public String salon;
     public String semestre;
-    
-    
-   
-
 
 }

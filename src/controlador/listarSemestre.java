@@ -79,7 +79,8 @@ public class listarSemestre {
         }
 
     }
-        public static void listarNotaEliminar(String semestre) {
+
+    public static void listarNotaEliminar(String semestre) {
 
         switch (semestre) {
             case "Semestre 1":
@@ -145,7 +146,8 @@ public class listarSemestre {
         }
 
     }
-            public static void listarNotaCrear(String semestre) {
+
+    public static void listarNotaCrear(String semestre) {
 
         switch (semestre) {
             case "Semestre 1":
@@ -211,6 +213,5 @@ public class listarSemestre {
         }
 
     }
-                
 
 }

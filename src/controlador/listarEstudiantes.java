@@ -22,7 +22,7 @@ public class listarEstudiantes {
                     usuario[i].nombre,
                     usuario[i].cedula,
                     usuario[i].celular
-                        
+
                 };
                 modelo1.addRow(fila);
             }

@@ -62,7 +62,7 @@ public class authHorario {
             );
 
             if (confirmacion == JOptionPane.YES_OPTION) {
-                
+
                 modelo.removeRow(filaSeleccionada);
 
                 eliminarDelArreglo(filaSeleccionada);
@@ -99,14 +99,14 @@ public class authHorario {
         return true;
     }
 
-    public static boolean validarIgualdad(String hora, String salon) {
+    public static boolean validarIgualdad(String hora, String salon, String mes, String dia) {
         for (int i = 0; i < contadorHorario; i++) {
-            if (horario[i].hora.equals(hora) && horario[i].salon.equals(salon)) {
-                JOptionPane.showMessageDialog(null, "Hora y salón ya ocupados");
+            if (horario[i].hora.equals(hora)&& horario[i].salon.equals(salon) && horario[i].dia.equals(dia)
+                    && horario[i].mes.equals(mes)) {
+                JOptionPane.showMessageDialog(null, "Hora y salón ya ocupados en este mes y día");
                 return true;
             }
         }
         return false;
-
     }
 }
