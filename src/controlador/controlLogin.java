@@ -2,6 +2,7 @@ package controlador;
 
 import javax.swing.JOptionPane;
 import static modelo.Usuarios.*;
+import static controlador.listarPanelEstudiante.*;
 import view.*;
 
 public class controlLogin {
@@ -18,8 +19,11 @@ public class controlLogin {
                         return true;
                     case "Estudiante":
                         JOptionPane.showMessageDialog(null, "Bienvenido al sistema " + usuario[i].nombre);
+                        String semestre = usuario[i].semestre;
                         estudiantesView estu = new estudiantesView();
                         estu.setVisible(true);
+                        listarNotaEstudiante(semestre);
+                        listarHorarioEstudiante(semestre);
                         return true;
                     case "Tutor":
                         JOptionPane.showMessageDialog(null, "Bienvenido al sistema " + usuario[i].nombre);
