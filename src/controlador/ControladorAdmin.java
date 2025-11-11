@@ -1,14 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package controlador;
 import static controlador.AuthRegistro.*;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import static modelo.Usuarios.*;
 import static view.Vitstaadmin.ListInac;
-import static view.Vitstaadmin.tabUsuACT;
+import static view.Vitstaadmin.ListAct;
 public class ControladorAdmin {
     
       public static void ListarInac(){
@@ -33,7 +30,7 @@ public class ControladorAdmin {
     }
    }
    public static void ListarAct(){
-        DefaultTableModel modelo = (DefaultTableModel) tabUsuACT.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) ListAct.getModel();
         boolean hayActivos = false;
         modelo.setRowCount(0);
         for (int i = 0; i < contadorUsu; i++) {

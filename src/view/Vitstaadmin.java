@@ -5,7 +5,6 @@
 package view;
 import Vistas.textoSombra;
 import java.awt.Color;
-import static controlador.AuthRegistro.valTelefono;
 import static controlador.ControladorAdmin.*;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -56,7 +55,10 @@ String cedulaSeleccionada="";
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jButton12 = new javax.swing.JButton();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel44 = new javax.swing.JLabel();
         tab = new javax.swing.JTabbedPane();
         Inicioo = new javax.swing.JPanel();
         jPanel15 = new javax.swing.JPanel();
@@ -69,7 +71,7 @@ String cedulaSeleccionada="";
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
-        jPanel16 = new javax.swing.JPanel();
+        solis = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         SoliAceptar = new javax.swing.JButton();
@@ -79,7 +81,7 @@ String cedulaSeleccionada="";
         jLabel56 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         ListInac = new javax.swing.JTable();
-        jPanel17 = new javax.swing.JPanel();
+        list = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
@@ -87,9 +89,9 @@ String cedulaSeleccionada="";
         jLabel34 = new javax.swing.JLabel();
         ActualizarTabACT = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        tabUsuACT = new javax.swing.JTable();
+        ListAct = new javax.swing.JTable();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jPanel5 = new javax.swing.JPanel();
+        Modi = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         txt_Buscarmodi = new javax.swing.JTextField();
@@ -119,7 +121,7 @@ String cedulaSeleccionada="";
         jLabel54 = new javax.swing.JLabel();
         txtCargoActual = new javax.swing.JTextField();
         jPanel14 = new javax.swing.JPanel();
-        jPanel19 = new javax.swing.JPanel();
+        Elim = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         txt_Buscarelim = new javax.swing.JTextField();
@@ -136,10 +138,6 @@ String cedulaSeleccionada="";
         jLabel48 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
         jButton8 = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jSeparator2 = new javax.swing.JSeparator();
-        jLabel44 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -358,7 +356,21 @@ String cedulaSeleccionada="";
         jPanel3.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 10, -1, -1));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 550, 50));
-        jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, -1, -1));
+
+        jPanel4.setBackground(new java.awt.Color(51, 153, 255));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Panel Administrador");
+        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, -1, -1));
+        jPanel4.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 180, 10));
+
+        jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/admin (1).png"))); // NOI18N
+        jPanel4.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, 70, 60));
+
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 550, 100));
 
         tab.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -412,10 +424,10 @@ String cedulaSeleccionada="";
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(51, 153, 255));
         jLabel19.setText("Inicio");
-        Inicioo.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
+        Inicioo.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 80, 30));
 
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/home-button.png"))); // NOI18N
-        Inicioo.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 40, 40));
+        Inicioo.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, 30));
 
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/tutoring (1).png"))); // NOI18N
         Inicioo.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 240, 70, 70));
@@ -425,16 +437,16 @@ String cedulaSeleccionada="";
 
         tab.addTab("Ini", Inicioo);
 
-        jPanel16.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        solis.setBackground(new java.awt.Color(255, 255, 255));
+        solis.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel23.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(51, 153, 255));
         jLabel23.setText("Solicitudes de ingreso");
-        jPanel16.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        solis.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, -1, -1));
 
         jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/add-account.png"))); // NOI18N
-        jPanel16.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 30, 40));
+        solis.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, 30, 40));
 
         SoliAceptar.setBackground(new java.awt.Color(51, 153, 255));
         SoliAceptar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -445,7 +457,7 @@ String cedulaSeleccionada="";
                 SoliAceptarActionPerformed(evt);
             }
         });
-        jPanel16.add(SoliAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 130, 30));
+        solis.add(SoliAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 130, 30));
 
         SoliDeclinar.setBackground(new java.awt.Color(51, 153, 255));
         SoliDeclinar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -456,7 +468,7 @@ String cedulaSeleccionada="";
                 SoliDeclinarActionPerformed(evt);
             }
         });
-        jPanel16.add(SoliDeclinar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 280, 110, 30));
+        solis.add(SoliDeclinar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 330, 110, 30));
 
         jButton6.setBackground(new java.awt.Color(51, 153, 255));
         jButton6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -467,13 +479,13 @@ String cedulaSeleccionada="";
                 jButton6ActionPerformed(evt);
             }
         });
-        jPanel16.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 120, 30));
+        solis.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 120, 30));
 
         jLabel55.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/delete-user.png"))); // NOI18N
-        jPanel16.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, -1, 50));
+        solis.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 320, -1, 50));
 
         jLabel56.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/add-account.png"))); // NOI18N
-        jPanel16.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, -1, 50));
+        solis.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 320, -1, 50));
 
         ListInac.setAutoCreateRowSorter(true);
         ListInac.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -503,31 +515,31 @@ String cedulaSeleccionada="";
         });
         jScrollPane4.setViewportView(ListInac);
 
-        jPanel16.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 550, 220));
+        solis.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 550, 220));
 
-        tab.addTab("soli", jPanel16);
+        tab.addTab("soli", solis);
 
-        jPanel17.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        list.setBackground(new java.awt.Color(255, 255, 255));
+        list.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel24.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(51, 153, 255));
         jLabel24.setText("Listado de usuarios");
-        jPanel17.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        list.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, -1, -1));
 
         jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/contact-list.png"))); // NOI18N
-        jPanel17.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 90, 70));
-        jPanel17.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 220, -1));
+        list.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 90, 70));
+        list.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 220, -1));
 
         jLabel33.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(51, 153, 255));
         jLabel33.setText("Aqui puedes observar el listado");
-        jPanel17.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, -1, -1));
+        list.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, -1, -1));
 
         jLabel34.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(51, 153, 255));
         jLabel34.setText("general de usuarios en el sistema");
-        jPanel17.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, -1, 20));
+        list.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, -1, 20));
 
         ActualizarTabACT.setBackground(new java.awt.Color(51, 153, 255));
         ActualizarTabACT.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -538,11 +550,11 @@ String cedulaSeleccionada="";
                 ActualizarTabACTActionPerformed(evt);
             }
         });
-        jPanel17.add(ActualizarTabACT, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 130, 30));
+        list.add(ActualizarTabACT, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 130, 30));
 
-        tabUsuACT.setAutoCreateRowSorter(true);
-        tabUsuACT.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        tabUsuACT.setModel(new javax.swing.table.DefaultTableModel(
+        ListAct.setAutoCreateRowSorter(true);
+        ListAct.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ListAct.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -561,29 +573,29 @@ String cedulaSeleccionada="";
                 "Nombre", "identificación", "N° Celular", "Cargo"
             }
         ));
-        jScrollPane3.setViewportView(tabUsuACT);
+        jScrollPane3.setViewportView(ListAct);
 
-        jPanel17.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 550, 220));
+        list.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 550, 220));
 
-        tab.addTab("list", jPanel17);
+        tab.addTab("list", list);
 
-        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Modi.setBackground(new java.awt.Color(255, 255, 255));
+        Modi.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(51, 153, 255));
         jLabel25.setText("Modificación de usuarios");
-        jPanel5.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, -1));
+        Modi.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 300, -1));
 
         jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/update-profile.png"))); // NOI18N
-        jPanel5.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 50, 40));
+        Modi.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 50, 40));
 
         txt_Buscarmodi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_BuscarmodiActionPerformed(evt);
             }
         });
-        jPanel5.add(txt_Buscarmodi, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 330, 30));
+        Modi.add(txt_Buscarmodi, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 330, 30));
 
         jButton2.setBackground(new java.awt.Color(51, 153, 255));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -594,11 +606,11 @@ String cedulaSeleccionada="";
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel5.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 80, 30));
+        Modi.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 80, 30));
 
         jLabel35.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel35.setText("No recuerdas la identificación de el usuario que buscas?");
-        jPanel5.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, 20));
+        Modi.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, 20));
 
         jButton3.setBackground(new java.awt.Color(51, 153, 255));
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
@@ -614,7 +626,7 @@ String cedulaSeleccionada="";
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel5.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 70, -1, 20));
+        Modi.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, -1, 20));
 
         jPanel6.setBackground(new java.awt.Color(51, 153, 255));
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nueva información de usuario", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -654,10 +666,10 @@ String cedulaSeleccionada="";
         jLabel52.setText("Nuevo numero celular");
         jPanel6.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
 
-        jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 280, 430));
+        Modi.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 280, 430));
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/students (3).png"))); // NOI18N
-        jPanel5.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 600, 70, 60));
+        Modi.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 600, 70, 60));
 
         jPanel13.setBackground(new java.awt.Color(51, 153, 255));
         jPanel13.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Información actual de usuario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -704,34 +716,34 @@ String cedulaSeleccionada="";
         txtCargoActual.setEditable(false);
         jPanel13.add(txtCargoActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 220, 30));
 
-        jPanel5.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 240, 430));
+        Modi.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 240, 430));
 
         jPanel14.setBackground(new java.awt.Color(51, 153, 255));
         jPanel14.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Deja vacios los campos que no desee modificar", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 2, 18), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel5.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 520, 40));
+        Modi.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 520, 40));
 
-        jScrollPane1.setViewportView(jPanel5);
+        jScrollPane1.setViewportView(Modi);
 
         tab.addTab("mo", jScrollPane1);
 
-        jPanel19.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel19.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Elim.setBackground(new java.awt.Color(255, 255, 255));
+        Elim.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel26.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(51, 153, 255));
         jLabel26.setText("Eliminación usuarios");
-        jPanel19.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, -1));
+        Elim.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, -1, -1));
 
         jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/delete-user.png"))); // NOI18N
-        jPanel19.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, -1, 40));
+        Elim.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, -1, 40));
 
         txt_Buscarelim.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_BuscarelimActionPerformed(evt);
             }
         });
-        jPanel19.add(txt_Buscarelim, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 340, 30));
+        Elim.add(txt_Buscarelim, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 340, 30));
 
         btnBscarE.setBackground(new java.awt.Color(51, 153, 255));
         btnBscarE.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -742,11 +754,11 @@ String cedulaSeleccionada="";
                 btnBscarEActionPerformed(evt);
             }
         });
-        jPanel19.add(btnBscarE, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, -1, 30));
+        Elim.add(btnBscarE, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 80, 30));
 
         jLabel45.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel45.setText("No recuerdas la identificación de el usuario que buscas?");
-        jPanel19.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, -1));
+        Elim.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, -1, -1));
 
         jButton7.setBackground(new java.awt.Color(51, 153, 255));
         jButton7.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
@@ -757,7 +769,7 @@ String cedulaSeleccionada="";
                 jButton7MouseClicked(evt);
             }
         });
-        jPanel19.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, -1, 20));
+        Elim.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, -1, 20));
 
         jPanel7.setBackground(new java.awt.Color(51, 153, 255));
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, " Información de usuario a eliminar", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -811,26 +823,11 @@ String cedulaSeleccionada="";
         });
         jPanel7.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 230, 30));
 
-        jPanel19.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 430, 190));
+        Elim.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 430, 190));
 
-        tab.addTab("elim", jPanel19);
+        tab.addTab("elim", Elim);
 
-        jPanel1.add(tab, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 550, 400));
-
-        jPanel4.setBackground(new java.awt.Color(51, 153, 255));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Panel Administrador");
-        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, -1, -1));
-        jPanel4.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 180, 10));
-
-        jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/admin (1).png"))); // NOI18N
-        jPanel4.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, 70, 60));
-
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 550, 100));
+        jPanel1.add(tab, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 550, 430));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1059,7 +1056,7 @@ String cedulaSeleccionada="";
     }//GEN-LAST:event_txt_BuscarelimActionPerformed
 
     private void ActualizarTabACTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarTabACTActionPerformed
-        DefaultTableModel modelo = (DefaultTableModel) tabUsuACT.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) ListAct.getModel();
         modelo.setRowCount(0);
         ListarAct();
     }//GEN-LAST:event_ActualizarTabACTActionPerformed
@@ -1160,9 +1157,12 @@ String cedulaSeleccionada="";
     private javax.swing.JButton ActualizarTabACT;
     private javax.swing.JTextField CargoUser;
     private javax.swing.JTextField ContadorDeSoli;
+    private javax.swing.JPanel Elim;
     private javax.swing.JTextField IDuser;
     private javax.swing.JPanel Inicioo;
+    public static javax.swing.JTable ListAct;
     public static javax.swing.JTable ListInac;
+    private javax.swing.JPanel Modi;
     private javax.swing.JTextField NombreUser;
     private javax.swing.JButton SoliAceptar;
     private javax.swing.JButton SoliDeclinar;
@@ -1235,13 +1235,9 @@ String cedulaSeleccionada="";
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel16;
-    private javax.swing.JPanel jPanel17;
-    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
@@ -1252,10 +1248,10 @@ String cedulaSeleccionada="";
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JPanel list;
     private javax.swing.JTextField numeroUser;
+    private javax.swing.JPanel solis;
     private javax.swing.JTabbedPane tab;
-    public static javax.swing.JTable tabUsuACT;
     private javax.swing.JTextField txtCargoActual;
     private javax.swing.JTextField txtCelularActual;
     private javax.swing.JTextField txtIdentificacionActual;
