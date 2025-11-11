@@ -20,8 +20,8 @@ public class controlLogin {
                     case "Estudiante":
                         JOptionPane.showMessageDialog(null, "Bienvenido al sistema " + usuario[i].nombre);
                         String semestre = usuario[i].semestre;
-                        listarNotaEstudiante();
-                        listarHorarioEstudiante();
+                        listarNotaEstudiante(semestre);
+                        listarHorarioEstudiante(semestre);
                         estudiantesView estu = new estudiantesView();
                         estu.setVisible(true);
                         return true;
