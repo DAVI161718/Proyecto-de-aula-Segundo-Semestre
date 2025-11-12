@@ -70,8 +70,8 @@ public class listarHorarios {
                     if (horario[i].semestre.equals(semestre)) {
                         String[] fila = {
                             horario[i].dia,
-                            horario[i].hora,
                             horario[i].mes,
+                            horario[i].hora,
                             horario[i].salon,
                             horario[i].semestre};
                         modelo1.addRow(fila);
@@ -88,8 +88,8 @@ public class listarHorarios {
                     if (horario[i].semestre.equals(semestre)) {
                         String[] fila = {
                             horario[i].dia,
-                            horario[i].hora,
                             horario[i].mes,
+                            horario[i].hora,
                             horario[i].salon,
                             horario[i].semestre};
                         modelo2.addRow(fila);
@@ -106,8 +106,8 @@ public class listarHorarios {
                     if (horario[i].semestre.equals(semestre)) {
                         String[] fila = {
                             horario[i].dia,
-                            horario[i].hora,
                             horario[i].mes,
+                            horario[i].hora,
                             horario[i].salon,
                             horario[i].semestre};
                         modelo3.addRow(fila);
@@ -124,8 +124,8 @@ public class listarHorarios {
                     if (horario[i].semestre.equals(semestre)) {
                         String[] fila = {
                             horario[i].dia,
-                            horario[i].hora,
                             horario[i].mes,
+                            horario[i].hora,
                             horario[i].salon,
                             horario[i].semestre,};
                         modelo4.addRow(fila);
@@ -149,8 +149,8 @@ public class listarHorarios {
                     if (horario[i].semestre.equals(semestre)) {
                         String[] fila = {
                             horario[i].dia,
-                            horario[i].hora,
                             horario[i].mes,
+                            horario[i].hora,
                             horario[i].salon,
                             horario[i].semestre};
                         modelo1.addRow(fila);
@@ -167,8 +167,8 @@ public class listarHorarios {
                     if (horario[i].semestre.equals(semestre)) {
                         String[] fila = {
                             horario[i].dia,
-                            horario[i].hora,
                             horario[i].mes,
+                            horario[i].hora,
                             horario[i].salon,
                             horario[i].semestre};
                         modelo2.addRow(fila);
@@ -185,8 +185,8 @@ public class listarHorarios {
                     if (horario[i].semestre.equals(semestre)) {
                         String[] fila = {
                             horario[i].dia,
-                            horario[i].hora,
                             horario[i].mes,
+                            horario[i].hora,
                             horario[i].salon,
                             horario[i].semestre};
                         modelo3.addRow(fila);
@@ -203,8 +203,8 @@ public class listarHorarios {
                     if (horario[i].semestre.equals(semestre)) {
                         String[] fila = {
                             horario[i].dia,
-                            horario[i].hora,
                             horario[i].mes,
+                            horario[i].hora,
                             horario[i].salon,
                             horario[i].semestre};
                         modelo4.addRow(fila);
@@ -228,8 +228,8 @@ public class listarHorarios {
                     if (horario[i].semestre.equals(semestre)) {
                         String[] fila = {
                             horario[i].dia,
-                            horario[i].hora,
                             horario[i].mes,
+                            horario[i].hora,
                             horario[i].salon,
                             horario[i].semestre};
                         modelo1.addRow(fila);
@@ -246,8 +246,8 @@ public class listarHorarios {
                     if (horario[i].semestre.equals(semestre)) {
                         String[] fila = {
                             horario[i].dia,
-                            horario[i].hora,
                             horario[i].mes,
+                            horario[i].hora,
                             horario[i].salon,
                             horario[i].semestre};
                         modelo2.addRow(fila);
@@ -264,8 +264,8 @@ public class listarHorarios {
                     if (horario[i].semestre.equals(semestre)) {
                         String[] fila = {
                             horario[i].dia,
-                            horario[i].hora,
                             horario[i].mes,
+                            horario[i].hora,
                             horario[i].salon,
                             horario[i].semestre};
                         modelo3.addRow(fila);
@@ -282,8 +282,8 @@ public class listarHorarios {
                     if (horario[i].semestre.equals(semestre)) {
                         String[] fila = {
                             horario[i].dia,
-                            horario[i].hora,
                             horario[i].mes,
+                            horario[i].hora,
                             horario[i].salon,
                             horario[i].semestre};
                         modelo4.addRow(fila);

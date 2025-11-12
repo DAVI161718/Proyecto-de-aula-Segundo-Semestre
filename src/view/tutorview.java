@@ -23,11 +23,6 @@ public class tutorview extends javax.swing.JFrame {
 
     public tutorview() {
         initComponents();
-        crearUsuario("1234567890", "Juan Navia", "123", "Estudiante", "1234567890", "Activo", "Semestre 1");
-        crearUsuario("1234567890", "b Navia", "123", "Estudiante", "1234567890", "Activo", "Semestre 2");
-        crearUsuario("1234567890", "a Navia", "123", "Estudiante", "1234567890", "Activo", "Semestre 3");
-        crearUsuario("1234567890", "c Navia", "123", "Estudiante", "1234567890", "Activo", "Semestre 4");
-
         this.setLocationRelativeTo(this);
         textoSombra Notas = new textoSombra("Digite documento", txt_notas);
     }
@@ -1038,8 +1033,8 @@ public class tutorview extends javax.swing.JFrame {
     }//GEN-LAST:event_panel_notasMouseClicked
 
     private void boton_horarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_horarioActionPerformed
-        if (contadorHorario >= 5) {
-            JOptionPane.showMessageDialog(this, "Cantidad máxima de horarios creados permitidos");
+        if (contadorHorario >= 40) {
+            JOptionPane.showMessageDialog(this, "¡Cantidad máxima de horarios creados permitidos!");
         } else {
 
             String dia = txt_dia.getText().trim();
@@ -1067,7 +1062,6 @@ public class tutorview extends javax.swing.JFrame {
                 
                 JOptionPane.showMessageDialog(null, "Horario creado correctamente");
             }
-            //  Si valida todo, continuamos
 
         }
     }//GEN-LAST:event_boton_horarioActionPerformed
@@ -1122,7 +1116,7 @@ public class tutorview extends javax.swing.JFrame {
         String mensaje = txt_ingresarNotas.getText();
         String semestre = caja_Sem.getSelectedItem().toString();
 
-        if (contadorNotas >= 20) {
+        if (contadorNotas >= 60) {
             JOptionPane.showMessageDialog(null, "¡Cantidad máxima de notas creadas!");
         } else {
             if (!mensaje.isEmpty()) {
