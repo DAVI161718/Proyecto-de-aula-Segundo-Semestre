@@ -154,6 +154,7 @@ public class estudiantesView extends javax.swing.JFrame {
                 "Nota"
             }
         ));
+        tabla_notaESTU.setFocusable(false);
         jScrollPane2.setViewportView(tabla_notaESTU);
 
         jPanel6.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 490, 200));
@@ -177,9 +178,10 @@ public class estudiantesView extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Dia", "Hora", "Salon"
+                "Dia", "Mes", "Hora", "Salon"
             }
         ));
+        tabla_horarioESTU.setFocusable(false);
         jScrollPane1.setViewportView(tabla_horarioESTU);
 
         jPanel7.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 490, 200));
