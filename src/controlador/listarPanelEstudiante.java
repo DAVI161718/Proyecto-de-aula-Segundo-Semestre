@@ -4,7 +4,10 @@ import javax.swing.table.DefaultTableModel;
 import static modelo.Horarios.*;
 import static modelo.Notas.*;
 import static view.estudiantesView.*;
-
+/**
+ *
+ * @author Cantillo
+ */
 public class listarPanelEstudiante {
 
     public static void listarHorarioEstudiante(String semestre) {

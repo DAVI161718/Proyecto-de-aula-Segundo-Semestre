@@ -3,10 +3,12 @@ package view;
 import Vistas.textoSombra;
 import static controlador.controlLogin.loginUsuarios;
 import javax.swing.JOptionPane;
+/**
+ *
+ * @author Cantillo
+ */
 public class loginView extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(loginView.class.getName());
-
     public loginView() {
         initComponents();
         this.setLocationRelativeTo(this);

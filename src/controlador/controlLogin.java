@@ -4,7 +4,10 @@ import javax.swing.JOptionPane;
 import static modelo.Usuarios.*;
 import static controlador.listarPanelEstudiante.*;
 import view.*;
-
+/**
+ *
+ * @author Cantillo
+ */
 public class controlLogin {
 
     public static boolean loginUsuarios(String cedula, String contraseña) {

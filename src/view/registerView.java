@@ -4,11 +4,11 @@ import Vistas.textoSombra;
 import static controlador.controladorRegistro.*;
 import javax.swing.JOptionPane;
 import static controlador.AuthRegistro.*;
-
+/**
+ *
+ * @author Cantillo
+ */
 public class registerView extends javax.swing.JFrame {
-
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(registerView.class.getName());
-
     public registerView() {
         initComponents();
         this.setLocationRelativeTo(this);

@@ -1,5 +1,8 @@
 package modelo;
-
+/**
+ *
+ * @author Cantillo
+ */
 public class Usuarios {
 
     public static Usuarios usuario[] = new Usuarios[100];

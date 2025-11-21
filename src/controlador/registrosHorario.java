@@ -2,7 +2,10 @@ package controlador;
 
 import modelo.Horarios;
 import static modelo.Horarios.*;
-
+/**
+ *
+ * @author Juanes
+ */
 
 public class registrosHorario {
 

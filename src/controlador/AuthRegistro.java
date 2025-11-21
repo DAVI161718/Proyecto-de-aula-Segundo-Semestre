@@ -1,8 +1,12 @@
 package controlador;
 
+
 import javax.swing.JOptionPane;
 import static modelo.Usuarios.*;
-
+/**
+ *
+ * @author Cantillo
+ */
 public class AuthRegistro {
 
     public static boolean valCedula(String cedula) {

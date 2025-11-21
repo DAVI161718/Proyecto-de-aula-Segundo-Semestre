@@ -4,7 +4,10 @@ import javax.swing.JOptionPane;
 
 import modelo.Usuarios;
 import static modelo.Usuarios.*;
-
+/**
+ *
+ * @author Cantillo
+ */
 public class controladorRegistro {
 
     public static void crearUsuario(String cedula, String nombre, String contraseña, String cargo, String celular, String estado, String semestre) {

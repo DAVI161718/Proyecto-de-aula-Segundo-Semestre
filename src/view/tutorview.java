@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view;
 
 import java.awt.Color;
@@ -10,15 +6,16 @@ import javax.swing.JOptionPane;
 import static modelo.Horarios.*;
 import static controlador.authHorario.*;
 import controlador.authNotas;
-import static controlador.controladorRegistro.crearUsuario;
-import static controlador.listarEstudianteNota.*;
 import controlador.listarHorarios;
 import static controlador.listarHorarios.*;
 import controlador.listarSemestre;
 import controlador.registrarNotas;
 import static controlador.registrosHorario.*;
 import static modelo.Notas.contadorNotas;
-
+/**
+ *
+ * @author Juanes
+ */
 public class tutorview extends javax.swing.JFrame {
 
     public tutorview() {
